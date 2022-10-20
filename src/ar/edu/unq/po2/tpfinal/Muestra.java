@@ -17,8 +17,7 @@ public class Muestra {
 		this.setHora(hora);
 	}
 
-	//borrar si no lo terminamos usando
-	private Coordenada getCoordenada() {
+	public Coordenada getCoordenada() {
 		return this.coordenada;
 	}
 
@@ -26,8 +25,7 @@ public class Muestra {
 		this.coordenada = coordenada;
 	}
 
-	//borrar si no lo terminamos usando
-	private Usuario getUsuario() {
+	public Usuario getUsuario() {
 		return this.usuario;
 	}
 
@@ -35,8 +33,7 @@ public class Muestra {
 		this.usuario = usuario;
 	}
 
-	//borrar si no lo terminamos usando
-	private LocalDate getFecha() {
+	public LocalDate getFecha() {
 		return this.fecha;
 	}
 
@@ -44,8 +41,7 @@ public class Muestra {
 		this.fecha = fecha;
 	}
 
-	//borrar si no lo terminamos usando
-	private LocalTime getHora() {
+	public LocalTime getHora() {
 		return this.hora;
 	}
 
