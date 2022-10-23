@@ -1,28 +1,29 @@
 package ar.edu.unq.po2.tpfinal;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class RestriccionTemporal {
 	
 	private String tipo;
-	private Date inicio;
-	private Date fin;
+	private LocalDate inicio;
+	private LocalDate fin;
 	
 	
-	public void RestriccionTempora(String tipo) {
+	public void RestriccionTemporal(String tipo) {
 		this.setTipo(tipo);
-		this.setInicio(Date(1900/01/01)); // una fecha ridiculamente vieja
-		this.setFin(Date(3000/01/01)); // una fecha ridiculamente futura
+		this.setInicio(LocalDate.of(1900,01,01)); // una fecha ridiculamente vieja
+		this.setFin(LocalDate.of(3000,01,01)); // una fecha ridiculamente futura
 		
 	}
-	public void RestriccionTempora(Date inicio, Date fin) {
+	public void RestriccionTemporal(LocalDate inicio, LocalDate fin) {
 		this.setTipo("algo que incluya a ambas");
 		this.setInicio(inicio); // una fecha ridiculamente vieja
 		this.setFin(fin); // una fecha ridiculamente futura
 		
 	}
 	
-	public void RestriccionTempora(String tipo, Date inicio, Date fin) {
+	public void RestriccionTemporal(String tipo, LocalDate inicio, LocalDate fin) {
 		this.setTipo(tipo);
 		this.setInicio(inicio); // una fecha ridiculamente vieja
 		this.setFin(fin); // una fecha ridiculamente futura
@@ -40,22 +41,22 @@ public class RestriccionTemporal {
 	}
 
 
-	private Date getInicio() {
+	private LocalDate getInicio() {
 		return inicio;
 	}
 
 
-	private void setInicio(Date inicio) {
+	private void setInicio(LocalDate inicio) {
 		this.inicio = inicio;
 	}
 
 
-	private Date getFin() {
+	private LocalDate getFin() {
 		return fin;
 	}
 
 
-	private void setFin(Date fin) {
+	private void setFin(LocalDate fin) {
 		this.fin = fin;
 	}
 
