@@ -4,12 +4,12 @@ import java.time.LocalDate;
 
 public class RestriccionTemporal {
 
-	private String tipo = null;
+	private Periodo periodo = null;
 	private LocalDate inicio = null;
 	private LocalDate fin = null;
 
-	public RestriccionTemporal(String tipo) {
-		this.setTipo(tipo);
+	public RestriccionTemporal(Periodo periodo) {
+		this.setPeriodo(periodo);
 	}
 
 	public RestriccionTemporal(LocalDate inicio, LocalDate fin) {
@@ -17,18 +17,18 @@ public class RestriccionTemporal {
 		this.setFin(fin);
 	}
 
-	public RestriccionTemporal(String tipo, LocalDate inicio, LocalDate fin) {
-		this.setTipo(tipo);
+	public RestriccionTemporal(Periodo periodo, LocalDate inicio, LocalDate fin) {
+		this.setPeriodo(periodo);
 		this.setInicio(inicio);
 		this.setFin(fin);
 	}
 
-	private String getTipo() {
-		return tipo;
+	private Periodo getPeriodo() {
+		return periodo;
 	}
 
-	private void setTipo(String tipo) {
-		this.tipo = tipo;
+	private void setPeriodo(Periodo periodo) {
+		this.periodo = periodo;
 	}
 
 	private LocalDate getInicio() {
@@ -48,10 +48,10 @@ public class RestriccionTemporal {
 	}
 
 	public boolean estaHabilitado(LocalDate fecha) {
-		switch (this.getTipo()) {
-		case "diasHabiles":
+		switch (this.getPeriodo()) {
+		case DIAS_HABILES:
 			return fecha.getDayOfWeek().getValue() < 6 && this.estaDentroDelPeriodo(fecha);
-		case "finDeSemana":
+		case FIN_DE_SEMANA:
 			return fecha.getDayOfWeek().getValue() > 5 && this.estaDentroDelPeriodo(fecha);
 		default:
 			return this.estaDentroDelPeriodo(fecha);
