@@ -7,6 +7,10 @@ public class RestriccionMixta extends TipoDeRestriccion{
 	//comentario para pushear
 	
 	private List<TipoDeRestriccion> restricciones;
+	
+	public RestriccionMixta(List<TipoDeRestriccion> restricciones) {
+		this.setRestricciones(restricciones);
+	}
 
 	public List<TipoDeRestriccion> getRestricciones() {
 		return this.restricciones;

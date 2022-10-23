@@ -16,5 +16,4 @@ public class DiasHabiles extends TipoDeRestriccion{
 	@Override
 	public void borrarRestriccion(TipoDeRestriccion restriccion) {
 	}
-
 }
