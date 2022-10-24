@@ -9,6 +9,7 @@ public class AreaCircular {
 	private int latitud;
 	private int longitud;
 	private int radio;
+	// private Coordenada cordenada; 
 
 	public AreaCircular(int latitud, int longitud, int radio) {
 		this.setLatitud(latitud);
