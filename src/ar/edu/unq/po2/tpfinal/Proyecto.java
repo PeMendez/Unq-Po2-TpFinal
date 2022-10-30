@@ -10,6 +10,7 @@ public class Proyecto {
 	private List<Categoria> categorias;
 	private List<Usuario> participantes; 
 	private List<Muestra> muestrasRecolectadas; 
+	private List<Desafio> desafios; 
 	
 	public Proyecto(String nombre, String descripcion, List<Categoria> categorias) {
 		
@@ -58,6 +59,14 @@ public class Proyecto {
 	public void removeParticipante(Usuario participante) {
 		
 		this.getParticipantes().remove(participante);
+	}
+	
+	public List<Desafio> getDesafios() {
+		return this.desafios;
+	}
+
+	public void setProyectos(List<Desafio> desafios) {
+		this.desafios = desafios;
 	}
 
 }

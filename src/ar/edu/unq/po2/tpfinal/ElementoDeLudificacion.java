@@ -1,6 +1,6 @@
 package ar.edu.unq.po2.tpfinal;
 
-public class ElementoDeLudificacion {
+public interface ElementoDeLudificacion {
 	//deberia ser interface o superclase? Pablo
 
 }
