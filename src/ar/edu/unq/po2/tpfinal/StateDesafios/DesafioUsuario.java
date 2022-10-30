@@ -1,6 +1,9 @@
-package ar.edu.unq.po2.tpfinal;
+package ar.edu.unq.po2.tpfinal.StateDesafios;
 
 import java.time.LocalDate;
+
+import ar.edu.unq.po2.tpfinal.Desafio;
+import ar.edu.unq.po2.tpfinal.Usuario;
 
 
 public class DesafioUsuario {
