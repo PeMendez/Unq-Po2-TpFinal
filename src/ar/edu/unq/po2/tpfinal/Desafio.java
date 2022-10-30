@@ -4,13 +4,13 @@ package ar.edu.unq.po2.tpfinal;
 
 public class Desafio implements ElementoDeLudificacion {
 		
-	private AreaCircular area; 
+	private RestriccionGeografica area; 
 	private TipoDeRestriccion restriccion; 
 	private int cantidadDeMuestras; 
 	private int dificultad; 
 	private int recompensa; 
 	
-	public Desafio(AreaCircular area, TipoDeRestriccion restriccion, int cant, int dif, int recompensa) {
+	public Desafio(RestriccionGeografica area, TipoDeRestriccion restriccion, int cant, int dif, int recompensa) {
 		
 		this.setArea(area);
 		this.setRestriccion(restriccion);
@@ -20,10 +20,10 @@ public class Desafio implements ElementoDeLudificacion {
 		
 	}
 	
-	public AreaCircular getArea() {
+	public RestriccionGeografica getArea() {
 		return area;
 	}
-	public void setArea(AreaCircular area) {
+	public void setArea(RestriccionGeografica area) {
 		this.area = area;
 	}
 	public int getCantidadDeMuestras() {
