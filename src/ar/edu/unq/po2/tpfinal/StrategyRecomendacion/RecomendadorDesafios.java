@@ -46,8 +46,8 @@ public abstract class RecomendadorDesafios {
 	public Integer coincidenciaCon(Usuario usuario, Desafio desafio) {
 		
 		Integer difDificultad = Math.abs(desafio.getDificultad() - usuario.getPerfil().getDificultad()); 
-		Integer difMuestras = Math.abs(desafio.getCantidadDeMuestras() - usuario.getPerfil().getCantMuestrasARecolectar()); 
-		Integer difRecompensa = Math.abs(desafio.getRecompensa() - usuario.getPerfil().getRecompensasPreferidas()); 
+		Integer difMuestras = Math.abs(desafio.getCantidadDeMuestras() - usuario.getPerfil().getCantidadDeMuestras()); 
+		Integer difRecompensa = Math.abs(desafio.getRecompensa() - usuario.getPerfil().getRecompensa()); 
 		
 		return difDificultad + difMuestras + difRecompensa;
 	}

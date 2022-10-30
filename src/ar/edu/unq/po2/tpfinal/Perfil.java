@@ -4,24 +4,24 @@ import ar.edu.unq.po2.tpfinal.StrategyRecomendacion.RecomendadorDesafios;
 
 public class Perfil {
 	
-	private int cantMuestrasARecolectar; 
+	private int cantidadDeMuestras; 
 	private int dificultad; 
-	private int recompensasPreferidas;
+	private int recompensa;
 	private RecomendadorDesafios tipoDeRecomendacion;
 	
-	public Perfil(int cantMuestrasARecolectar, int dificultad, int recompensasPreferidas, RecomendadorDesafios tipoDeRecomendacion) {
+	public Perfil(int cantidadDeMuestras, int dificultad, int recompensa, RecomendadorDesafios tipoDeRecomendacion) {
 		
-		this.setCantMuestrasARecolectar(cantMuestrasARecolectar);
+		this.setCantidadDeMuestras(cantidadDeMuestras);
 		this.setDificultad(dificultad);
-		this.setRecompensasPreferidas(recompensasPreferidas);
+		this.setRecompensa(recompensa);
 		this.setTipoDeRecomendacion(tipoDeRecomendacion);
 	}
 	
-	public int getCantMuestrasARecolectar() {
-		return cantMuestrasARecolectar;
+	public int getCantidadDeMuestras() {
+		return cantidadDeMuestras;
 	}
-	public void setCantMuestrasARecolectar(int cantMuestrasARecolectar) {
-		this.cantMuestrasARecolectar = cantMuestrasARecolectar;
+	public void setCantidadDeMuestras(int cantidadDeMuestras) {
+		this.cantidadDeMuestras = cantidadDeMuestras;
 	}
 	public int getDificultad() {
 		return dificultad;
@@ -29,11 +29,11 @@ public class Perfil {
 	public void setDificultad(int dificultad) {
 		this.dificultad = dificultad;
 	}
-	public int getRecompensasPreferidas() {
-		return recompensasPreferidas;
+	public int getRecompensa() {
+		return recompensa;
 	}
-	public void setRecompensasPreferidas(int recompensasPreferidas) {
-		this.recompensasPreferidas = recompensasPreferidas;
+	public void setRecompensa(int recompensa) {
+		this.recompensa = recompensa;
 	}
 	public RecomendadorDesafios getTipoDeRecomendacion() {
 		return tipoDeRecomendacion;
