@@ -1,4 +1,4 @@
-package ar.edu.unq.po2.tpfinal;
+package ar.edu.unq.po2.tpfinal.RestriccionTemporal;
 
 import java.time.LocalDate;
 import java.util.List;

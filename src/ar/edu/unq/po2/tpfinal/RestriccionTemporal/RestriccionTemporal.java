@@ -1,6 +1,8 @@
-package ar.edu.unq.po2.tpfinal;
+package ar.edu.unq.po2.tpfinal.RestriccionTemporal;
 
 import java.time.LocalDate;
+
+import ar.edu.unq.po2.tpfinal.Periodo;
 
 public class RestriccionTemporal {
 
