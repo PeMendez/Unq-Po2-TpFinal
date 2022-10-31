@@ -44,15 +44,7 @@ public class Desafio implements ElementoDeLudificacion{
 	public void setRecompensa(int recompensa) {
 		this.recompensa = recompensa;
 	}
-//	public Integer coincidenciaCon(Usuario usuario) {
-//	// esto no debería estar aca, pero por ahora sirve. 
-//		
-//		Integer difDificultad = Math.abs(this.getDificultad() - usuario.getPerfil().getDificultad()); 
-//		Integer difMuestras = Math.abs(this.getCantidadDeMuestras() - usuario.getPerfil().getCantMuestrasARecolectar()); 
-//		Integer difRecompensa = Math.abs(this.getRecompensa() - usuario.getPerfil().getRecompensasPreferidas()); 
-//		
-//		return difDificultad + difMuestras + difRecompensa;
-//	}
+
 	public TipoDeRestriccion getRestriccion() {
 		return restriccion;
 	}
