@@ -37,17 +37,17 @@ public abstract class RecomendadorDesafios {
 		List<Desafio> desafiosOrd = 
 		desafios
 		.stream()
-		.sorted((desafio1, desafio2) -> this.coincidenciaCon(usuario, desafio1).compareTo(this.coincidenciaCon(usuario, desafio2)))
+		.sorted((desafio1, desafio2) -> this.coincidenciaCon(usuario.getPerfil(), desafio1).compareTo(this.coincidenciaCon(usuario.getPerfil(), desafio2)))
 		.toList(); 
 		
 		return desafiosOrd; 
 	}
 	
-	public Integer coincidenciaCon(Usuario usuario, Desafio desafio) {
+	public Integer coincidenciaCon(Perfil perfilUsuario, Desafio desafio) {
 		
-		Integer difDificultad = Math.abs(desafio.getDificultad() - usuario.getPerfil().getDificultad()); 
-		Integer difMuestras = Math.abs(desafio.getCantidadDeMuestras() - usuario.getPerfil().getCantMuestrasARecolectar()); 
-		Integer difRecompensa = Math.abs(desafio.getRecompensa() - usuario.getPerfil().getRecompensasPreferidas()); 
+		Integer difDificultad = Math.abs(desafio.getDificultad() - perfilUsuario.getDificultad()); 
+		Integer difMuestras = Math.abs(desafio.getCantidadDeMuestras() - perfilUsuario.getCantMuestrasARecolectar()); 
+		Integer difRecompensa = Math.abs(desafio.getRecompensa() - perfilUsuario.getRecompensasPreferidas()); 
 		
 		return difDificultad + difMuestras + difRecompensa;
 	}
