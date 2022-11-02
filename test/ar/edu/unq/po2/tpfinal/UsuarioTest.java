@@ -1,7 +1,9 @@
 package ar.edu.unq.po2.tpfinal;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.mock;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -34,6 +36,21 @@ class UsuarioTest {
 	
 	@BeforeEach
 	void setUp() throws Exception {
+		user = new Usuario(perfilUser);
+	    muestra1 = mock(Muestra.class); 
+		muestra2 = mock(Muestra.class);  
+		muestra3 = mock(Muestra.class);  
+		proyecto1 = mock(Proyecto.class);  
+		proyecto2 = mock(Proyecto.class);   
+		perfilUser = mock(Perfil.class);   
+		desafiosUsuario1 = mock(DesafioUsuario.class);  
+		desafiosUsuario2 = mock(DesafioUsuario.class); 
+		desafiosUsuario3 = mock(DesafioUsuario.class);
+		
+		muestrasUser = new ArrayList<Muestra>();
+		proyectosUser = new ArrayList<Proyecto>();
+		desafiosUsuariosUser = new ArrayList<DesafioUsuario>();
+
 	}
 
 	@Test
