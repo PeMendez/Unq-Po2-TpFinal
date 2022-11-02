@@ -8,11 +8,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import ar.edu.unq.po2.tpfinal.RestriccionTemporal.RangoDeFechas;
-import ar.edu.unq.po2.tpfinal.RestriccionTemporal.TipoDeRestriccion;
 
 class RangoDeFechasTest {
 
-	private TipoDeRestriccion rangodefechas;
+	private RangoDeFechas rangodefechas;
 
 	@BeforeEach
 	void setUp() throws Exception {

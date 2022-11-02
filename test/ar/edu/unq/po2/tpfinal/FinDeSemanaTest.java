@@ -6,11 +6,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import ar.edu.unq.po2.tpfinal.RestriccionTemporal.FinDeSemana;
-import ar.edu.unq.po2.tpfinal.RestriccionTemporal.TipoDeRestriccion;
 
 class FinDeSemanaTest {
 
-	private TipoDeRestriccion finDeSemana;
+	private FinDeSemana finDeSemana;
 
 	@BeforeEach
 	void setUp() throws Exception {

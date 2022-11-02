@@ -6,11 +6,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import ar.edu.unq.po2.tpfinal.RestriccionTemporal.DiasHabiles;
-import ar.edu.unq.po2.tpfinal.RestriccionTemporal.TipoDeRestriccion;
 
 class DiasHabilesTest {
 
-	private TipoDeRestriccion diasHabiles;
+	private DiasHabiles diasHabiles;
 
 	@BeforeEach
 	void setUp() throws Exception {
