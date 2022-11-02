@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class RestriccionMixta extends TipoDeRestriccion{
-	//comentario para pushear
 	
 	private List<TipoDeRestriccion> restricciones;
 	
