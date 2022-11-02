@@ -31,7 +31,7 @@ public class RangoDeFechas extends TipoDeRestriccion{
 
 	@Override
 	public boolean estaHabilitado(LocalDate fecha) {
-		return fecha.isAfter(this.getInicio()) && fecha.isBefore(this.getFin());
+		return fecha.isAfter(this.getInicio().minusDays(1)) && fecha.isBefore(this.getFin().plusDays(1));
 	}
 
 	@Override
