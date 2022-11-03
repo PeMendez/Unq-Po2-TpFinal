@@ -3,6 +3,7 @@ package ar.edu.unq.po2.tpfinal;
 import java.util.ArrayList;
 import java.util.List;
 
+import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.TipoDeBusqueda;
 import ar.edu.unq.po2.tpfinal.StateDesafios.DesafioUsuario;
 
 //import ar.edu.unq.po2.tpfinal.StateDesafios.*;
@@ -13,7 +14,8 @@ public class Usuario {
 	private List<Muestra> muestras; 
 	private List<Proyecto> proyectos; 
 	private Perfil perfil; 
-	private List<DesafioUsuario> desafiosUsuarios; 
+	private List<DesafioUsuario> desafiosUsuarios;
+	private TipoDeBusqueda modoDeBuscar;
 	
 	public Usuario(Perfil perfil) {
 		
@@ -86,5 +88,9 @@ public class Usuario {
 
 	public void setDesafiosUsuario(List<DesafioUsuario> desafiosUsuario) {
 		this.desafiosUsuarios = desafiosUsuario;
+	}
+	
+	public List<Proyecto> buscarProyectosPor(String catOTit) {
+		return modoDeBuscar.buscarEnProyectos(catOTit);
 	}
 }
