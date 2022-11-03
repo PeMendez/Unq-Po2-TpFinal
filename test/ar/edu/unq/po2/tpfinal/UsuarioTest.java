@@ -13,6 +13,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
+import ar.edu.unq.po2.tpfinal.StateDesafios.*;
 
 class UsuarioTest {
 
@@ -60,5 +61,15 @@ class UsuarioTest {
 		//verify
 		assertEquals(proyectosSuscriptos,user.getProyectos());
 		verify(proyecto1).addParticipante(user);
+	}
+	
+	@Test
+	void testAceptarDesafio() {
+		//setup
+		List<DesafioUsuario> desafioAceptado = Arrays.asList(desafiosUsuario1);
+		//excercise
+		user.aceptarDesafio(desafiosUsuario1); 
+		//verify
+		verify(desafiosUsuario1).serAceptado();
 	}
 }
