@@ -17,14 +17,20 @@ public class BuscadorAndOr extends TipoDeBusqueda{
 
 	@Override
 	public void agregarTipoDeBusqueda(TipoDeBusqueda nuevoTipo) {
-		// TODO Auto-generated method stub
-		
+		this.getBusquedasAndOr().add(nuevoTipo);
 	}
 
 	@Override
 	public void borrarTipoDeBusqueda(TipoDeBusqueda nuevoTipo) {
-		// TODO Auto-generated method stub
-		
+		this.getBusquedasAndOr().remove(nuevoTipo);
+	}
+
+	public List<TipoDeBusqueda> getBusquedasAndOr() {
+		return busquedasAndOr;
+	}
+
+	public void setBusquedasAndOr(List<TipoDeBusqueda> busquedasAndOr) {
+		this.busquedasAndOr = busquedasAndOr;
 	}
 
 	
