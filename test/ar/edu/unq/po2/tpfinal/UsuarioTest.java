@@ -1,20 +1,16 @@
 package ar.edu.unq.po2.tpfinal;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
-import ar.edu.unq.po2.clasesBasicas.Muestra;
-import ar.edu.unq.po2.clasesBasicas.Perfil;
-import ar.edu.unq.po2.clasesBasicas.Proyecto;
-import ar.edu.unq.po2.clasesBasicas.Usuario;
-import ar.edu.unq.po2.clasesBasicas.StateDesafios.DesafioUsuario;
 
 class UsuarioTest {
 
@@ -35,7 +31,7 @@ class UsuarioTest {
 	private List<DesafioUsuario> desafiosUsuariosUser;
 	
 	@BeforeEach
-	void setUp() throws Exception {
+	public void setUp()  {
 		user = new Usuario(perfilUser);
 	    muestra1 = mock(Muestra.class); 
 		muestra2 = mock(Muestra.class);  
@@ -54,8 +50,13 @@ class UsuarioTest {
 	}
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testSuscribirseAProyecto() {
+		//setup
+		List<Proyecto> proyectosSuscriptos = Arrays.asList(proyecto1);
+		//excercise
+		user.suscribirse(proyecto1); 
+		//verify
+		assertEquals(proyectosSuscriptos,user.getProyectos());
+		verify(proyecto1).addParticipante(user);
 	}
-
 }
