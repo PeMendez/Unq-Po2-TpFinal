@@ -73,4 +73,8 @@ public class Proyecto {
 		return this.nombre;
 	}
 
+	public List<Categoria> getCategorias() {
+		return this.categorias;
+	}
+
 }
