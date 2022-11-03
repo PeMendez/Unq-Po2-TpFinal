@@ -5,7 +5,6 @@ import static org.mockito.Mockito.*;
 
 import ar.edu.unq.po2.tpfinal.StateDesafios.*;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -13,7 +12,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
-import ar.edu.unq.po2.tpfinal.StateDesafios.*;
+//import ar.edu.unq.po2.tpfinal.StateDesafios.*;
 
 class UsuarioTest {
 
@@ -66,7 +65,7 @@ class UsuarioTest {
 	@Test
 	void testAceptarDesafio() {
 		//setup
-		List<DesafioUsuario> desafioAceptado = Arrays.asList(desafiosUsuario1);
+//		List<DesafioUsuario> desafioAceptado = Arrays.asList(desafiosUsuario1);
 		//excercise
 		user.aceptarDesafio(desafiosUsuario1); 
 		//verify
