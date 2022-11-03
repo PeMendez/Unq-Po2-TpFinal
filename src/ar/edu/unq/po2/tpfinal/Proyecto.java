@@ -69,4 +69,8 @@ public class Proyecto {
 		this.desafios = desafios;
 	}
 
+	public String getNombre() {
+		return this.nombre;
+	}
+
 }
