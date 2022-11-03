@@ -3,6 +3,8 @@ package ar.edu.unq.po2.tpfinal;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+import ar.edu.unq.po2.tpfinal.StateDesafios.*;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -26,9 +28,9 @@ class UsuarioTest {
 	@Mock private DesafioUsuario desafiosUsuario2;
 	@Mock private DesafioUsuario desafiosUsuario3;
 	
-	private List<Muestra> muestrasUser; 
-	private List<Proyecto> proyectosUser; 
-	private List<DesafioUsuario> desafiosUsuariosUser;
+//	private List<Muestra> muestrasUser; 
+//	private List<Proyecto> proyectosUser; 
+//	private List<DesafioUsuario> desafiosUsuariosUser;
 	
 	@BeforeEach
 	public void setUp()  {
@@ -43,9 +45,9 @@ class UsuarioTest {
 		desafiosUsuario2 = mock(DesafioUsuario.class); 
 		desafiosUsuario3 = mock(DesafioUsuario.class);
 		
-		muestrasUser = new ArrayList<Muestra>();
-		proyectosUser = new ArrayList<Proyecto>();
-		desafiosUsuariosUser = new ArrayList<DesafioUsuario>();
+//		muestrasUser = new ArrayList<Muestra>();
+//		proyectosUser = new ArrayList<Proyecto>();
+//		desafiosUsuariosUser = new ArrayList<DesafioUsuario>();
 
 	}
 
