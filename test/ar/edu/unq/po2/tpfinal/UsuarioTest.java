@@ -30,10 +30,7 @@ class UsuarioTest {
 	@Mock private DesafioUsuario desafiosUsuario1;
 	@Mock private DesafioUsuario desafiosUsuario2;
 	@Mock private DesafioUsuario desafiosUsuario3;
-	
-//	private List<Muestra> muestrasUser; 
-//	private List<Proyecto> proyectosUser; 
-//	private List<DesafioUsuario> desafiosUsuariosUser;
+
 	
 	@BeforeEach
 	public void setUp()  {
