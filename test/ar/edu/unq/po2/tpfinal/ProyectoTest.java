@@ -109,5 +109,15 @@ class UsuarioTest {
 		assertEquals(participanteTest,proyect.getParticipantes());
 	}
 	
+	@Test
+	void testAddMuestra() {
+		//setup
+		List<Muestra> muestrasTest = Arrays.asList(muestra1);
+		//excercise
+		proyect.addMuestra(muestra1);
+		//verify
+		assertEquals(muestrasTest,proyect.getMuestrasRecolectadas());
+	}
+	
 	
 }
