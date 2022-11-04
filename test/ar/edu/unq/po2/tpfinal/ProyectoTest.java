@@ -72,7 +72,7 @@ class UsuarioTest {
 		//excercise
 		proyect.setNombre("hola");
 		//verify
-		assertEquals("hola", proyect.getNombre());
+		assertEquals("hola", proyect.getTitulo());
 	}
 	
 	@Test
