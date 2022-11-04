@@ -18,6 +18,7 @@ class DiasHabilesTest {
 
 	@Test
 	void testEstaHabilitadoTrue() {
+		// verify
 		assertTrue(diasHabiles.estaHabilitado(LocalDate.of(2022, 10, 17))); // Lunes
 		assertTrue(diasHabiles.estaHabilitado(LocalDate.of(2022, 10, 18))); // Martes
 		assertTrue(diasHabiles.estaHabilitado(LocalDate.of(2022, 10, 19))); // Miércoles
@@ -27,6 +28,7 @@ class DiasHabilesTest {
 
 	@Test
 	void testEstaHabilitadoFalse() {
+		// verify
 		assertFalse(diasHabiles.estaHabilitado(LocalDate.of(2022, 10, 22))); // Sábado
 		assertFalse(diasHabiles.estaHabilitado(LocalDate.of(2022, 10, 23))); // Domingo
 	}

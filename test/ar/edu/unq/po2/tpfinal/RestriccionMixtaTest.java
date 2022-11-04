@@ -14,14 +14,16 @@ import ar.edu.unq.po2.tpfinal.RestriccionTemporal.*;
 class RestriccionMixtaTest {
 
 	private RestriccionMixta restriccionMixta;
-	@Mock private TipoDeRestriccion restriccion1;
-	@Mock private TipoDeRestriccion restriccion2;
+	@Mock
+	private TipoDeRestriccion restriccion1;
+	@Mock
+	private TipoDeRestriccion restriccion2;
 	private List<TipoDeRestriccion> restricciones;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		restriccion1=mock(TipoDeRestriccion.class);
-		restriccion2=mock(TipoDeRestriccion.class);
+		restriccion1 = mock(TipoDeRestriccion.class);
+		restriccion2 = mock(TipoDeRestriccion.class);
 		restricciones = new ArrayList<TipoDeRestriccion>();
 		restriccionMixta = new RestriccionMixta(restricciones);
 		restriccionMixta.getRestricciones().add(restriccion1);
