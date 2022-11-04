@@ -122,11 +122,11 @@ class UsuarioTest {
 	@Test
 	void testAddParticipante() {
 		//setup
-		List<Muestra> muestrasTest = Arrays.asList(muestra1);
+		List<Usuario> participantesTest = Arrays.asList(participante1);
 		//excercise
-		proyect.addMuestra(muestra1);
+		proyect.addParticipante(participante1);
 		//verify
-		assertEquals(muestrasTest,proyect.getMuestrasRecolectadas());
+		assertEquals(participantesTest,proyect.getParticipantes());
 	}
 	
 	
