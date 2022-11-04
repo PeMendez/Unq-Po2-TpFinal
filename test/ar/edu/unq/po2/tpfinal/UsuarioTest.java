@@ -82,5 +82,17 @@ class UsuarioTest {
 		user.desafiosRecomendados(); 
 		//verify
 		verify(perfilUser,times(1)).getTipoDeRecomendacion();
-	}	
+	}
+	
+	@Test
+	void testValorarDesafio() {
+		//setup
+		List<DesafioUsuario> desafioRecomendado = Arrays.asList(desafiosUsuario1);
+		user.setDesafiosUsuario(desafioRecomendado);
+		//excercise
+		user.valorarDesafio(desafiosUsuario1, 100); 
+		//verify
+		assertEquals(desafioRecomendado,user.getDesafiosUsuario());
+		verify(desafiosUsuario1).setValoracion(100);
+	}
 }
