@@ -108,5 +108,14 @@ class UsuarioTest {
 		verify(desafiosUsuario2).getValoracion();
 	}
 
+	//Test Getters y Setters
+	
+	@Test
+	void testGetYSetPerfil() {
+		//excercise
+		user.setPerfil(perfilUser2);
+		//excercise y verify
+		assertEquals(perfilUser2,user.getPerfil());
+	}	
 	
 }
