@@ -85,4 +85,17 @@ class UsuarioTest {
 		assertEquals(categTest, proyect.getCategorias());
 	}	
 	
+	@Test
+	void testGetMuestrasRecolectadas() {
+		//setup
+		proyect.addMuestra(muestra1);
+		proyect.addMuestra(muestra2);
+		List<Muestra> muestrasTest = Arrays.asList(muestra1,muestra2);
+		//excercise
+		proyect.getMuestrasRecolectadas();
+		//verify
+		assertEquals(muestrasTest,proyect.getMuestrasRecolectadas());
+	}
+	
+	
 }
