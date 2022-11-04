@@ -44,10 +44,6 @@ class UsuarioTest {
 		desafiosUsuario1 = mock(DesafioUsuario.class);  
 		desafiosUsuario2 = mock(DesafioUsuario.class); 
 		desafiosUsuario3 = mock(DesafioUsuario.class);
-		
-//		muestrasUser = new ArrayList<Muestra>();
-//		proyectosUser = new ArrayList<Proyecto>();
-//		desafiosUsuariosUser = new ArrayList<DesafioUsuario>();
 
 	}
 
