@@ -3,6 +3,7 @@ package ar.edu.unq.po2.tpfinal;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+import ar.edu.unq.po2.clasesBasicas.StateDesafios.DesafioUsuario;
 import ar.edu.unq.po2.tpfinal.StateDesafios.*;
 
 import java.util.Arrays;
@@ -72,5 +73,14 @@ class UsuarioTest {
 		verify(desafiosUsuario1).serAceptado();
 	}
 	
-	
+	//TODO este test no esta ok
+	//@Test //ver como testeo este mensaje
+	void testDesafiosRecomendados() {
+		//setup
+		List<DesafioUsuario> desafioRecomendado = Arrays.asList(desafiosUsuario1);
+		//excercise
+		user.desafiosRecomendados(); 
+		//verify
+		verify(perfilUser,times(1)).getTipoDeRecomendacion();
+	}	
 }
