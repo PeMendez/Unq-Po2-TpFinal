@@ -63,101 +63,18 @@ class UsuarioTest {
 
 	}
 
-	@Test
-	void testSuscribirseAProyecto() {
-		//setup
-		List<Proyecto> proyectosSuscriptos = Arrays.asList(proyecto1);
-		//excercise
-		user.suscribirse(proyecto1); 
-		//verify
-		assertEquals(proyectosSuscriptos,user.getProyectos());
-
-		verify(proyecto1).addParticipante(user);
-	}
+	//setter y getter
 	
 	@Test
-	void testAceptarDesafio() {
+	void testGetYSetNombre() {
 		//setup
+		
 		//excercise
-		user.aceptarDesafio(desafiosUsuario1); 
+		proyect.setNombre("hola");
 		//verify
-		verify(desafiosUsuario1).serAceptado();
+		assertEquals("hola", proyect.getNombre());
 	}
 	
-	//TODO este test no esta ok
-	//@Test //ver como testeo este mensaje
-	void testDesafiosRecomendados() {
-		//setup
-		List<DesafioUsuario> desafioRecomendado = Arrays.asList(desafiosUsuario1);
-		//excercise
-		user.desafiosRecomendados(); 
-		//verify
-		verify(perfilUser,times(1)).getTipoDeRecomendacion();
-	}
-	
-	@Test
-	void testValorarDesafio() {
-		//setup
-		List<DesafioUsuario> desafioRecomendado = Arrays.asList(desafiosUsuario1);
-		user.setDesafiosUsuario(desafioRecomendado);
-		//excercise
-		user.valorarDesafio(desafiosUsuario1, 100); 
-		//verify
-		assertEquals(desafioRecomendado,user.getDesafiosUsuario());
-		verify(desafiosUsuario1).setValoracion(100);
-	}
-	
-	@Test
-	void testDesafioFavorito() {
-		//setup
-		List<DesafioUsuario> desafios1Y2 = Arrays.asList(desafiosUsuario1,desafiosUsuario2);
-		user.setDesafiosUsuario(desafios1Y2);
-		//excercise
-		user.desafioFavorito(); 
-		//verify
-		verify(desafiosUsuario1).getValoracion();
-		verify(desafiosUsuario2).getValoracion();
-	}
-
-	//Test Getters y Setters
-	
-	@Test
-	void testGetYSetPerfil() {
-		//excercise
-		user.setPerfil(perfilUser2);
-		//excercise y verify
-		assertEquals(perfilUser2,user.getPerfil());
-	}	
-	
-	@Test
-	void testGetYSetProyectos() {
-		//setup
-		List<Proyecto> proyectosSuscriptos = Arrays.asList(proyecto1,proyecto2);
-		//excercise
-		user.setProyectos(proyectosSuscriptos);
-		//verify
-		assertEquals(proyectosSuscriptos,user.getProyectos());
-	}
-
-	@Test
-	void testGetYSetMuestras() {
-		//setup
-		List<Muestra> muestrasUser = Arrays.asList(muestra1,muestra2);
-		//excercise
-		user.setMuestras(muestrasUser);
-		//verify
-		assertEquals(muestrasUser,user.getMuestras());
-	}	
-	
-	@Test
-	void testGetYSetDesafioUsuario() {
-		//setup
-		List<DesafioUsuario> desafiosUsuariosUser = Arrays.asList(desafiosUsuario1,desafiosUsuario2);
-		//excercise
-		user.setDesafiosUsuario(desafiosUsuariosUser);
-		//verify
-		assertEquals(desafiosUsuariosUser,user.getDesafiosUsuario());
-	}
 
 	
 }
