@@ -75,6 +75,14 @@ class UsuarioTest {
 		assertEquals("hola", proyect.getNombre());
 	}
 	
-
+	@Test
+	void testGetYSetCategorias() {
+		//setup
+		List<Categoria> categTest = Arrays.asList(categoria1,categoria2);
+		//excercise
+		proyect.setCategorias(categTest);
+		//verify
+		assertEquals(categTest, proyect.getCategorias());
+	}	
 	
 }
