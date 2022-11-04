@@ -95,4 +95,18 @@ class UsuarioTest {
 		assertEquals(desafioRecomendado,user.getDesafiosUsuario());
 		verify(desafiosUsuario1).setValoracion(100);
 	}
+	
+	@Test
+	void testDesafioFavorito() {
+		//setup
+		List<DesafioUsuario> desafios1Y2 = Arrays.asList(desafiosUsuario1,desafiosUsuario2);
+		user.setDesafiosUsuario(desafios1Y2);
+		//excercise
+		user.desafioFavorito(); 
+		//verify
+		verify(desafiosUsuario1).getValoracion();
+		verify(desafiosUsuario2).getValoracion();
+	}
+
+	
 }
