@@ -96,6 +96,18 @@ class UsuarioTest {
 		//verify
 		assertEquals(muestrasTest,proyect.getMuestrasRecolectadas());
 	}
+
+	@Test
+	void testGetParticipantes() {
+		//setup
+		proyect.addParticipante(participante1);
+		proyect.addParticipante(participante2);
+		List<Usuario> participanteTest = Arrays.asList(participante1,participante2);
+		//excercise
+		proyect.getParticipantes();
+		//verify
+		assertEquals(participanteTest,proyect.getParticipantes());
+	}
 	
 	
 }
