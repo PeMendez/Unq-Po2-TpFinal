@@ -3,6 +3,7 @@ package ar.edu.unq.po2.tpfinal;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+import ar.edu.unq.po2.clasesBasicas.Muestra;
 import ar.edu.unq.po2.clasesBasicas.Proyecto;
 import ar.edu.unq.po2.clasesBasicas.StateDesafios.DesafioUsuario;
 import ar.edu.unq.po2.tpfinal.StateDesafios.*;
@@ -128,5 +129,15 @@ class UsuarioTest {
 		//verify
 		assertEquals(proyectosSuscriptos,user.getProyectos());
 	}
+
+	@Test
+	void testGetYSetMuestras() {
+		//setup
+		List<Muestra> muestrasUser = Arrays.asList(muestra1,muestra2);
+		//excercise
+		user.setMuestras(muestrasUser);
+		//verify
+		assertEquals(muestrasUser,user.getMuestras());
+	}	
 	
 }
