@@ -129,5 +129,16 @@ class UsuarioTest {
 		assertEquals(participantesTest,proyect.getParticipantes());
 	}
 	
+	@Test
+	void testRemoveParticipante() {
+		//setup
+		List<Usuario> participantesTest = Arrays.asList(participante2);
+		//Exercise
+		proyect.addParticipante(participante1);
+		proyect.addParticipante(participante2);
+		proyect.removeParticipante(participante1);
+		//verify
+		assertEquals(participantesTest,proyect.getParticipantes());
+	}	
 	
 }
