@@ -59,16 +59,18 @@ class UsuarioTest {
 		user.suscribirse(proyecto1); 
 		//verify
 		assertEquals(proyectosSuscriptos,user.getProyectos());
+
 		verify(proyecto1).addParticipante(user);
 	}
 	
 	@Test
 	void testAceptarDesafio() {
 		//setup
-//		List<DesafioUsuario> desafioAceptado = Arrays.asList(desafiosUsuario1);
 		//excercise
 		user.aceptarDesafio(desafiosUsuario1); 
 		//verify
 		verify(desafiosUsuario1).serAceptado();
 	}
+	
+	
 }
