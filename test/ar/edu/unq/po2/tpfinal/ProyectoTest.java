@@ -139,6 +139,17 @@ class UsuarioTest {
 		proyect.removeParticipante(participante1);
 		//verify
 		assertEquals(participantesTest,proyect.getParticipantes());
-	}	
+	}
+
+	@Test
+	void testGetYSetDesafios() {
+		//setup
+		List<Desafio> desafiosTest = Arrays.asList(desafioU1,desafioU2);
+		List<Desafio> desafiosEsperado = Arrays.asList(desafioU1,desafioU2);
+		//Exercise
+		proyect.setDesafios(desafiosTest);
+		//verify
+		assertEquals(desafiosEsperado,proyect.getDesafios());
+	}
 	
 }
