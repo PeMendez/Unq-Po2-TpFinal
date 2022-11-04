@@ -140,4 +140,15 @@ class UsuarioTest {
 		assertEquals(muestrasUser,user.getMuestras());
 	}	
 	
+	@Test
+	void testGetYSetDesafioUsuario() {
+		//setup
+		List<DesafioUsuario> desafiosUsuariosUser = Arrays.asList(desafiosUsuario1,desafiosUsuario2);
+		//excercise
+		user.setDesafiosUsuario(desafiosUsuariosUser);
+		//verify
+		assertEquals(desafiosUsuariosUser,user.getDesafiosUsuario());
+	}
+
+	
 }
