@@ -20,7 +20,7 @@ import org.mockito.Mock;
 
 //import ar.edu.unq.po2.tpfinal.StateDesafios.*;
 
-class UsuarioTest {
+class ProyectoTest {
 
 	private Proyecto proyect; //sut
 	private String nombre1; 
