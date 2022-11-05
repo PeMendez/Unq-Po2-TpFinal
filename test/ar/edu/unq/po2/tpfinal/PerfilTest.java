@@ -27,6 +27,15 @@ class PerfilTest {
 		tipoDeRecomendacion2 = mock(RecomendadorDesafios.class);
 	}
 
+	@Test
+	void testGetCantMuestrasARecolectar() {
+		//setup
+		
+		//exercise
+		
+		//verify
+		assertEquals(10,perfil.getCantMuestrasARecolectar());
+	}
 
 	
 }
