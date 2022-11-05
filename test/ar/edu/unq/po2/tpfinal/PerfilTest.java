@@ -37,5 +37,14 @@ class PerfilTest {
 		assertEquals(10,perfil.getCantMuestrasARecolectar());
 	}
 
+	@Test
+	void testSetCantMuestrasARecolectar() {
+		//setup
+		
+		//exercise
+		perfil.setCantMuestrasARecolectar(7);
+		//verify
+		assertEquals(7,perfil.getCantMuestrasARecolectar());
+	}
 	
 }
