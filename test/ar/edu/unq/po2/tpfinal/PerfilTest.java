@@ -76,5 +76,15 @@ class PerfilTest {
 		//verify
 		assertEquals(30,perfil.getRecompensasPreferidas());
 	}
+
+	@Test
+	void testSetRecompensasPreferidas() {
+		//setup
+		
+		//exercise
+		perfil.setRecompensasPreferidas(99);
+		//verify
+		assertEquals(99,perfil.getRecompensasPreferidas());
+	}
 	
 }
