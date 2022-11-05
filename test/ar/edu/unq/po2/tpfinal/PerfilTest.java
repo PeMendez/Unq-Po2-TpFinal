@@ -1,0 +1,32 @@
+package ar.edu.unq.po2.tpfinal;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+
+class PerfilTest {
+
+	private Perfil perfil; // sut
+	private int cantMuestrasARecolectar; 
+	private int dificultad; 
+	private int recompensasPreferidas;
+	
+	@Mock private RecomendadorDesafios tipoDeRecomendacion;
+	@Mock private RecomendadorDesafios tipoDeRecomendacion2;
+	
+	@BeforeEach
+	public void setup() {
+		perfil = new Perfil(10, 4, 30, tipoDeRecomendacion);
+		tipoDeRecomendacion = mock(RecomendadorDesafios.class);
+		tipoDeRecomendacion2 = mock(RecomendadorDesafios.class);
+	}
+
+
+	
+}
