@@ -46,5 +46,15 @@ class PerfilTest {
 		//verify
 		assertEquals(7,perfil.getCantMuestrasARecolectar());
 	}
+
+	@Test
+	void testGetDificultad() {
+		//setup
+		
+		//exercise
+		
+		//verify
+		assertEquals(4,perfil.getDificultad());
+	}
 	
 }
