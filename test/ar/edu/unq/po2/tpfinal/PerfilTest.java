@@ -97,4 +97,14 @@ class PerfilTest {
 		assertEquals(tipoDeRecomendacion,perfil.getTipoDeRecomendacion());
 	}
 	
+	@Test
+	void testSetTipoDeRecomendacion() {
+		//setup
+		
+		//exercise
+		perfil.setTipoDeRecomendacion(tipoDeRecomendacion2);
+		//verify
+		assertEquals(tipoDeRecomendacion2,perfil.getTipoDeRecomendacion());
+	}
+	
 }
