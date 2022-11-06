@@ -32,7 +32,7 @@ public class CompositeORTest {
 	void testORCompositeAmbasTrue() {
 
 		when(condicion1.seCumple(proyecto1)).thenReturn(true);
-		when(condicion2.seCumple(proyecto1)).thenReturn(false);
+		when(condicion2.seCumple(proyecto1)).thenReturn(true);
 		assertTrue(compositeOR.seCumple(proyecto1));
 	}
 
