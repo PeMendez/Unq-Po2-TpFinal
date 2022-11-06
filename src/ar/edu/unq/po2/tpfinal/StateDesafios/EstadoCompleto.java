@@ -11,7 +11,7 @@ public class EstadoCompleto extends EstadoDesafio{
 	@Override
 	public float porcentajeDeCompletitud(DesafioUsuario desafio) {
 		
-		return 100;
+		return 1.00f;
 	}
 
 	@Override
