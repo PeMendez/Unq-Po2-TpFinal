@@ -68,6 +68,16 @@ class ProyectoTest {
 	}
 	
 	@Test
+	void testGetYSetDescripcion() {
+		//setup
+		
+		//excercise
+		proyect.setDescripcion("descripccion");
+		//verify
+		assertEquals("descripccion", proyect.getDescripcion());
+	}
+	
+	@Test
 	void testGetYSetCategorias() {
 		//setup
 		List<Categoria> categTest = Arrays.asList(categoria1,categoria2);
