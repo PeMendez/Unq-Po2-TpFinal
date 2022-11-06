@@ -89,4 +89,14 @@ public class DesafioUsuarioTest {
 		//verify
 		assertEquals(fechaInicio,desafioU.getFechaInicio());
 	}
+	
+	@Test
+	void testSerAceptado() {
+		//setup
+		desafioU.setEstado(estado);
+		//exercise
+		desafioU.serAceptado();
+		//verify
+		verify(estado).serAceptado(desafioU);
+	}
 }
