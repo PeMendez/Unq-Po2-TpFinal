@@ -47,7 +47,7 @@ class UsuarioTest {
 	void testSuscribirseAProyecto() {
 		//setup
 		List<Proyecto> proyectosSuscriptos = Arrays.asList(proyecto1);
-		//excercise
+		//Exercise
 		user.suscribirse(proyecto1); 
 		//verify
 		assertEquals(proyectosSuscriptos,user.getProyectos());
@@ -56,9 +56,21 @@ class UsuarioTest {
 	}
 	
 	@Test
+	void testDesuscribirseAProyecto() {
+		//setup
+		List<Proyecto> proyectosSuscriptos = Arrays.asList(proyecto1);
+		//Exercise
+		user.desuscribirse(proyecto1); 
+		//verify
+		assertNotEquals(proyectosSuscriptos,user.getProyectos());
+
+		verify(proyecto1).desuscribirParticipante(user);;
+	}
+	
+	@Test
 	void testAceptarDesafio() {
 		//setup
-		//excercise
+		//Exercise
 		user.aceptarDesafio(desafiosUsuario1); 
 		//verify
 		verify(desafiosUsuario1).serAceptado();
@@ -69,10 +81,18 @@ class UsuarioTest {
 	void testDesafiosRecomendados() {
 		//setup
 		List<DesafioUsuario> desafioRecomendado = Arrays.asList(desafiosUsuario1);
-		//excercise
+		//Exercise
 		user.desafiosRecomendados(); 
 		//verify
 		verify(perfilUser,times(1)).getTipoDeRecomendacion();
+	}
+	
+	@Test
+	void testRechazarDesafio(){
+		
+		user.rechazarDesafio(desafiosUsuario1);
+		
+		assertTrue(user.getDesafiosUsuario().isEmpty()); 
 	}
 	
 	@Test
@@ -80,24 +100,13 @@ class UsuarioTest {
 		//setup
 		List<DesafioUsuario> desafioRecomendado = Arrays.asList(desafiosUsuario1);
 		user.setDesafiosUsuario(desafioRecomendado);
-		//excercise
+		//Exercise
 		user.valorarDesafio(desafiosUsuario1, 100); 
 		//verify
 		assertEquals(desafioRecomendado,user.getDesafiosUsuario());
 		verify(desafiosUsuario1).setValoracion(100);
 	}
 	
-//	@Test
-//	void testDesafioFavorito() {
-//		//setup
-//		List<DesafioUsuario> desafios1Y2 = Arrays.asList(desafiosUsuario1,desafiosUsuario2);
-//		user.setDesafiosUsuario(desafios1Y2);
-//		//excercise
-//		user.getDesafioFavorito(); 
-//		//verify
-//		verify(desafiosUsuario1).getValoracion();
-//		verify(desafiosUsuario2).getValoracion();
-//	}
 
 	//Test Getters y Setters
 	

@@ -15,7 +15,6 @@ public class ExcluyeCategoriasTest {
 	private ExcluyeCategorias excluyeCategorias;
 	private Proyecto proyecto1, proyecto2, proyecto3;
 	private Categoria cat1, cat2, cat3, cat4, cat5;
-	private AdministradorDeProyectos admP; 
 	private List<Categoria> categorias = new ArrayList<>();
 	private List<Categoria> catproy1 = new ArrayList<>();
 	private List<Categoria> catproy2 = new ArrayList<>();
@@ -24,7 +23,6 @@ public class ExcluyeCategoriasTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		
-		admP = new AdministradorDeProyectos(); 
 		excluyeCategorias = new ExcluyeCategorias(categorias);
 	
 		proyecto1 = mock(Proyecto.class);
@@ -43,10 +41,7 @@ public class ExcluyeCategoriasTest {
 		when(cat4.getNombre()).thenReturn("Fisica Cuantica");
 		when(cat5.getNombre()).thenReturn("BioInformática");
 		
-		admP.addProyecto(proyecto1);
-		admP.addProyecto(proyecto2);
-		admP.addProyecto(proyecto3);
-		
+
 		catproy1.add(cat1);
 		catproy1.add(cat3);
 		when(proyecto1.getCategorias()).thenReturn(catproy1);
@@ -67,16 +62,16 @@ public class ExcluyeCategoriasTest {
 	}
 
 	@Test
-	void testORCompositeFalse() {
+	void testExcluyeCategoriaseFalse() {
 		
-		assertFalse(excluyeCategorias.filtrarProyectos(admP).contains(proyecto1));
-		assertFalse(excluyeCategorias.filtrarProyectos(admP).contains(proyecto3));
+		assertFalse(excluyeCategorias.seCumple(proyecto1));
+		assertFalse(excluyeCategorias.seCumple(proyecto3));
 	}
 
 	@Test
-	void testORCompositeTrue() {
+	void testExcluyeCategoriasTrue() {
 		
-		assertTrue(excluyeCategorias.filtrarProyectos(admP).contains(proyecto2));
+		assertTrue(excluyeCategorias.seCumple(proyecto2));
 
 	}
 

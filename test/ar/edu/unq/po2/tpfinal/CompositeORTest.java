@@ -15,10 +15,10 @@ import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.*;
 public class CompositeORTest {
 	
 	private OR compositeOR;
-	private CondicionDeBusqueda condicion1, condicion2;
+	private IncluyeTextoEnTitulo condicion1;
+	private IncluyeCategorias condicion2;
 	private Proyecto proyecto1, proyecto2, proyecto3;
-	private Categoria cat1, cat2, cat3, cat4, cat5;
-	private AdministradorDeProyectos admP; 
+	private Categoria cat1, cat2, cat3, cat4, cat5; 
 	private List<Categoria> categorias = new ArrayList<>();
 	private List<Categoria> catproy1 = new ArrayList<>();
 	private List<Categoria> catproy2 = new ArrayList<>();
@@ -26,10 +26,13 @@ public class CompositeORTest {
 	
 	@BeforeEach
 	void setUp() throws Exception {
+
+//		condicion1 = new IncluyeTextoEnTitulo("Java");
+//		condicion2 = new IncluyeCategorias(categorias);
 		
-		admP = new AdministradorDeProyectos(); 
-		condicion1 = new IncluyeTextoEnTitulo("Java");
-		condicion2 = new IncluyeCategorias(categorias);
+		condicion1 = mock(IncluyeTextoEnTitulo.class); 
+		condicion2 = mock(IncluyeCategorias.class);
+		
 		compositeOR = new OR(condicion1, condicion2);
 		
 		proyecto1 = mock(Proyecto.class);
@@ -48,10 +51,6 @@ public class CompositeORTest {
 		when(cat4.getNombre()).thenReturn("Fisica Cuantica");
 		when(cat5.getNombre()).thenReturn("BioInformática");
 		
-		admP.addProyecto(proyecto1);
-		admP.addProyecto(proyecto2);
-		admP.addProyecto(proyecto3);
-		
 		catproy1.add(cat1);
 		catproy1.add(cat3);
 		when(proyecto1.getCategorias()).thenReturn(catproy1);
@@ -66,22 +65,26 @@ public class CompositeORTest {
 		
 		categorias.add(cat1);
 		categorias.add(cat3);
+		
 		when(proyecto1.getNombre()).thenReturn("Programacion con Java");
 		when(proyecto2.getNombre()).thenReturn("Arboles Binarios");
 		when(proyecto3.getNombre()).thenReturn("Java and C++");
+		
+		when(condicion1.getTextoABuscar()).thenReturn("Java");
+		when(condicion2.getCategorias()).thenReturn(categorias);
 	}
 
 	@Test
 	void testORCompositeTrue() {
 		
-		assertTrue(compositeOR.filtrarProyectos(admP).contains(proyecto1));
-		assertTrue(compositeOR.filtrarProyectos(admP).contains(proyecto3));
+		assertTrue(compositeOR.seCumple(proyecto1));
+		assertTrue(compositeOR.seCumple(proyecto3));
 	}
 
 	@Test
 	void testORCompositeFalse() {
 		
-		assertFalse(compositeOR.filtrarProyectos(admP).contains(proyecto2));
+		assertFalse(compositeOR.seCumple(proyecto2));
 
 	}
 }

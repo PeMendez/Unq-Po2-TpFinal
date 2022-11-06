@@ -14,10 +14,9 @@ import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.*;
 public class CompositeNOTest {
 
 	private Negacion compositeNOT;
-	private CondicionDeBusqueda condicion1; 
+	private IncluyeTextoEnTitulo condicion; 
 	private Proyecto proyecto1, proyecto2, proyecto3;
 	private Categoria cat1, cat2, cat3, cat4, cat5;
-	private AdministradorDeProyectos admP; 
 	private List<Categoria> categorias = new ArrayList<>();
 	private List<Categoria> catproy1 = new ArrayList<>();
 	private List<Categoria> catproy2 = new ArrayList<>();
@@ -26,9 +25,13 @@ public class CompositeNOTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		
-		admP = new AdministradorDeProyectos(); 
-		condicion1 = new IncluyeTextoEnTitulo("Java");
-		compositeNOT = new Negacion(condicion1);
+//		condicion1 = new IncluyeTextoEnTitulo("Java");
+		
+		condicion = mock(IncluyeTextoEnTitulo.class); 
+		
+		when(condicion.getTextoABuscar()).thenReturn("Java"); 
+		
+		compositeNOT = new Negacion(condicion);
 		
 		proyecto1 = mock(Proyecto.class);
 		proyecto2 = mock(Proyecto.class);
@@ -46,10 +49,6 @@ public class CompositeNOTest {
 		when(cat4.getNombre()).thenReturn("Fisica Cuantica");
 		when(cat5.getNombre()).thenReturn("BioInformática");
 		
-		admP.addProyecto(proyecto1);
-		admP.addProyecto(proyecto2);
-		admP.addProyecto(proyecto3);
-		
 		catproy1.add(cat1);
 		catproy1.add(cat3);
 		when(proyecto1.getCategorias()).thenReturn(catproy1);
@@ -64,22 +63,23 @@ public class CompositeNOTest {
 		
 		categorias.add(cat1);
 		categorias.add(cat3);
+		
 		when(proyecto1.getNombre()).thenReturn("Programacion con Java");
 		when(proyecto2.getNombre()).thenReturn("Arboles Binarios");
 		when(proyecto3.getNombre()).thenReturn("Java and C++");
 	}
 	
 	@Test
-	void testORCompositeTrue() {
+	void testNOTCompositeTrue() {
 		
-		assertTrue(compositeNOT.filtrarProyectos(admP).contains(proyecto2));
+		assertTrue(compositeNOT.seCumple(proyecto2));
 	}
 
 	@Test
-	void testORCompositeFalse() {
+	void testNOTCompositeFalse() {
 		
-		assertFalse(compositeNOT.filtrarProyectos(admP).contains(proyecto3));
-		assertFalse(compositeNOT.filtrarProyectos(admP).contains(proyecto1));
+		assertFalse(compositeNOT.seCumple(proyecto3));
+		assertFalse(compositeNOT.seCumple(proyecto1));
 
 	}
 

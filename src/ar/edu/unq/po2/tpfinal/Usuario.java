@@ -100,7 +100,7 @@ public class Usuario {
 	
 	public List<Proyecto> buscarProyectosPor(CondicionDeBusqueda condicion) {
 		
-		return condicion.filtrarProyectos(sistema);
+		return sistema.filtrarProyectos(condicion);
 	}
 
 	public AdministradorDeProyectos getSistema() {

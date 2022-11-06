@@ -3,6 +3,8 @@ package ar.edu.unq.po2.tpfinal;
 import java.util.ArrayList;
 import java.util.List;
 
+import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.CondicionDeBusqueda;
+
 public class AdministradorDeProyectos {
 
 	private List<Proyecto> proyDisponibles;
@@ -23,6 +25,11 @@ public class AdministradorDeProyectos {
 
 	public void setProyDisponibles(List<Proyecto> proyDisponibles) {
 		this.proyDisponibles = proyDisponibles;
+	}
+	
+	public List<Proyecto> filtrarProyectos(CondicionDeBusqueda condicion) {
+		
+		return this.getProyDisponibles().stream().filter(proyecto -> condicion.seCumple(proyecto)).toList();
 	}
 	
 }

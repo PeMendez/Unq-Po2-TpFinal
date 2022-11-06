@@ -69,14 +69,14 @@ public class IncluyeTextoTest {
 	@Test
 	void testORCompositeTrue() {
 		
-		assertTrue(incluyeTexto.filtrarProyectos(admP).contains(proyecto1));
-		assertTrue(incluyeTexto.filtrarProyectos(admP).contains(proyecto3));
+		assertTrue(incluyeTexto.seCumple(proyecto1));
+		assertTrue(incluyeTexto.seCumple(proyecto3));
 	}
 
 	@Test
 	void testORCompositeFalse() {
 		
-		assertFalse(incluyeTexto.filtrarProyectos(admP).contains(proyecto2));
+		assertFalse(incluyeTexto.seCumple(proyecto2));
 
 	}
 }

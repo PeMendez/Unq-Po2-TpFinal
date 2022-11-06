@@ -16,21 +16,29 @@ import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.*;
 class CompositeANDTest {
 
 		private AND compositeAND;
-		private CondicionDeBusqueda condicion1, condicion2;
+		private IncluyeTextoEnTitulo condicion1;
+		private IncluyeCategorias condicion2;
 		private Proyecto proyecto1, proyecto2, proyecto3;
 		private Categoria cat1, cat2, cat3, cat4, cat5;
-		private AdministradorDeProyectos admP; 
 		private List<Categoria> categorias = new ArrayList<>();
 		private List<Categoria> catproy1 = new ArrayList<>();
 		private List<Categoria> catproy2 = new ArrayList<>();
 		private List<Categoria> catproy3 = new ArrayList<>();
+		private List<Proyecto> proyectos = new ArrayList<>();
 		
 		@BeforeEach
 		void setUp() throws Exception {
 			
-			admP = new AdministradorDeProyectos(); 
-			condicion1 = new IncluyeTextoEnTitulo("Java");
-			condicion2 = new IncluyeCategorias(categorias);
+//			admP = new AdministradorDeProyectos(); 
+//			condicion1 = new IncluyeTextoEnTitulo("Java");
+//			condicion2 = new IncluyeCategorias(categorias);
+			
+			condicion1 = mock(IncluyeTextoEnTitulo.class);
+			condicion2 = mock(IncluyeCategorias.class);
+			
+			when(condicion1.getTextoABuscar()).thenReturn("Java");
+			when(condicion2.getCategorias()).thenReturn(categorias);
+			
 			compositeAND = new AND(condicion1, condicion2);
 			
 			proyecto1 = mock(Proyecto.class);
@@ -49,9 +57,9 @@ class CompositeANDTest {
 			when(cat4.getNombre()).thenReturn("Fisica Cuantica");
 			when(cat5.getNombre()).thenReturn("BioInformática");
 			
-			admP.addProyecto(proyecto1);
-			admP.addProyecto(proyecto2);
-			admP.addProyecto(proyecto3);
+			proyectos.add(proyecto1);
+			proyectos.add(proyecto2);
+			proyectos.add(proyecto3);
 			
 			catproy1.add(cat1);
 			catproy1.add(cat3);
@@ -70,19 +78,20 @@ class CompositeANDTest {
 			when(proyecto1.getNombre()).thenReturn("Programacion con Java");
 			when(proyecto2.getNombre()).thenReturn("Arboles Binarios");
 			when(proyecto3.getNombre()).thenReturn("Java and C++");
+	
 		}
 		
 		
 		@Test
 		void testANDCompositeTrue() {
 			
-			assertTrue(compositeAND.filtrarProyectos(admP).contains(proyecto1));
-			assertTrue(compositeAND.filtrarProyectos(admP).contains(proyecto3));
+			assertTrue(compositeAND.seCumple(proyecto1));
+//			assertFalse(compositeAND.filtrarProyectos(admP).contains(proyecto3));
 		}
 		
 		@Test
 		void testANDCompositeFalse() {
 			
-			assertFalse(compositeAND.filtrarProyectos(admP).contains(proyecto2));
+			assertFalse(compositeAND.seCumple(proyecto2));
 		}
 }
