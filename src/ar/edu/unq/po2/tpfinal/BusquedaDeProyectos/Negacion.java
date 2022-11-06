@@ -5,6 +5,11 @@ import ar.edu.unq.po2.tpfinal.*;
 public class Negacion extends CondicionDeBusqueda{
 	
 	private CondicionDeBusqueda condicion;
+	
+	public Negacion(CondicionDeBusqueda condicion) {
+		
+		this.setCondicion(condicion);
+	}
 
 	public CondicionDeBusqueda getCondicion() {
 		return condicion;
@@ -19,15 +24,4 @@ public class Negacion extends CondicionDeBusqueda{
 		return !this.getCondicion().seCumple(proyecto);
 	}
 
-//	@Override
-//	public void agregarCondicion(CondicionDeBusqueda condicion) {
-//		// TODO Auto-generated method stub
-//		
-//	}
-//
-//	@Override
-//	public void borrarCondicion(CondicionDeBusqueda condicion) {
-//		// TODO Auto-generated method stub
-//		
-//	}
 }
