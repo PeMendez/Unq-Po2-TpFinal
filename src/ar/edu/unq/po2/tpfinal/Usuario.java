@@ -3,11 +3,8 @@ package ar.edu.unq.po2.tpfinal;
 import java.util.ArrayList;
 import java.util.List;
 
-import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.TipoDeBusqueda;
-import ar.edu.unq.po2.tpfinal.StateDesafios.DesafioUsuario;
-
-//import ar.edu.unq.po2.tpfinal.StateDesafios.*;
-
+import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.*;
+import ar.edu.unq.po2.tpfinal.StateDesafios.*;
 
 public class Usuario {
 
@@ -15,7 +12,7 @@ public class Usuario {
 	private List<Proyecto> proyectos; 
 	private Perfil perfil; 
 	private List<DesafioUsuario> desafiosUsuarios;
-	private TipoDeBusqueda modoDeBuscar;
+	private AdministradorDeProyectos sistema; 
 	
 	public Usuario(Perfil perfil) {
 		
@@ -50,7 +47,6 @@ public class Usuario {
 	public List<Desafio> desafiosRecomendados(){
 		
 		List<Desafio> desafiosRecomendados = this.getPerfil().getTipoDeRecomendacion().desafiosRecomendados(this); 
-//		desafiosRecomendados.stream().forEach(desafio -> this.getDesafiosUsuario().add(new DesafioUsuario(this, desafio)));
 		
 		return desafiosRecomendados; 
 	}
@@ -102,8 +98,16 @@ public class Usuario {
 		this.desafiosUsuarios = desafiosUsuario;
 	}
 	
-	public List<Proyecto> buscarProyectosPor(String catOTit) {
+	public List<Proyecto> buscarProyectosPor(CondicionDeBusqueda condicion) {
 		
-		return modoDeBuscar.buscarEnProyectos(catOTit);
+		return condicion.filtrarProyectos(sistema);
+	}
+
+	public AdministradorDeProyectos getSistema() {
+		return sistema;
+	}
+
+	public void setSistema(AdministradorDeProyectos sistema) {
+		this.sistema = sistema;
 	}
 }

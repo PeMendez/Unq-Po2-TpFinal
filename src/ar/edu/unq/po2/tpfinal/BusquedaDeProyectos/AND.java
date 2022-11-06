@@ -2,13 +2,22 @@ package ar.edu.unq.po2.tpfinal.BusquedaDeProyectos;
 
 import ar.edu.unq.po2.tpfinal.*;
 
-public class Conjuncion extends CompuestoBinario{
+public class AND extends CompuestoBinario{
 	
 	@Override
 	public boolean seCumple(Proyecto proyecto) {
 		
-		return this.getCondicion1().seCumple(proyecto) || this.getCondicion2().seCumple(proyecto);
+		return this.getCondicion1().seCumple(proyecto) && this.getCondicion2().seCumple(proyecto);
 	}
+//
+//	@Override
+//	public List<Proyecto> filtrarProyectos(List<Proyecto> proyectos) {
+//		
+//		List<Proyecto> filtro = this.getCondicion1().filtrarProyectos(proyectos); 
+//		List<Proyecto> filtro2 = this.getCondicion2().filtrarProyectos(filtro); 
+//		
+//		return filtro2;
+//	}
 	
 
 //	public List<CondicionDeBusqueda> getCondiciones() {
