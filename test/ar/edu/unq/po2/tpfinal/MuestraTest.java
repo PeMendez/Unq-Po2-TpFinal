@@ -12,10 +12,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
-import ar.edu.unq.po2.clasesBasicas.Coordenada;
-import ar.edu.unq.po2.clasesBasicas.Muestra;
-import ar.edu.unq.po2.clasesBasicas.Usuario;
-
 class MuestraTest {
 
 	private Muestra muestra;
