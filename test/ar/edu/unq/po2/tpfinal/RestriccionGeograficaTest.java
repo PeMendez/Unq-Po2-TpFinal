@@ -2,11 +2,15 @@ package ar.edu.unq.po2.tpfinal;
 
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+
+import ar.edu.unq.po2.clasesBasicas.Coordenada;
+import ar.edu.unq.po2.clasesBasicas.RestriccionGeografica;
 
 class RestriccionGeograficaTest {
 
@@ -15,12 +19,20 @@ class RestriccionGeograficaTest {
 	private Coordenada coordenada1;
 	@Mock
 	private Coordenada coordenada2;
+	private RestriccionGeografica restriccionG;
+	private int latitud;
+	private int longitud;
+	private int radio;
 
 	@BeforeEach
 	void setUp() throws Exception {
 		coordenada1 = mock(Coordenada.class);
 		coordenada2 = mock(Coordenada.class);
 		restriccion = new RestriccionGeografica(5, 5, 5);
+		latitud = 30;
+		longitud = 10;
+		radio = 4;
+		restriccionG = new RestriccionGeografica(latitud, longitud, radio);
 	}
 
 	@Test
@@ -69,6 +81,15 @@ class RestriccionGeograficaTest {
 		//exercise
 		//verify
 		assertEquals(4,restriccionG.getRadio());
-	}	
+	}
+
+	@Test
+	void testContieneTrue() {
+		//setup
+		Coordenada coordenada = new Coordenada(31, 12);
+		//exercise
+		//verify
+		assertTrue(restriccionG.contiene(coordenada));
+	}
 
 }
