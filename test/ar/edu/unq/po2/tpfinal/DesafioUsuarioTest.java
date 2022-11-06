@@ -41,5 +41,32 @@ public class DesafioUsuarioTest {
 		desafioU.cantidadDeMuestrasValidas();
 		//verify
 		verify(usuario).getMuestras();
+	}
+	
+	@Test
+	void testGetYSetUsuario() {
+		//setup
+		//exercise
+		desafioU.setUsuario(usuario2);
+		//verify
+		assertEquals(usuario2,desafioU.getUsuario());
+	}
+	
+	@Test
+	void testGetYSetDesafio() {
+		//setup
+		//exercise
+		desafioU.setDesafio(desafio2);
+		//verify
+		assertEquals(desafio2,desafioU.getDesafio());
 	}	
+	
+	@Test
+	void testGetYSetEstado() {
+		//setup
+		//exercise
+		desafioU.setEstado(estado2);
+		//verify
+		assertEquals(estado2,desafioU.getEstado());
+	}
 }
