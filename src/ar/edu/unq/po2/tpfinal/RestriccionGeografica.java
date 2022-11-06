@@ -12,7 +12,7 @@ public class RestriccionGeografica {
 		this.setRadio(radio);
 	}
 
-	private int getLatitud() {
+	public int getLatitud() {
 		return this.latitud;
 	}
 
@@ -20,7 +20,7 @@ public class RestriccionGeografica {
 		this.latitud = latitud;
 	}
 
-	private int getLongitud() {
+	public int getLongitud() {
 		return this.longitud;
 	}
 
