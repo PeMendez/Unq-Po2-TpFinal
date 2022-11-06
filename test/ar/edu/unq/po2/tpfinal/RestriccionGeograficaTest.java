@@ -1,6 +1,7 @@
 package ar.edu.unq.po2.tpfinal;
 
 import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -43,6 +44,14 @@ class RestriccionGeograficaTest {
 
 		// verify
 		assertFalse(restriccion.contiene(coordenada1));
+	}
+
+	@Test
+	void testGetLatitud() {
+		//setup
+		//exercise
+		//verify
+		assertEquals(30,restriccionG.getLatitud());
 	}
 
 }
