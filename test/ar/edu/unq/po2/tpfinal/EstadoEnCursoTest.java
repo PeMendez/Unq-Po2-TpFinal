@@ -7,9 +7,6 @@ import static org.mockito.Mockito.when;
 import org.junit.jupiter.api.*;
 import org.mockito.Mock;
 
-import ar.edu.unq.po2.clasesBasicas.Desafio;
-import ar.edu.unq.po2.clasesBasicas.StateDesafios.DesafioUsuario;
-import ar.edu.unq.po2.clasesBasicas.StateDesafios.EstadoEnCurso;
 import ar.edu.unq.po2.tpfinal.StateDesafios.*;
 
 public class EstadoEnCursoTest {
