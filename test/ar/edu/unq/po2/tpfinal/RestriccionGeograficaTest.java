@@ -23,7 +23,7 @@ class RestriccionGeograficaTest {
 	}
 
 	@Test
-	void testEstaHabilitadoTrue() {
+	void testContieneTrue() {
 		// set up
 		when(coordenada1.getX()).thenReturn(4);
 		when(coordenada1.getY()).thenReturn(4);
@@ -36,7 +36,7 @@ class RestriccionGeograficaTest {
 	}
 
 	@Test
-	void testEstaHabilitadoFalse() {
+	void testContieneFalse() {
 		// set up
 		when(coordenada2.getX()).thenReturn(6);
 		when(coordenada2.getY()).thenReturn(6);
