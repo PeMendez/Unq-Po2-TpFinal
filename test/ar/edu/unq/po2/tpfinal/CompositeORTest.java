@@ -29,7 +29,7 @@ public class CompositeORTest {
 		
 		admP = new AdministradorDeProyectos(); 
 		condicion1 = new IncluyeTextoEnTitulo("Java");
-		condicion2 = new IncluyeCategorias(admP, categorias);
+		condicion2 = new IncluyeCategorias(categorias);
 		compositeOR = new OR(condicion1, condicion2);
 		
 		proyecto1 = mock(Proyecto.class);

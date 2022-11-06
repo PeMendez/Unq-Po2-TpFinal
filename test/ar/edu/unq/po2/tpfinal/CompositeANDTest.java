@@ -30,7 +30,7 @@ class CompositeANDTest {
 			
 			admP = new AdministradorDeProyectos(); 
 			condicion1 = new IncluyeTextoEnTitulo("Java");
-			condicion2 = new IncluyeCategorias(admP, categorias);
+			condicion2 = new IncluyeCategorias(categorias);
 			compositeAND = new AND(condicion1, condicion2);
 			
 			proyecto1 = mock(Proyecto.class);
@@ -77,7 +77,7 @@ class CompositeANDTest {
 		void testANDCompositeTrue() {
 			
 			assertTrue(compositeAND.filtrarProyectos(admP).contains(proyecto1));
-			assertFalse(compositeAND.filtrarProyectos(admP).contains(proyecto3));
+			assertTrue(compositeAND.filtrarProyectos(admP).contains(proyecto3));
 		}
 		
 		@Test

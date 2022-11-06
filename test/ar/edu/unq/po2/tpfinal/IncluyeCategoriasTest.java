@@ -26,7 +26,7 @@ public class IncluyeCategoriasTest {
 	void setUp() throws Exception {
 		
 		admP = new AdministradorDeProyectos(); 
-		incluyeCategorias = new IncluyeCategorias(admP, categorias);
+		incluyeCategorias = new IncluyeCategorias(categorias);
 	
 		proyecto1 = mock(Proyecto.class);
 		proyecto2 = mock(Proyecto.class);

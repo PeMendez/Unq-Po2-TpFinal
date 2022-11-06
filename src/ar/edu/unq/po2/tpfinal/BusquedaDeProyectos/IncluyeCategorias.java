@@ -7,11 +7,9 @@ import ar.edu.unq.po2.tpfinal.*;
 public class IncluyeCategorias extends CondicionDeBusqueda{
 	
 	private List<Categoria> categorias; 
-	private List<Proyecto> proyectos;
 
-	public IncluyeCategorias(AdministradorDeProyectos proyectos, List<Categoria> categorias) {
+	public IncluyeCategorias(List<Categoria> categorias) {
 		
-		this.setProyectos(proyectos.getProyDisponibles());
 		this.setCategorias(categorias);
 	}
 		
@@ -23,15 +21,6 @@ public class IncluyeCategorias extends CondicionDeBusqueda{
 		this.categorias = categorias;
 	}
 
-	public List<Proyecto> getProyectos() {
-	
-		return proyectos;
-	}
-	
-	public void setProyectos(List<Proyecto> proyectos) {
-		
-		this.proyectos = proyectos;
-	}
 
 	@Override
 	public boolean seCumple(Proyecto proyecto) {

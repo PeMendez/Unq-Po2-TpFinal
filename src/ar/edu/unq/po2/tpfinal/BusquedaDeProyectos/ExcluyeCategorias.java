@@ -7,11 +7,9 @@ import ar.edu.unq.po2.tpfinal.*;
 public class ExcluyeCategorias extends CondicionDeBusqueda{
 	
 	private List<Categoria> categorias; 
-	private List<Proyecto> proyectos;
 
-	public ExcluyeCategorias(AdministradorDeProyectos proyectos, List<Categoria> categorias) {
-		
-		this.setProyectos(proyectos.getProyDisponibles());
+	public ExcluyeCategorias(List<Categoria> categorias) {
+
 		this.setCategorias(categorias);
 	}
 		
@@ -21,16 +19,6 @@ public class ExcluyeCategorias extends CondicionDeBusqueda{
 
 	public void setCategorias(List<Categoria> categorias) {
 		this.categorias = categorias;
-	}
-
-	public List<Proyecto> getProyectos() {
-	
-		return proyectos;
-	}
-	
-	public void setProyectos(List<Proyecto> proyectos) {
-		
-		this.proyectos = proyectos;
 	}
 
 	@Override
