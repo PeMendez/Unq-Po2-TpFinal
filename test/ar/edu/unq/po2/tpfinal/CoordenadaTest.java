@@ -22,5 +22,12 @@ class CoordenadaTest {
 		coordenada = new Coordenada(x, y);
 	}
 
+	@Test
+	void testGetX() {
+		//setup
+		//exercise
+		//verify
+		assertEquals(5,coordenada.getX());
+	}
 	
 }
