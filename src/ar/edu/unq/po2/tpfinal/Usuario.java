@@ -5,6 +5,7 @@ import java.util.List;
 
 import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.*;
 import ar.edu.unq.po2.tpfinal.StateDesafios.*;
+import ar.edu.unq.po2.tpfinal.StrategyRecomendacion.RecomendadorDesafios;
 
 public class Usuario {
 
@@ -47,9 +48,7 @@ public class Usuario {
 	
 	public List<Desafio> desafiosRecomendados(){
 		
-		List<Desafio> desafiosRecomendados = this.getPerfil().getTipoDeRecomendacion().desafiosRecomendados(this); 
-		
-		return desafiosRecomendados; 
+		return this.getPerfil().getTipoDeRecomendacion().desafiosRecomendados(this); 
 	}
 
 	public void valorarDesafio(DesafioUsuario desafio, Integer valoracion) {

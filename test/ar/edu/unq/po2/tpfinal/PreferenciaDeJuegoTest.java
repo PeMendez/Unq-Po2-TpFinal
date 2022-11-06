@@ -42,7 +42,6 @@ class PreferenciaDeJuegoTest {
 	void testDesafiosARecomendar() {
 		// set up
 		List<Desafio> desafiosDelUsuario = new ArrayList<Desafio>();
-		List<Desafio> desafiosYaTomados = new ArrayList<Desafio>();
 		
 		//exercise
 		desafiosDelUsuario.add(desafio1);
