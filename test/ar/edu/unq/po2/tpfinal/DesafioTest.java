@@ -30,8 +30,8 @@ public class DesafioTest {
 		area = mock(RestriccionGeografica.class);
 		restriccion = mock(TipoDeRestriccion.class);
 		cantidadDeMuestras = 10;
-		dificultad=4;
-		recompensa=100;
+		dificultad = 4;
+		recompensa = 100;
 		desafio = new Desafio(area, restriccion, cantidadDeMuestras, dificultad, recompensa);
 		muestra = mock(Muestra.class);
 	}
@@ -43,10 +43,10 @@ public class DesafioTest {
 		when(area.contiene(coordenada)).thenReturn(true);
 		when(muestra.getFecha()).thenReturn(LocalDate.of(2022, 10, 17));
 		when(restriccion.estaHabilitado(LocalDate.of(2022, 10, 17))).thenReturn(true);
-		
+
 		// verify
 		assertTrue(desafio.esMuestraValida(muestra));
-		
+
 	}
 
 	@Test
@@ -56,7 +56,7 @@ public class DesafioTest {
 		when(area.contiene(coordenada)).thenReturn(false);
 		when(muestra.getFecha()).thenReturn(LocalDate.of(2022, 10, 17));
 		when(restriccion.estaHabilitado(LocalDate.of(2022, 10, 17))).thenReturn(true);
-		
+
 		// verify
 		assertFalse(desafio.esMuestraValida(muestra));
 	}

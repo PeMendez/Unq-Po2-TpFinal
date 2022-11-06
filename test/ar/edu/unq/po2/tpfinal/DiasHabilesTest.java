@@ -12,12 +12,13 @@ import ar.edu.unq.po2.tpfinal.RestriccionTemporal.TipoDeRestriccion;
 
 class DiasHabilesTest {
 
-	@Mock private TipoDeRestriccion restriccion1;
+	@Mock
+	private TipoDeRestriccion restriccion1;
 	private DiasHabiles diasHabiles;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		
+
 		diasHabiles = new DiasHabiles();
 	}
 
