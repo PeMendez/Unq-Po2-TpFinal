@@ -4,6 +4,12 @@ import ar.edu.unq.po2.tpfinal.*;
 
 public class AND extends CompuestoBinario{
 	
+	public AND(CondicionDeBusqueda condicion1, CondicionDeBusqueda condicion2) {
+		
+		this.setCondicion1(condicion1);
+		this.setCondicion2(condicion2);
+	}
+
 	@Override
 	public boolean seCumple(Proyecto proyecto) {
 		
