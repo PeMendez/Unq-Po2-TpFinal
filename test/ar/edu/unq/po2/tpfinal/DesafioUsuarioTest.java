@@ -51,4 +51,13 @@ public class DesafioUsuarioTest {
 		//verify
 		assertEquals(usuario2,desafioU.getUsuario());
 	}
+	
+	@Test
+	void testGetYSetDesafio() {
+		//setup
+		//exercise
+		desafioU.setDesafio(desafio2);
+		//verify
+		assertEquals(desafio2,desafioU.getDesafio());
+	}	
 }
