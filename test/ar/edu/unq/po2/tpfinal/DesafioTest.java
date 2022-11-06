@@ -1,9 +1,7 @@
 package ar.edu.unq.po2.tpfinal;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 import java.time.LocalDate;
 
@@ -11,7 +9,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
-import ar.edu.unq.po2.tpfinal.RestriccionTemporal.DiasHabiles;
 import ar.edu.unq.po2.tpfinal.RestriccionTemporal.TipoDeRestriccion;
 
 public class DesafioTest {
