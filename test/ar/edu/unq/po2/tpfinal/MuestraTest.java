@@ -40,4 +40,12 @@ class MuestraTest {
 		//verify
 		assertEquals(coordenada,muestra.getCoordenada());
 	}
+	
+	@Test
+	void testGetUsuario() {
+		//setup
+		//exercise
+		//verify
+		assertEquals(usuario,muestra.getUsuario());
+	}
 }
