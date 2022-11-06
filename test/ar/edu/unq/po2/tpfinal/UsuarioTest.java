@@ -83,17 +83,19 @@ class UsuarioTest {
 		//verify
 		verify(desafiosUsuario1).serAceptado();
 	}
-
+	
 	@Test 
 	void testDesafiosRecomendados() {
+
 		//setup
-		perfilUser2 = new Perfil(10, 4, 30, tipoRecomendacion);
-		user = new Usuario(perfilUser2);
+		when(perfilUser.getTipoDeRecomendacion()).thenReturn(tipoRecomendacion);
+		user = new Usuario(perfilUser);
 		//Exercise
 		user.desafiosRecomendados(); 
 		//verify
-		verify(tipoRecomendacion, times(1)).desafiosRecomendados(user); 
+		verify(tipoRecomendacion, times(1)).desafiosRecomendados(user);
 	}
+	
 	
 	@Test 
 	void testBuscarProyectos() {
