@@ -48,7 +48,7 @@ class PreferenciaDeJuegoTest {
 		desafiosDelUsuario.add(desafio1);
 		desafiosDelUsuario.add(desafio2);
 
-		when(usuario.desafiosSegunUsuario()).thenReturn(desafiosDelUsuario);
+		when(recomendador.desafiosSegunUsuario(usuario)).thenReturn(desafiosDelUsuario);
 
 		fail("Not yet implemented");
 	}
