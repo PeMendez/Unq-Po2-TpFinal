@@ -11,10 +11,9 @@ import org.junit.jupiter.api.Test;
 
 import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.*;
 
-public class CompositeNOTest {
-
-	private Negacion compositeNOT;
-	private CondicionDeBusqueda condicion1; 
+public class IncluyeCategoriasTest {
+	
+	private IncluyeCategorias incluyeCategorias;
 	private Proyecto proyecto1, proyecto2, proyecto3;
 	private Categoria cat1, cat2, cat3, cat4, cat5;
 	private AdministradorDeProyectos admP; 
@@ -27,9 +26,8 @@ public class CompositeNOTest {
 	void setUp() throws Exception {
 		
 		admP = new AdministradorDeProyectos(); 
-		condicion1 = new IncluyeTextoEnTitulo("Java");
-		compositeNOT = new Negacion(condicion1);
-		
+		incluyeCategorias = new IncluyeCategorias(admP, categorias);
+	
 		proyecto1 = mock(Proyecto.class);
 		proyecto2 = mock(Proyecto.class);
 		proyecto3 = mock(Proyecto.class);
@@ -68,19 +66,18 @@ public class CompositeNOTest {
 		when(proyecto2.getNombre()).thenReturn("Arboles Binarios");
 		when(proyecto3.getNombre()).thenReturn("Java and C++");
 	}
-	
+
 	@Test
 	void testORCompositeTrue() {
 		
-		assertTrue(compositeNOT.filtrarProyectos(admP).contains(proyecto2));
+		assertTrue(incluyeCategorias.filtrarProyectos(admP).contains(proyecto1));
+		assertTrue(incluyeCategorias.filtrarProyectos(admP).contains(proyecto3));
 	}
 
 	@Test
 	void testORCompositeFalse() {
 		
-		assertFalse(compositeNOT.filtrarProyectos(admP).contains(proyecto3));
-		assertFalse(compositeNOT.filtrarProyectos(admP).contains(proyecto1));
+		assertFalse(incluyeCategorias.filtrarProyectos(admP).contains(proyecto2));
 
 	}
-
 }
