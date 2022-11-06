@@ -32,4 +32,12 @@ class MuestraTest {
 		usuario = mock(Usuario.class);
 		muestra = new Muestra(coordenada, usuario, fecha, hora);
 	}
+	
+	@Test
+	void testGetCoordenada() {
+		//setup
+		//exercise
+		//verify
+		assertEquals(coordenada,muestra.getCoordenada());
+	}
 }
