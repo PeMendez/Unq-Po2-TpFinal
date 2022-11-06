@@ -128,7 +128,7 @@ class ProyectoTest {
 		//Exercise
 		proyect.addParticipante(participante1);
 		proyect.addParticipante(participante2);
-		proyect.removeParticipante(participante1);
+		proyect.desuscribirParticipante(participante1);
 		//verify
 		assertEquals(participantesTest,proyect.getParticipantes());
 	}

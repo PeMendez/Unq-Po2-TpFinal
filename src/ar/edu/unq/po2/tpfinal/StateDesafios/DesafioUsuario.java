@@ -24,7 +24,11 @@ public class DesafioUsuario {
 	
 	public int cantidadDeMuestrasValidas() {
 		
-		return this.getUsuario().getMuestras().stream().filter(muestra -> this.getDesafio().esMuestraValida(muestra)).toList().size(); 
+		return this.getUsuario()
+					.getMuestras()
+					.stream().filter(muestra -> this.getDesafio().esMuestraValida(muestra))
+					.toList()
+					.size(); 
 	}
 
 	public Usuario getUsuario() {

@@ -57,4 +57,14 @@ public class AdministradorDeProyectosTest {
 		
 		assertEquals(admP.filtrarProyectos(condicion), filtrados); 		
 	}
+	
+	@Test 
+	void testSetter() {
+		
+		List<Proyecto> proyectos = Arrays.asList(proyecto1, proyecto2, proyecto3); 
+		
+		admP.setProyDisponibles(proyectos);
+		
+		assertEquals(admP.getProyDisponibles(), proyectos); 
+	}
 }
