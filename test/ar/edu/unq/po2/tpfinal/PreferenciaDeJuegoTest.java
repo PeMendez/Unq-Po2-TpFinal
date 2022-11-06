@@ -39,18 +39,6 @@ class PreferenciaDeJuegoTest {
 	}
 
 	@Test
-	void testDesafiosARecomendar() {
-		// set up
-		List<Desafio> desafiosDelUsuario = new ArrayList<Desafio>();
-		
-		//exercise
-		desafiosDelUsuario.add(desafio1);
-		desafiosDelUsuario.add(desafio2);
-
-		when(recomendador.desafiosSegunUsuario(usuario)).thenReturn(desafiosDelUsuario);
-	}
-
-	@Test
 	void testOrdenarPorCoincidencia() {
 		// set up
 		when(usuario.getPerfil()).thenReturn(perfil);
