@@ -58,6 +58,11 @@ public class Usuario {
 				.getDesafio(); 
 	}
 	
+	public void enviarMuestra(Muestra muestra, Proyecto proyecto) {
+		
+		proyecto.addMuestra(muestra);
+	}
+	
 	public Perfil getPerfil() {
 		return perfil;
 	}
