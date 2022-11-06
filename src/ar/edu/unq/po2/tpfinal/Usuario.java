@@ -70,7 +70,7 @@ public class Usuario {
 		return perfil;
 	}
 
-	private void setPerfil(Perfil perfil) {
+	public void setPerfil(Perfil perfil) {
 		this.perfil = perfil;
 	}
 	
@@ -78,7 +78,7 @@ public class Usuario {
 		return this.proyectos;
 	}
 
-	private void setProyectos(List<Proyecto> proyectos) {
+	public void setProyectos(List<Proyecto> proyectos) {
 		this.proyectos = proyectos;
 	}
 
@@ -86,7 +86,7 @@ public class Usuario {
 		return muestras;
 	}
 
-	private void setMuestras(List<Muestra> muestras) {
+	public void setMuestras(List<Muestra> muestras) {
 		this.muestras = muestras;
 	}
 
@@ -94,7 +94,7 @@ public class Usuario {
 		return this.desafiosUsuarios;
 	}
 
-	private void setDesafiosUsuario(List<DesafioUsuario> desafiosUsuario) {
+	public void setDesafiosUsuario(List<DesafioUsuario> desafiosUsuario) {
 		this.desafiosUsuarios = desafiosUsuario;
 	}
 	

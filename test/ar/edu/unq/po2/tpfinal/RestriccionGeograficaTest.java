@@ -10,9 +10,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
-import ar.edu.unq.po2.clasesBasicas.Coordenada;
-import ar.edu.unq.po2.clasesBasicas.RestriccionGeografica;
-
 class RestriccionGeograficaTest {
 
 	private RestriccionGeografica restriccion;
@@ -37,7 +34,7 @@ class RestriccionGeograficaTest {
 	}
 
 	@Test
-	void testContieneTrue() {
+	void testContieneTrue1() {
 		// set up
 		when(coordenada1.getX()).thenReturn(4);
 		when(coordenada1.getY()).thenReturn(4);
@@ -50,7 +47,7 @@ class RestriccionGeograficaTest {
 	}
 
 	@Test
-	void testContieneFalse() {
+	void testContieneFalse1() {
 		// set up
 		when(coordenada2.getX()).thenReturn(6);
 		when(coordenada2.getY()).thenReturn(6);

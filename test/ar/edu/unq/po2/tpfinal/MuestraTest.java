@@ -5,13 +5,15 @@ import static org.mockito.Mockito.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Arrays;
-import java.util.List;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'main' of https://github.com/PeMendez/Unq-Po2-TpFinal.git
 class MuestraTest {
 
 	private Muestra muestra;

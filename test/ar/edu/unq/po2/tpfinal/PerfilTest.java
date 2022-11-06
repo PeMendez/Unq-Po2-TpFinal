@@ -10,6 +10,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
+import ar.edu.unq.po2.tpfinal.StrategyRecomendacion.*;
+
 class PerfilTest {
 
 	private Perfil perfil; // sut
