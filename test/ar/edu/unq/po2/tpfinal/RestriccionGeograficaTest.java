@@ -63,4 +63,12 @@ class RestriccionGeograficaTest {
 		assertEquals(10,restriccionG.getLongitud());
 	}
 
+	@Test
+	void testGetRadio() {
+		//setup
+		//exercise
+		//verify
+		assertEquals(4,restriccionG.getRadio());
+	}	
+
 }
