@@ -33,4 +33,13 @@ public class DesafioUsuarioTest {
 		estado2 = mock(EstadoDesafio.class);
 		desafioU = new DesafioUsuario(usuario, desafio);
 	}
+
+	@Test
+	void testCantidadMuestrasValidas() {
+		//setup
+		//exercise
+		desafioU.cantidadDeMuestrasValidas();
+		//verify
+		verify(usuario).getMuestras();
+	}	
 }
