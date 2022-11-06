@@ -12,7 +12,5 @@ public abstract class CondicionDeBusqueda {
 	}
 	
 	public abstract boolean seCumple(Proyecto proyecto);
-	
-//	public abstract void agregarCondicion(CondicionDeBusqueda condicion);
-//	public abstract void borrarCondicion(CondicionDeBusqueda condicion);
+
 }

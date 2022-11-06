@@ -62,11 +62,18 @@ class CompositeANDTest {
 			when(proyecto2.getNombre()).thenReturn("Arboles Binarios");
 			when(proyecto3.getNombre()).thenReturn("Java and C++");
 		}
+		
+		
 		@Test
-		void testANDComposite() {
+		void testANDCompositeTrue() {
+			
 			assertTrue(compositeAND.filtrarProyectos(admP).contains(proyecto1));
-			assertFalse(compositeAND.filtrarProyectos(admP).contains(proyecto2));
 			assertFalse(compositeAND.filtrarProyectos(admP).contains(proyecto3));
 		}
-
+		
+		@Test
+		void testANDCompositeFalse() {
+			
+			assertFalse(compositeAND.filtrarProyectos(admP).contains(proyecto2));
+		}
 }
