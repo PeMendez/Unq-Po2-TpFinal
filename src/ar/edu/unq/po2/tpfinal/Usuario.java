@@ -31,15 +31,26 @@ public class Usuario {
 		proyecto.addParticipante(this);
 	}
 	
+	public void desuscribirse(Proyecto proyecto) {
+		
+		this.getProyectos().remove(proyecto); 
+		proyecto.desuscribirParticipante(this); 
+	}
+	
 	public void aceptarDesafio(DesafioUsuario desafio) {
 		
 		desafio.serAceptado(); 
 	}
 	
+	public void rechazarDesafio(DesafioUsuario desafio) {
+	
+		this.getDesafiosUsuario().remove(desafio); 
+	}
+	
 	public List<Desafio> desafiosRecomendados(){
 		
 		List<Desafio> desafiosRecomendados = this.getPerfil().getTipoDeRecomendacion().desafiosRecomendados(this); 
-		desafiosRecomendados.stream().forEach(desafio -> this.getDesafiosUsuario().add(new DesafioUsuario(this, desafio)));
+//		desafiosRecomendados.stream().forEach(desafio -> this.getDesafiosUsuario().add(new DesafioUsuario(this, desafio)));
 		
 		return desafiosRecomendados; 
 	}

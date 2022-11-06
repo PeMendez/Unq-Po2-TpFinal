@@ -7,8 +7,13 @@ public class Favorito extends RecomendadorDesafios {
 	@Override
 	public List<Desafio> desafiosRecomendados(Usuario usuario) {
 		
-		return this.ordenarPorSimilitud(
-				this.los20ConMayorCoincidencia(usuario), this.desafioFavoritoDe(usuario)).subList(0, 4);
+		List<Desafio> desafiosRecomendados = 
+			this.ordenarPorSimilitud(
+				this.los20ConMayorCoincidencia(usuario), this.desafioFavoritoDe(usuario)).subList(0, 4); 
+		
+		this.agregarDesafiosRecomendados(usuario, desafiosRecomendados);
+		
+		return desafiosRecomendados;
 	}
 	
 	public List<Desafio> ordenarPorSimilitud(List<Desafio> desafios, Desafio desafioFavorito) {

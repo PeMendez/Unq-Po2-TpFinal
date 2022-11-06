@@ -77,4 +77,9 @@ public class Proyecto {
 		return this.categorias;
 	}
 
+	public void desuscribirParticipante(Usuario usuario) {
+		
+		this.getParticipantes().remove(usuario); 
+	}
+
 }

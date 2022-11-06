@@ -1,5 +1,7 @@
 package ar.edu.unq.po2.tpfinal.StrategyRecomendacion;
 import ar.edu.unq.po2.tpfinal.*;
+import ar.edu.unq.po2.tpfinal.StateDesafios.DesafioUsuario;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -52,13 +54,12 @@ public abstract class RecomendadorDesafios {
 		return difDificultad + difMuestras + difRecompensa;
 	}
 
+
+	public void agregarDesafiosRecomendados(Usuario usuario, List<Desafio> desafiosRecomendados) {
+		
+		desafiosRecomendados.stream().forEach(desafio -> usuario.getDesafiosUsuario().add(new DesafioUsuario(usuario, desafio)));
+	}
 	
 	public abstract List<Desafio> desafiosRecomendados(Usuario usuario);
-
-	
-//	public Integer calcularDiferenciaEntre(Integer x, Integer y) {
-//		
-//		return Math.abs(x-y); 
-//	}
 	
 }
