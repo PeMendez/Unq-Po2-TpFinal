@@ -53,5 +53,14 @@ class RestriccionGeograficaTest {
 		//verify
 		assertEquals(30,restriccionG.getLatitud());
 	}
+	
+	
+	@Test
+	void testGetLongitud() {
+		//setup
+		//exercise
+		//verify
+		assertEquals(10,restriccionG.getLongitud());
+	}
 
 }
