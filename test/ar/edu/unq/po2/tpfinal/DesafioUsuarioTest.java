@@ -79,4 +79,14 @@ public class DesafioUsuarioTest {
 		//verify
 		assertEquals(valoracion,desafioU.getValoracion());
 	}
+	
+	@Test
+	void testGetYSetFechaInicio() {
+		//setup
+		fechaInicio = LocalDate.of(2022, 5, 11);
+		//exercise
+		desafioU.setFechaInicio(fechaInicio);
+		//verify
+		assertEquals(fechaInicio,desafioU.getFechaInicio());
+	}
 }
