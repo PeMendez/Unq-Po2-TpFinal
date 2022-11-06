@@ -55,5 +55,13 @@ class MuestraTest {
 		//exercise
 		//verify
 		assertEquals(LocalDate.of(2022, 5, 11),muestra.getFecha());
-	}	
+	}
+	
+	@Test
+	void testGetHora() {
+		//setup
+		//exercise
+		//verify
+		assertEquals(LocalTime.of(15,25),muestra.getHora());
+	}
 }
