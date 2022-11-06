@@ -50,12 +50,24 @@ public class DesafioTest {
 	}
 
 	@Test
-	void testEsMuestraValidaFalse() {
+	void testEsMuestraValidaCoordenadaFalse() {
 		// set up
 		when(muestra.getCoordenada()).thenReturn(coordenada);
 		when(area.contiene(coordenada)).thenReturn(false);
 		when(muestra.getFecha()).thenReturn(LocalDate.of(2022, 10, 17));
 		when(restriccion.estaHabilitado(LocalDate.of(2022, 10, 17))).thenReturn(true);
+
+		// verify
+		assertFalse(desafio.esMuestraValida(muestra));
+	}
+	
+	@Test
+	void testEsMuestraValidaFechaFalse() {
+		// set up
+		when(muestra.getCoordenada()).thenReturn(coordenada);
+		when(area.contiene(coordenada)).thenReturn(true);
+		when(muestra.getFecha()).thenReturn(LocalDate.of(2022, 10, 17));
+		when(restriccion.estaHabilitado(LocalDate.of(2022, 10, 17))).thenReturn(false);
 
 		// verify
 		assertFalse(desafio.esMuestraValida(muestra));
