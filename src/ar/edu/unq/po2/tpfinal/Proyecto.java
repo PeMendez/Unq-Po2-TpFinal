@@ -70,10 +70,6 @@ public class Proyecto {
 		return this.desafios;
 	}
 
-	public void setProyectos(List<Desafio> desafios) {
-		this.desafios = desafios;
-	}
-
 	public String getNombre() {
 		return this.nombre;
 	}
@@ -83,7 +79,6 @@ public class Proyecto {
 	}
 
 	public void desuscribirParticipante(Usuario usuario) {
-		
 		this.getParticipantes().remove(usuario); 
 	}
 
