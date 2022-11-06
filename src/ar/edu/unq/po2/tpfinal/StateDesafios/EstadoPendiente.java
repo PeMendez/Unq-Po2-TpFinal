@@ -11,7 +11,7 @@ public class EstadoPendiente extends EstadoDesafio {
 	@Override
 	public float porcentajeDeCompletitud(DesafioUsuario desafio) {
 		//lanzar error 
-		return 0;
+		return 0.00f;
 	}
 
 	@Override
