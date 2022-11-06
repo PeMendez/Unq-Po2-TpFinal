@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.*;
-import ar.edu.unq.po2.tpfinal.RestriccionTemporal.TipoDeRestriccion;
 import ar.edu.unq.po2.tpfinal.StateDesafios.*;
 import ar.edu.unq.po2.tpfinal.StrategyRecomendacion.RecomendadorDesafios;
 

@@ -31,7 +31,7 @@ public class AdministradorDeProyectosTest {
 	}
 	
 	@Test
-	void test() {
+	void testAdd() {
 		
 		admP.addProyecto(proyecto1);
 		admP.addProyecto(proyecto2);
@@ -41,7 +41,7 @@ public class AdministradorDeProyectosTest {
 	}
 	
 	@Test
-	void test2() {
+	void testFiltrarProyectos() {
 		
 		List<Proyecto> filtrados = Arrays.asList(proyecto1, proyecto2); 
 		
