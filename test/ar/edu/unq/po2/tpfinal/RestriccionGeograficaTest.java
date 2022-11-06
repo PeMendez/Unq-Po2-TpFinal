@@ -2,6 +2,7 @@ package ar.edu.unq.po2.tpfinal;
 
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
@@ -90,6 +91,15 @@ class RestriccionGeograficaTest {
 		//exercise
 		//verify
 		assertTrue(restriccionG.contiene(coordenada));
+	}
+
+	@Test
+	void testContieneFalse() {
+		//setup
+		Coordenada coordenada = new Coordenada(33, 13);
+		//exercise
+		//verify
+		assertFalse(restriccionG.contiene(coordenada));
 	}
 
 }
