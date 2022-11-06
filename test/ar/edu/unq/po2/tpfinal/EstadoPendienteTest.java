@@ -49,6 +49,14 @@ public class EstadoPendienteTest {
 		assertFalse(estadoPend.estaCompleto(du2));
 	}
 	
-	
+	@Test
+	void testPorcentajeDeCompletitud() {
+		//setup
 
+		//exercise
+
+		//verify
+		assertEquals(0.00f, estadoPend.porcentajeDeCompletitud(desafioU1));
+	}
+	
 }
