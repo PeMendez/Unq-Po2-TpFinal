@@ -69,4 +69,14 @@ public class DesafioUsuarioTest {
 		//verify
 		assertEquals(estado2,desafioU.getEstado());
 	}
+	
+	@Test
+	void testGetYSetValoracion() {
+		//setup
+		valoracion = 2;
+		//exercise
+		desafioU.setValoracion(valoracion);
+		//verify
+		assertEquals(valoracion,desafioU.getValoracion());
+	}
 }
