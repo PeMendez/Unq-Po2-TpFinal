@@ -77,9 +77,4 @@ public class Proyecto {
 		return this.categorias;
 	}
 
-	public String getTitulo() {
-		
-		return this.nombre;
-	}
-
 }

@@ -8,7 +8,7 @@ public class Favorito extends RecomendadorDesafios {
 	public List<Desafio> desafiosRecomendados(Usuario usuario) {
 		
 		return this.ordenarPorSimilitud(
-				this.los20ConMayorCoincidencia(usuario), usuario.desafioFavorito()).subList(0, 4);
+				this.los20ConMayorCoincidencia(usuario), this.desafioFavoritoDe(usuario)).subList(0, 4);
 	}
 	
 	public List<Desafio> ordenarPorSimilitud(List<Desafio> desafios, Desafio desafioFavorito) {
@@ -34,4 +34,12 @@ public class Favorito extends RecomendadorDesafios {
 		return this.ordenarPorCoincidencia(this.desafiosARecomendar(usuario), usuario).subList(0, 19); 
 	}
 
+	public Desafio desafioFavoritoDe(Usuario usuario) {
+		
+		return usuario.getDesafiosUsuario()
+				.stream()
+				.max((d1, d2) -> (d1.getValoracion()).compareTo(d2.getValoracion()))
+				.get()
+				.getDesafio(); 
+	}
 }

@@ -16,7 +16,7 @@ public class IncluyeTextoEnTitulo extends CondicionDeBusqueda {
 
 	@Override
 	public boolean seCumple(Proyecto proyecto) {
-		return proyecto.getTitulo().contains(textoABuscar);
+		return proyecto.getNombre().contains(textoABuscar);
 	}
 
 //	@Override

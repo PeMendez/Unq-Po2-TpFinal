@@ -49,25 +49,21 @@ public class Usuario {
 		desafio.setValoracion(valoracion);
 	}
 	
-	public Desafio desafioFavorito() {
-		
-		return this.getDesafiosUsuario()
-				.stream()
-				.max((d1, d2) -> (d1.getValoracion()).compareTo(d2.getValoracion()))
-				.get()
-				.getDesafio(); 
-	}
-	
 	public void enviarMuestra(Muestra muestra, Proyecto proyecto) {
 		
 		proyecto.addMuestra(muestra);
+	}
+	
+	public void recolectarMuestra(Muestra muestra) {
+		
+		this.getMuestras().add(muestra); 
 	}
 	
 	public Perfil getPerfil() {
 		return perfil;
 	}
 
-	public void setPerfil(Perfil perfil) {
+	private void setPerfil(Perfil perfil) {
 		this.perfil = perfil;
 	}
 	
@@ -75,7 +71,7 @@ public class Usuario {
 		return this.proyectos;
 	}
 
-	public void setProyectos(List<Proyecto> proyectos) {
+	private void setProyectos(List<Proyecto> proyectos) {
 		this.proyectos = proyectos;
 	}
 
@@ -83,7 +79,7 @@ public class Usuario {
 		return muestras;
 	}
 
-	public void setMuestras(List<Muestra> muestras) {
+	private void setMuestras(List<Muestra> muestras) {
 		this.muestras = muestras;
 	}
 
@@ -91,11 +87,12 @@ public class Usuario {
 		return this.desafiosUsuarios;
 	}
 
-	public void setDesafiosUsuario(List<DesafioUsuario> desafiosUsuario) {
+	private void setDesafiosUsuario(List<DesafioUsuario> desafiosUsuario) {
 		this.desafiosUsuarios = desafiosUsuario;
 	}
 	
 	public List<Proyecto> buscarProyectosPor(String catOTit) {
+		
 		return modoDeBuscar.buscarEnProyectos(catOTit);
 	}
 }
