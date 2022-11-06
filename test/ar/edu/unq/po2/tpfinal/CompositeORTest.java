@@ -26,35 +26,44 @@ public class CompositeORTest {
 	
 	@BeforeEach
 	void setUp() throws Exception {
+		
 		admP = new AdministradorDeProyectos(); 
 		condicion1 = new IncluyeTextoEnTitulo("Java");
 		condicion2 = new IncluyeCategorias(admP, categorias);
 		compositeOR = new OR(condicion1, condicion2);
+		
 		proyecto1 = mock(Proyecto.class);
 		proyecto2 = mock(Proyecto.class);
 		proyecto3 = mock(Proyecto.class);
+		
 		cat1 = mock(Categoria.class);
 		cat2 = mock(Categoria.class);
 		cat3 = mock(Categoria.class);
 		cat4 = mock(Categoria.class);
 		cat5 = mock(Categoria.class);
+		
 		when(cat1.getNombre()).thenReturn("Geologia");
 		when(cat2.getNombre()).thenReturn("Ingenieria Computacional");
 		when(cat3.getNombre()).thenReturn("Programación");
 		when(cat4.getNombre()).thenReturn("Fisica Cuantica");
 		when(cat5.getNombre()).thenReturn("BioInformática");
+		
 		admP.addProyecto(proyecto1);
 		admP.addProyecto(proyecto2);
 		admP.addProyecto(proyecto3);
+		
 		catproy1.add(cat1);
 		catproy1.add(cat3);
 		when(proyecto1.getCategorias()).thenReturn(catproy1);
+		
 		catproy2.add(cat2);
 		when(proyecto2.getCategorias()).thenReturn(catproy2);
+	
 		catproy3.add(cat3);
 		catproy3.add(cat4);
 		catproy3.add(cat5);
 		when(proyecto3.getCategorias()).thenReturn(catproy3);
+		
 		categorias.add(cat1);
 		categorias.add(cat3);
 		when(proyecto1.getNombre()).thenReturn("Programacion con Java");
