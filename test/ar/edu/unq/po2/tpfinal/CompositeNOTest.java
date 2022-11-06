@@ -14,73 +14,26 @@ import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.*;
 public class CompositeNOTest {
 
 	private Negacion compositeNOT;
-	private IncluyeTextoEnTitulo condicion; 
-	private Proyecto proyecto1, proyecto2, proyecto3;
-	private Categoria cat1, cat2, cat3, cat4, cat5;
-	private List<Categoria> categorias = new ArrayList<>();
-	private List<Categoria> catproy1 = new ArrayList<>();
-	private List<Categoria> catproy2 = new ArrayList<>();
-	private List<Categoria> catproy3 = new ArrayList<>();
+	private IncluyeTextoEnTitulo condicion;
+	private Proyecto proyecto1;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		
-//		condicion1 = new IncluyeTextoEnTitulo("Java");
-		
-		condicion = mock(IncluyeTextoEnTitulo.class); 
-		
-		when(condicion.getTextoABuscar()).thenReturn("Java"); 
-		
-		compositeNOT = new Negacion(condicion);
-		
+		condicion = mock(IncluyeTextoEnTitulo.class);
 		proyecto1 = mock(Proyecto.class);
-		proyecto2 = mock(Proyecto.class);
-		proyecto3 = mock(Proyecto.class);
-		
-		cat1 = mock(Categoria.class);
-		cat2 = mock(Categoria.class);
-		cat3 = mock(Categoria.class);
-		cat4 = mock(Categoria.class);
-		cat5 = mock(Categoria.class);
-		
-		when(cat1.getNombre()).thenReturn("Geologia");
-		when(cat2.getNombre()).thenReturn("Ingenieria Computacional");
-		when(cat3.getNombre()).thenReturn("Programación");
-		when(cat4.getNombre()).thenReturn("Fisica Cuantica");
-		when(cat5.getNombre()).thenReturn("BioInformática");
-		
-		catproy1.add(cat1);
-		catproy1.add(cat3);
-		when(proyecto1.getCategorias()).thenReturn(catproy1);
-		
-		catproy2.add(cat2);
-		when(proyecto2.getCategorias()).thenReturn(catproy2);
-	
-		catproy3.add(cat3);
-		catproy3.add(cat4);
-		catproy3.add(cat5);
-		when(proyecto3.getCategorias()).thenReturn(catproy3);
-		
-		categorias.add(cat1);
-		categorias.add(cat3);
-		
-		when(proyecto1.getNombre()).thenReturn("Programacion con Java");
-		when(proyecto2.getNombre()).thenReturn("Arboles Binarios");
-		when(proyecto3.getNombre()).thenReturn("Java and C++");
-	}
-	
-	@Test
-	void testNOTCompositeTrue() {
-		
-		assertTrue(compositeNOT.seCumple(proyecto2));
+		compositeNOT = new Negacion(condicion);
 	}
 
 	@Test
-	void testNOTCompositeFalse() {
-		
-		assertFalse(compositeNOT.seCumple(proyecto3));
+	void testSeCumpleTrue() {
+		when(condicion.seCumple(proyecto1)).thenReturn(false);
+		assertTrue(compositeNOT.seCumple(proyecto1));
+	}
+
+	@Test
+	void testSeCumpleFalse() {
+		when(condicion.seCumple(proyecto1)).thenReturn(true);
 		assertFalse(compositeNOT.seCumple(proyecto1));
-
 	}
 
 }

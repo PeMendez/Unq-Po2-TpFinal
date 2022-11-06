@@ -29,7 +29,7 @@ public class CompositeORTest {
 	}
 
 	@Test
-	void testORCompositeAmbasTrue() {
+	void testSeCumpleAmbasTrue() {
 
 		when(condicion1.seCumple(proyecto1)).thenReturn(true);
 		when(condicion2.seCumple(proyecto1)).thenReturn(true);
@@ -37,7 +37,7 @@ public class CompositeORTest {
 	}
 
 	@Test
-	void testORCompositeCondicion1True() {
+	void testSeCumpleeCondicion1True() {
 
 		when(condicion1.seCumple(proyecto1)).thenReturn(true);
 		when(condicion2.seCumple(proyecto1)).thenReturn(false);
@@ -45,7 +45,7 @@ public class CompositeORTest {
 	}
 
 	@Test
-	void testORCompositeCondicion2True() {
+	void testSeCumpleCondicion2True() {
 
 		when(condicion1.seCumple(proyecto1)).thenReturn(false);
 		when(condicion2.seCumple(proyecto1)).thenReturn(true);
@@ -53,7 +53,7 @@ public class CompositeORTest {
 	}
 
 	@Test
-	void testORCompositeFalse() {
+	void testSeCumpleAmbasFalse() {
 
 		when(condicion1.seCumple(proyecto1)).thenReturn(false);
 		when(condicion2.seCumple(proyecto1)).thenReturn(false);
