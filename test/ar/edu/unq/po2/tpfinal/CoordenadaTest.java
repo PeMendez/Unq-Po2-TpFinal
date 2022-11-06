@@ -30,4 +30,12 @@ class CoordenadaTest {
 		assertEquals(5,coordenada.getX());
 	}
 	
+	@Test
+	void testGetY() {
+		//setup
+		//exercise
+		//verify
+		assertEquals(6,coordenada.getY());
+	}
+	
 }
