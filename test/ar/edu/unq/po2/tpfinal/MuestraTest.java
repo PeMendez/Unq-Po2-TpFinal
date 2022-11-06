@@ -48,4 +48,12 @@ class MuestraTest {
 		//verify
 		assertEquals(usuario,muestra.getUsuario());
 	}
+	
+	@Test
+	void testGetFecha() {
+		//setup
+		//exercise
+		//verify
+		assertEquals(LocalDate.of(2022, 5, 11),muestra.getFecha());
+	}	
 }
