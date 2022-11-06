@@ -2,26 +2,41 @@ package ar.edu.unq.po2.tpfinal.BusquedaDeProyectos;
 
 import java.util.List;
 
-import ar.edu.unq.po2.tpfinal.AdministradorDeProyectos;
-import ar.edu.unq.po2.tpfinal.Proyecto;
+import ar.edu.unq.po2.tpfinal.*;
 
-public class IncluyeCategorias extends TipoDeBusqueda{
+public class IncluyeCategorias extends CondicionDeBusqueda{
+	
+	private List<Categoria> categorias; 
+	private List<Proyecto> proyectos;
 
-	@Override
-	public List<Proyecto> buscarEnProyectos(String loQueBusco) {
-		AdministradorDeProyectos admP = null;
-		List<Proyecto> proyectos = 
-				admP.getProyDisponibles()
-				.stream()
-				.filter(proyIncCat -> proyIncCat.getCategorias().contains(loQueBusco)).toList();
-		//TODO: no estoy seguro que este buscando dentro de las categorias
+	public IncluyeCategorias(AdministradorDeProyectos proyectos, List<Categoria> categorias) {
+		
+		this.setProyectos(proyectos.getProyDisponibles());
+		this.setCategorias(categorias);
+	}
+		
+	public List<Categoria> getCategorias() {
+		return categorias;
+	}
+
+	public void setCategorias(List<Categoria> categorias) {
+		this.categorias = categorias;
+	}
+
+	public List<Proyecto> getProyectos() {
+	
 		return proyectos;
+	}
+	
+	public void setProyectos(List<Proyecto> proyectos) {
+		
+		this.proyectos = proyectos;
 	}
 
 	@Override
-	public void agregarTipoDeBusqueda(TipoDeBusqueda nuevoTipo) {}
-
-	@Override
-	public void borrarTipoDeBusqueda(TipoDeBusqueda nuevoTipo) {}
+	public boolean seCumple(Proyecto proyecto) {
+		
+		return this.getCategorias().stream().allMatch(categoria -> proyecto.getCategorias().contains(categoria));
+	}
 
 }
