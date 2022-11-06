@@ -51,4 +51,15 @@ public class EstadoEnCursoTest {
 		assertFalse(estadoEnCurso.estaCompleto(desafioU1));
 	}
 
+	@Test
+	void testPorcentajeDeCompletitud() {
+		//setup
+		when(desafioU1.cantidadDeMuestrasValidas()).thenReturn(2);
+		when(desafioU1.getDesafio()).thenReturn(desafio);
+		when(desafioU1.getDesafio().getCantidadDeMuestras()).thenReturn(4);
+		//exercise
+		estadoEnCurso.porcentajeDeCompletitud(desafioU1);
+		//verify
+		assertEquals(0.50, estadoEnCurso.porcentajeDeCompletitud(desafioU1));
+	}
 }
