@@ -69,4 +69,34 @@ public class DesafioUsuarioTest {
 		//verify
 		assertEquals(estado2,desafioU.getEstado());
 	}
+	
+	@Test
+	void testGetYSetValoracion() {
+		//setup
+		valoracion = 2;
+		//exercise
+		desafioU.setValoracion(valoracion);
+		//verify
+		assertEquals(valoracion,desafioU.getValoracion());
+	}
+	
+	@Test
+	void testGetYSetFechaInicio() {
+		//setup
+		fechaInicio = LocalDate.of(2022, 5, 11);
+		//exercise
+		desafioU.setFechaInicio(fechaInicio);
+		//verify
+		assertEquals(fechaInicio,desafioU.getFechaInicio());
+	}
+	
+	@Test
+	void testSerAceptado() {
+		//setup
+		desafioU.setEstado(estado);
+		//exercise
+		desafioU.serAceptado();
+		//verify
+		verify(estado).serAceptado(desafioU);
+	}
 }
