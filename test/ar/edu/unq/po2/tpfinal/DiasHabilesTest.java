@@ -1,18 +1,23 @@
 package ar.edu.unq.po2.tpfinal;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import java.time.LocalDate;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 
 import ar.edu.unq.po2.tpfinal.RestriccionTemporal.DiasHabiles;
+import ar.edu.unq.po2.tpfinal.RestriccionTemporal.TipoDeRestriccion;
 
 class DiasHabilesTest {
 
+	@Mock private TipoDeRestriccion restriccion1;
 	private DiasHabiles diasHabiles;
 
 	@BeforeEach
 	void setUp() throws Exception {
+		
 		diasHabiles = new DiasHabiles();
 	}
 
