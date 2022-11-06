@@ -23,4 +23,9 @@ class CategoriaTest {
 		categoria = new Categoria(nombre);
 	}
 	
+	@Test
+	void testGetNombre() {
+		assertEquals("Ciencias Naturales",categoria.getNombre());
+	}
+	
 }
