@@ -10,10 +10,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'main' of https://github.com/PeMendez/Unq-Po2-TpFinal.git
 class MuestraTest {
 
 	private Muestra muestra;
