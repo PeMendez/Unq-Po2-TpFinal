@@ -5,6 +5,7 @@ import static org.mockito.Mockito.*;
 
 import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.*;
 import ar.edu.unq.po2.tpfinal.StateDesafios.*;
+import ar.edu.unq.po2.tpfinal.StrategyRecomendacion.RecomendadorDesafios;
 
 import java.util.Arrays;
 import java.util.List;
@@ -29,6 +30,7 @@ class UsuarioTest {
 	@Mock private DesafioUsuario desafiosUsuario3;
 	@Mock private CondicionDeBusqueda condicion; 
 	@Mock private AdministradorDeProyectos admP; 
+	@Mock private RecomendadorDesafios tipoRecomendacion; 
 
 	
 	@BeforeEach
@@ -39,12 +41,13 @@ class UsuarioTest {
 		muestra3 = mock(Muestra.class);  
 		proyecto1 = mock(Proyecto.class);  
 		proyecto2 = mock(Proyecto.class);   
-		perfilUser = mock(Perfil.class);   
+		perfilUser = mock(Perfil.class);    
 		desafiosUsuario1 = mock(DesafioUsuario.class);  
 		desafiosUsuario2 = mock(DesafioUsuario.class); 
 		desafiosUsuario3 = mock(DesafioUsuario.class);
 		condicion = mock(IncluyeCategorias.class); 
 		admP = mock(AdministradorDeProyectos.class);  
+		tipoRecomendacion = mock(RecomendadorDesafios.class); 
 
 	}
 
@@ -81,13 +84,15 @@ class UsuarioTest {
 		verify(desafiosUsuario1).serAceptado();
 	}
 
-	//@Test 
+	@Test 
 	void testDesafiosRecomendados() {
 		//setup
+		perfilUser2 = new Perfil(10, 4, 30, tipoRecomendacion);
+		user = new Usuario(perfilUser2);
 		//Exercise
 		user.desafiosRecomendados(); 
 		//verify
-		verify(user.getPerfil().getTipoDeRecomendacion(),times(1)).desafiosRecomendados(user); 
+		verify(tipoRecomendacion, times(1)).desafiosRecomendados(user); 
 	}
 	
 	@Test 
