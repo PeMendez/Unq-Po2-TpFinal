@@ -19,8 +19,13 @@ public class Proyecto {
 		this.setCategorias(categorias);
 		this.participantes = new ArrayList<Usuario>(); 
 		this.muestrasRecolectadas = new ArrayList<Muestra>(); 
+		this.desafios = new ArrayList<Desafio>(); 
 	}
 	
+	public void setDesafios(List<Desafio> desafios) {
+		this.desafios = desafios;
+	}
+
 	public void setNombre(String nombre) {
 		
 		this.nombre = nombre; 

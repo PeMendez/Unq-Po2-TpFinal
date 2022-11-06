@@ -3,14 +3,6 @@ package ar.edu.unq.po2.tpfinal;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-import ar.edu.unq.po2.clasesBasicas.Categoria;
-import ar.edu.unq.po2.clasesBasicas.Desafio;
-import ar.edu.unq.po2.clasesBasicas.Muestra;
-import ar.edu.unq.po2.clasesBasicas.Proyecto;
-import ar.edu.unq.po2.clasesBasicas.Usuario;
-import ar.edu.unq.po2.clasesBasicas.StateDesafios.DesafioUsuario;
-import ar.edu.unq.po2.tpfinal.StateDesafios.*;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -72,7 +64,7 @@ class ProyectoTest {
 		//excercise
 		proyect.setNombre("hola");
 		//verify
-		assertEquals("hola", proyect.getTitulo());
+		assertEquals("hola", proyect.getNombre());
 	}
 	
 	@Test
