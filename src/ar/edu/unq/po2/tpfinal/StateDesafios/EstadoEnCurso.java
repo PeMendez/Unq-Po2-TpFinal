@@ -15,7 +15,7 @@ public class EstadoEnCurso extends EstadoDesafio {
 	@Override
 	public float porcentajeDeCompletitud(DesafioUsuario desafio) {
 		
-		return desafio.cantidadDeMuestrasValidas() / desafio.getDesafio().getCantidadDeMuestras();
+		return (float) desafio.cantidadDeMuestrasValidas() / desafio.getDesafio().getCantidadDeMuestras();
 	}
 
 	@Override
