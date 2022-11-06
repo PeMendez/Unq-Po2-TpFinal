@@ -37,6 +37,21 @@ public class DesafioTest {
 	}
 
 	@Test
+	void testGetCantidadDeMuestras() {
+		assertEquals(10, desafio.getCantidadDeMuestras());
+	}
+
+	@Test
+	void testGetDificultad() {
+		assertEquals(4, desafio.getDificultad());
+	}
+
+	@Test
+	void testGetRecompensa() {
+		assertEquals(100, desafio.getRecompensa());
+	}
+
+	@Test
 	void testEsMuestraValidaTrue() {
 		// set up
 		when(muestra.getCoordenada()).thenReturn(coordenada);
@@ -60,7 +75,7 @@ public class DesafioTest {
 		// verify
 		assertFalse(desafio.esMuestraValida(muestra));
 	}
-	
+
 	@Test
 	void testEsMuestraValidaFechaFalse() {
 		// set up
