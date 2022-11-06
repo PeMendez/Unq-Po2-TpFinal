@@ -39,5 +39,16 @@ public class EstadoEnCursoTest {
 	}
 	
 	
+	@Test
+	void testEstaCompletoFalse() {
+		//setup
+		when(desafioU1.cantidadDeMuestrasValidas()).thenReturn(1);
+		when(desafioU1.getDesafio()).thenReturn(desafio);
+		when(desafioU1.getDesafio().getCantidadDeMuestras()).thenReturn(3);
+		//exercise
+		estadoEnCurso.estaCompleto(desafioU1);
+		//verify
+		assertFalse(estadoEnCurso.estaCompleto(desafioU1));
+	}
 
 }
