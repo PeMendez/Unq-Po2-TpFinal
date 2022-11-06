@@ -22,8 +22,9 @@ public class Usuario {
 		this.desafiosUsuarios =  new ArrayList<DesafioUsuario>();
 	}
 	
-	public void suscribirse(Proyecto proyecto) {
+	public void suscribirse(AdministradorDeProyectos admP, Proyecto proyecto) {
 		
+		this.setSistema(admP);
 		this.proyectos.add(proyecto); 
 		proyecto.addParticipante(this);
 	}

@@ -2,6 +2,8 @@ package ar.edu.unq.po2.tpfinal;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
+
+import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.*;
 import ar.edu.unq.po2.tpfinal.StateDesafios.*;
 
 import java.util.Arrays;
@@ -11,7 +13,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
-//import ar.edu.unq.po2.tpfinal.StateDesafios.*;
 
 class UsuarioTest {
 
@@ -26,6 +27,8 @@ class UsuarioTest {
 	@Mock private DesafioUsuario desafiosUsuario1;
 	@Mock private DesafioUsuario desafiosUsuario2;
 	@Mock private DesafioUsuario desafiosUsuario3;
+	@Mock private CondicionDeBusqueda condicion; 
+	@Mock private AdministradorDeProyectos admP; 
 
 	
 	@BeforeEach
@@ -40,6 +43,8 @@ class UsuarioTest {
 		desafiosUsuario1 = mock(DesafioUsuario.class);  
 		desafiosUsuario2 = mock(DesafioUsuario.class); 
 		desafiosUsuario3 = mock(DesafioUsuario.class);
+		condicion = mock(IncluyeCategorias.class); 
+		admP = mock(AdministradorDeProyectos.class);  
 
 	}
 
@@ -48,7 +53,7 @@ class UsuarioTest {
 		//setup
 		List<Proyecto> proyectosSuscriptos = Arrays.asList(proyecto1);
 		//Exercise
-		user.suscribirse(proyecto1); 
+		user.suscribirse(admP, proyecto1); 
 		//verify
 		assertEquals(proyectosSuscriptos,user.getProyectos());
 
@@ -75,16 +80,40 @@ class UsuarioTest {
 		//verify
 		verify(desafiosUsuario1).serAceptado();
 	}
-	
-	//TODO este test no esta ok
-	//@Test //ver como testeo este mensaje
+
+	//@Test 
 	void testDesafiosRecomendados() {
 		//setup
-		List<DesafioUsuario> desafioRecomendado = Arrays.asList(desafiosUsuario1);
 		//Exercise
 		user.desafiosRecomendados(); 
 		//verify
-		verify(perfilUser,times(1)).getTipoDeRecomendacion();
+		verify(user.getPerfil().getTipoDeRecomendacion(),times(1)).desafiosRecomendados(user); 
+	}
+	
+	@Test 
+	void testBuscarProyectos() {
+		//setUp
+		user.suscribirse(admP, proyecto1);
+		//Exercise
+		user.buscarProyectosPor(condicion);
+		//verify
+		verify(user.getSistema(), times(1)).filtrarProyectos(condicion); 
+	}
+	
+	@Test 
+	void testEnviarMuestra() {
+		
+		user.enviarMuestra(muestra1, proyecto1);
+		
+		verify(proyecto1, times(1)).addMuestra(muestra1);
+	}
+	
+	@Test
+	void testRecolectarMuestra() {
+		
+		user.recolectarMuestra(muestra1);
+		
+		assertTrue(user.getMuestras().contains(muestra1)); 
 	}
 	
 	@Test
