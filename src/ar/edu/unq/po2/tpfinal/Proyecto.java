@@ -61,11 +61,6 @@ public class Proyecto {
 		this.getParticipantes().add(participante);
 	}
 
-	public void removeParticipante(Usuario participante) {
-
-		this.getParticipantes().remove(participante);
-	}
-
 	public List<Desafio> getDesafios() {
 		return this.desafios;
 	}
