@@ -17,7 +17,7 @@ public abstract class RecomendadorDesafios {
 			return desafios;  
 	}
 	
-	private List<Desafio> desafiosSegunUsuario(Usuario usuario){
+	public List<Desafio> desafiosSegunUsuario(Usuario usuario){
 		
 		List<Desafio> desafios = new ArrayList<Desafio>();
 		

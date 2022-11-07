@@ -9,7 +9,7 @@ public class Favorito extends RecomendadorDesafios {
 		
 		List<Desafio> desafiosRecomendados = 
 			this.ordenarPorSimilitud(
-				this.los20ConMayorCoincidencia(usuario), this.desafioFavoritoDe(usuario)).subList(0, 4); 
+				this.los20ConMayorCoincidencia(usuario), this.desafioFavoritoDe(usuario)).stream().limit(5).toList(); 
 		
 		this.agregarDesafiosRecomendados(usuario, desafiosRecomendados);
 		
@@ -17,11 +17,12 @@ public class Favorito extends RecomendadorDesafios {
 	}
 	
 	public List<Desafio> ordenarPorSimilitud(List<Desafio> desafios, Desafio desafioFavorito) {
-		
+		List<Desafio> ordenar =
 		desafios
-		.sort((desafio1, desafio2) -> this.similitudCon(desafio1, desafioFavorito).compareTo(this.similitudCon(desafio2, desafioFavorito))); 
+		.stream()
+		.sorted((desafio1, desafio2) -> this.similitudCon(desafio1, desafioFavorito).compareTo(this.similitudCon(desafio2, desafioFavorito))).toList(); 
 		
-		return desafios; 
+		return ordenar; 
 		
 	}
 	
@@ -36,7 +37,7 @@ public class Favorito extends RecomendadorDesafios {
 
 	private List<Desafio> los20ConMayorCoincidencia(Usuario usuario) {
 		
-		return this.ordenarPorCoincidencia(this.desafiosARecomendar(usuario), usuario).subList(0, 19); 
+		return this.ordenarPorCoincidencia(this.desafiosARecomendar(usuario), usuario).stream().limit(20).toList(); 
 	}
 
 	public Desafio desafioFavoritoDe(Usuario usuario) {
