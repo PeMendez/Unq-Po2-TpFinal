@@ -1,8 +1,7 @@
 package ar.edu.unq.po2.tpfinal;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*; 
 
 import org.junit.jupiter.api.*;
 import org.mockito.Mock;
@@ -56,7 +55,7 @@ public class EstadoPendienteTest {
 		//exercise
 
 		//verify
-		assertEquals(0.00f, estadoPend.porcentajeDeCompletitud(desafioU1));
+		assertEquals(0.00f, estadoPend.porcentajeDeCompletitud(du));
 	}
 	
 }
