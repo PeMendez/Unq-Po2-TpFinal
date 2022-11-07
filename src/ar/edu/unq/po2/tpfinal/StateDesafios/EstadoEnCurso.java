@@ -19,7 +19,9 @@ public class EstadoEnCurso extends EstadoDesafio {
 	}
 
 	@Override
-	public void serAceptado(DesafioUsuario desafio) {
+	public void serAceptado(DesafioUsuario desafio) throws Exception {
+		
+		throw new Exception("El desafio ya fue aceptado");
 		
 	}
 }

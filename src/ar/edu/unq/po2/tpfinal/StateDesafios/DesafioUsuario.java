@@ -71,7 +71,7 @@ public class DesafioUsuario {
 		this.fechaInicio = fechaInicio;
 	}
 
-	public void serAceptado() {
+	public void serAceptado() throws Exception {
 		
 		this.getEstado().serAceptado(this); 
 		

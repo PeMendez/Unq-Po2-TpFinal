@@ -76,7 +76,7 @@ class UsuarioTest {
 	}
 	
 	@Test
-	void testAceptarDesafio() {
+	void testAceptarDesafio() throws Exception {
 		//setup
 		//Exercise
 		user.aceptarDesafio(desafiosUsuario1); 

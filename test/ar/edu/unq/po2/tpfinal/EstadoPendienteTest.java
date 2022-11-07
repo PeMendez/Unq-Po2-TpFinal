@@ -16,14 +16,15 @@ public class EstadoPendienteTest {
 	@Mock Usuario usuario; 
 	private DesafioUsuario du; 
 	@Mock private DesafioUsuario du2; 
+	@Mock private EstadoEnCurso estdoEnCurso; 
 	
 	@BeforeEach 
 	public void setUp() {
 		estadoPend = new EstadoPendiente();
 		estadoEnCurso = mock(EstadoDesafio.class);
 		du2 = mock(DesafioUsuario.class);
-		
 		du = new DesafioUsuario(usuario, desafio);
+		estadoEnCurso = mock(EstadoEnCurso.class); 
 	}
 	
 	
@@ -35,7 +36,6 @@ public class EstadoPendienteTest {
 		
 		//verify
 		assertFalse(du.getEstado().estaCompleto(du));
-
 	}
 	
 	@Test
@@ -57,5 +57,6 @@ public class EstadoPendienteTest {
 		//verify
 		assertEquals(0.00f, estadoPend.porcentajeDeCompletitud(du));
 	}
+	
 	
 }

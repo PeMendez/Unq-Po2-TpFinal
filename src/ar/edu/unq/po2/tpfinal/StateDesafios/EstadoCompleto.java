@@ -15,8 +15,9 @@ public class EstadoCompleto extends EstadoDesafio{
 	}
 
 	@Override
-	public void serAceptado(DesafioUsuario desafio) {
+	public void serAceptado(DesafioUsuario desafio) throws Exception {
 		
+		throw new Exception("El desafio esta completo");
 	}
 
 }

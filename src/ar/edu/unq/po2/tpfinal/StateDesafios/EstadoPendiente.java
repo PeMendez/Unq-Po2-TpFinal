@@ -10,12 +10,12 @@ public class EstadoPendiente extends EstadoDesafio {
 
 	@Override
 	public float porcentajeDeCompletitud(DesafioUsuario desafio) {
-		//lanzar error 
+ 
 		return 0.00f;
 	}
 
 	@Override
-	public void serAceptado(DesafioUsuario desafio) {
+	public void serAceptado(DesafioUsuario desafio) throws Exception {
 		
 		desafio.setEstado(new EstadoEnCurso());
 		

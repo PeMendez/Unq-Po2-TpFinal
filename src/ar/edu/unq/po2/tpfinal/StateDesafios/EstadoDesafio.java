@@ -4,5 +4,5 @@ public abstract class EstadoDesafio {
 
 	public abstract boolean estaCompleto(DesafioUsuario desafio); 
 	public abstract float porcentajeDeCompletitud(DesafioUsuario desafio);
-	public abstract void serAceptado(DesafioUsuario desafio);
+	public abstract void serAceptado(DesafioUsuario desafio) throws Exception;
 }

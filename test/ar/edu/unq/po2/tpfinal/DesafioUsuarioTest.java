@@ -93,7 +93,7 @@ public class DesafioUsuarioTest {
 	}
 	
 	@Test
-	void testSerAceptado() {
+	void testSerAceptado() throws Exception {
 		//setup
 		desafioU.setEstado(estado);
 		//exercise

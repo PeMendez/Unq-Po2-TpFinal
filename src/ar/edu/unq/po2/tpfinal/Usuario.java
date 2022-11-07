@@ -36,7 +36,7 @@ public class Usuario {
 		proyecto.desuscribirParticipante(this); 
 	}
 	
-	public void aceptarDesafio(DesafioUsuario desafio) {
+	public void aceptarDesafio(DesafioUsuario desafio) throws Exception {
 		
 		desafio.serAceptado(); 
 	}
