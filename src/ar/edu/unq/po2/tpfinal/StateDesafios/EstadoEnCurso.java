@@ -1,5 +1,7 @@
 package ar.edu.unq.po2.tpfinal.StateDesafios;
 
+import java.time.LocalDate;
+
 public class EstadoEnCurso extends EstadoDesafio {
 
 	@Override
@@ -7,6 +9,7 @@ public class EstadoEnCurso extends EstadoDesafio {
 		
 		if (this.porcentajeDeCompletitud(desafio) == 1.00f) {
 			desafio.setEstado(new EstadoCompleto());  
+			desafio.setFechaCompletado(LocalDate.now());
 		}
 		
 		return this.porcentajeDeCompletitud(desafio) == 1.00f;

@@ -1,5 +1,7 @@
 package ar.edu.unq.po2.tpfinal.StateDesafios;
 
+import java.time.LocalDate;
+
 public class EstadoPendiente extends EstadoDesafio {
 
 	@Override
@@ -18,6 +20,7 @@ public class EstadoPendiente extends EstadoDesafio {
 	public void serAceptado(DesafioUsuario desafio) throws Exception {
 		
 		desafio.setEstado(new EstadoEnCurso());
+		desafio.setFechaInicio(LocalDate.now());
 		
 	}
 }

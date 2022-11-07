@@ -5,7 +5,6 @@ import java.util.List;
 
 import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.*;
 import ar.edu.unq.po2.tpfinal.StateDesafios.*;
-import ar.edu.unq.po2.tpfinal.StrategyRecomendacion.RecomendadorDesafios;
 
 public class Usuario {
 

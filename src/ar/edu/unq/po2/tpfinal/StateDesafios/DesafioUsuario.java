@@ -13,6 +13,7 @@ public class DesafioUsuario {
 	private EstadoDesafio estado; 
 	private Integer valoracion; 
 	private LocalDate fechaInicio; 
+	private LocalDate fechaCompletado; 
 	
 	public DesafioUsuario(Usuario usuario, Desafio desafio) {
 		
@@ -75,6 +76,14 @@ public class DesafioUsuario {
 		
 		this.getEstado().serAceptado(this); 
 		
+	}
+
+	public LocalDate getFechaCompletado() {
+		return fechaCompletado;
+	}
+
+	public void setFechaCompletado(LocalDate fechaCompletado) {
+		this.fechaCompletado = fechaCompletado;
 	}
 	
 }
