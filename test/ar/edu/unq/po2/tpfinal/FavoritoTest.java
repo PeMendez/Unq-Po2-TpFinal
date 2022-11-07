@@ -65,8 +65,40 @@ public class FavoritoTest {
 		desafioUsuario3 = mock(DesafioUsuario.class);
 		desafioUsuario4 = mock(DesafioUsuario.class);
 		proyecto1 = mock(Proyecto.class);
-		proyecto2 = mock(Proyecto.class);
+		proyecto2 = mock(Proyecto.class);		
+
+		when(desafioUsuario.getValoracion()).thenReturn(5);		
+		when(desafioUsuario.getDesafio()).thenReturn(desafio1);
 		
+		when(perfil.getCantMuestrasARecolectar()).thenReturn(15);
+		when(perfil.getDificultad()).thenReturn(2);
+		when(perfil.getRecompensasPreferidas()).thenReturn(25);
+		
+		when(desafio1.getCantidadDeMuestras()).thenReturn(30);
+		when(desafio1.getDificultad()).thenReturn(5);
+		when(desafio1.getRecompensa()).thenReturn(10);
+		
+		when(desafio2.getCantidadDeMuestras()).thenReturn(30);
+		when(desafio2.getDificultad()).thenReturn(6);
+		when(desafio2.getRecompensa()).thenReturn(10);
+		
+		when(desafio3.getCantidadDeMuestras()).thenReturn(30);
+		when(desafio3.getDificultad()).thenReturn(4);
+		when(desafio3.getRecompensa()).thenReturn(10);
+		
+		when(desafio4.getCantidadDeMuestras()).thenReturn(30);
+		when(desafio4.getDificultad()).thenReturn(7);
+		when(desafio4.getRecompensa()).thenReturn(10);
+		
+		when(desafio5.getCantidadDeMuestras()).thenReturn(30);
+		when(desafio5.getDificultad()).thenReturn(8);
+		when(desafio5.getRecompensa()).thenReturn(10);
+		
+		when(desafio6.getCantidadDeMuestras()).thenReturn(30);
+		when(desafio6.getDificultad()).thenReturn(9);
+		when(desafio6.getRecompensa()).thenReturn(10);
+		
+		when(usuario.getPerfil()).thenReturn(perfil); 
 	}
 
 	@Test
@@ -92,35 +124,6 @@ public class FavoritoTest {
 		List<Desafio> desafiosProyecto1 = Arrays.asList(desafio1, desafio2, desafio3); 
 		List<Desafio> desafiosProyecto2 = Arrays.asList(desafio4, desafio5, desafio6); 
 		//exercise
-		when(perfil.getCantMuestrasARecolectar()).thenReturn(15);
-		when(perfil.getDificultad()).thenReturn(2);
-		when(perfil.getRecompensasPreferidas()).thenReturn(25);
-		
-		when(desafio1.getCantidadDeMuestras()).thenReturn(30);
-		when(desafio1.getDificultad()).thenReturn(5);
-		when(desafio1.getRecompensa()).thenReturn(10);
-		
-		when(desafio2.getCantidadDeMuestras()).thenReturn(30);
-		when(desafio2.getDificultad()).thenReturn(6);
-		when(desafio2.getRecompensa()).thenReturn(10);
-		
-		when(desafio3.getCantidadDeMuestras()).thenReturn(30);
-		when(desafio3.getDificultad()).thenReturn(4);
-		when(desafio3.getRecompensa()).thenReturn(10);
-		
-		when(desafio4.getCantidadDeMuestras()).thenReturn(30);
-		when(desafio4.getDificultad()).thenReturn(7);
-		when(desafio4.getRecompensa()).thenReturn(10);
-		
-		when(desafio5.getCantidadDeMuestras()).thenReturn(30);
-		when(desafio5.getDificultad()).thenReturn(8);
-		when(desafio5.getRecompensa()).thenReturn(10);
-		
-		when(desafio6.getCantidadDeMuestras()).thenReturn(30);
-		when(desafio6.getDificultad()).thenReturn(9);
-		when(desafio6.getRecompensa()).thenReturn(10);
-		
-		when(usuario.getPerfil()).thenReturn(perfil); 
 		
 		when(proyecto1.getDesafios()).thenReturn(desafiosProyecto1); 
 		when(proyecto2.getDesafios()).thenReturn(desafiosProyecto2);		
@@ -136,40 +139,9 @@ public class FavoritoTest {
 		
 		List<DesafioUsuario> desafiosDelUsuario = new ArrayList<DesafioUsuario>();
 
-		when(desafioUsuario.getValoracion()).thenReturn(5);		
-		when(desafioUsuario.getDesafio()).thenReturn(desafio1);
 		when(usuario.getDesafiosUsuario()).thenReturn(desafiosDelUsuario);
 		desafiosDelUsuario.add(desafioUsuario);
 		
-		when(perfil.getCantMuestrasARecolectar()).thenReturn(15);
-		when(perfil.getDificultad()).thenReturn(2);
-		when(perfil.getRecompensasPreferidas()).thenReturn(25);
-		
-		when(desafio1.getCantidadDeMuestras()).thenReturn(30);
-		when(desafio1.getDificultad()).thenReturn(5);
-		when(desafio1.getRecompensa()).thenReturn(10);
-		
-		when(desafio2.getCantidadDeMuestras()).thenReturn(30);
-		when(desafio2.getDificultad()).thenReturn(6);
-		when(desafio2.getRecompensa()).thenReturn(10);
-		
-		when(desafio3.getCantidadDeMuestras()).thenReturn(30);
-		when(desafio3.getDificultad()).thenReturn(4);
-		when(desafio3.getRecompensa()).thenReturn(10);
-		
-		when(desafio4.getCantidadDeMuestras()).thenReturn(30);
-		when(desafio4.getDificultad()).thenReturn(7);
-		when(desafio4.getRecompensa()).thenReturn(10);
-		
-		when(desafio5.getCantidadDeMuestras()).thenReturn(30);
-		when(desafio5.getDificultad()).thenReturn(8);
-		when(desafio5.getRecompensa()).thenReturn(10);
-		
-		when(desafio6.getCantidadDeMuestras()).thenReturn(30);
-		when(desafio6.getDificultad()).thenReturn(9);
-		when(desafio6.getRecompensa()).thenReturn(10);
-		
-		when(usuario.getPerfil()).thenReturn(perfil); 
 		
 		List<Desafio> desafiosProyecto1 = Arrays.asList(desafio1, desafio2, desafio3, desafio4, desafio5, desafio6); 
 		
