@@ -42,8 +42,8 @@ class RestriccionGeograficaTest {
 		when(coordenada2.getLongitud()).thenReturn(5);
 
 		// verify
-		assertTrue(restriccion.contiene(coordenada1));
-		assertTrue(restriccion.contiene(coordenada2));
+		assertTrue(restriccion.seCumple(coordenada1));
+		assertTrue(restriccion.seCumple(coordenada2));
 	}
 
 	@Test
@@ -53,7 +53,7 @@ class RestriccionGeograficaTest {
 		when(coordenada2.getLongitud()).thenReturn(6);
 
 		// verify
-		assertFalse(restriccion.contiene(coordenada1));
+		assertFalse(restriccion.seCumple(coordenada1));
 	}
 
 	@Test
@@ -87,7 +87,7 @@ class RestriccionGeograficaTest {
 		Coordenada coordenada = new Coordenada(31, 12);
 		//exercise
 		//verify
-		assertTrue(restriccionG.contiene(coordenada));
+		assertTrue(restriccionG.seCumple(coordenada));
 	}
 
 	@Test
@@ -96,7 +96,7 @@ class RestriccionGeograficaTest {
 		Coordenada coordenada = new Coordenada(33, 13);
 		//exercise
 		//verify
-		assertFalse(restriccionG.contiene(coordenada));
+		assertFalse(restriccionG.seCumple(coordenada));
 	}
 
 }

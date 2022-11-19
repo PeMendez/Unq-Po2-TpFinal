@@ -55,7 +55,7 @@ public class DesafioTest {
 	void testEsMuestraValidaTrue() {
 		// set up
 		when(muestra.getCoordenada()).thenReturn(coordenada);
-		when(area.contiene(coordenada)).thenReturn(true);
+		when(area.seCumple(coordenada)).thenReturn(true);
 		when(muestra.getFecha()).thenReturn(LocalDate.of(2022, 10, 17));
 		when(restriccion.estaHabilitado(LocalDate.of(2022, 10, 17))).thenReturn(true);
 
@@ -68,7 +68,7 @@ public class DesafioTest {
 	void testEsMuestraValidaCoordenadaFalse() {
 		// set up
 		when(muestra.getCoordenada()).thenReturn(coordenada);
-		when(area.contiene(coordenada)).thenReturn(false);
+		when(area.seCumple(coordenada)).thenReturn(false);
 		when(muestra.getFecha()).thenReturn(LocalDate.of(2022, 10, 17));
 		when(restriccion.estaHabilitado(LocalDate.of(2022, 10, 17))).thenReturn(true);
 
@@ -80,7 +80,7 @@ public class DesafioTest {
 	void testEsMuestraValidaFechaFalse() {
 		// set up
 		when(muestra.getCoordenada()).thenReturn(coordenada);
-		when(area.contiene(coordenada)).thenReturn(true);
+		when(area.seCumple(coordenada)).thenReturn(true);
 		when(muestra.getFecha()).thenReturn(LocalDate.of(2022, 10, 17));
 		when(restriccion.estaHabilitado(LocalDate.of(2022, 10, 17))).thenReturn(false);
 

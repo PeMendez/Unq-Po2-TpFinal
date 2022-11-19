@@ -1,31 +1,12 @@
 package ar.edu.unq.po2.tpfinal;
 
-public class RestriccionGeografica {
+public class RestriccionGeografica extends Coordenada {
 	
-	private int latitud;
-	private int longitud;
 	private int radio;
 
 	public RestriccionGeografica(int latitud, int longitud, int radio) {
-		this.setLatitud(latitud);
-		this.setLongitud(longitud);
+		super(latitud,longitud);
 		this.setRadio(radio);
-	}
-
-	public int getLatitud() {
-		return this.latitud;
-	}
-
-	private void setLatitud(int latitud) {
-		this.latitud = latitud;
-	}
-
-	public int getLongitud() {
-		return this.longitud;
-	}
-
-	private void setLongitud(int longitud) {
-		this.longitud = longitud;
 	}
 
 	public int getRadio() {
@@ -36,7 +17,7 @@ public class RestriccionGeografica {
 		this.radio = radio;
 	}
 
-	public boolean contiene(Coordenada coordenada) {
+	public boolean seCumple(Coordenada coordenada) {
 		return Math.sqrt(Math.pow(Math.abs(coordenada.getLatitud() - this.getLatitud()), 2)
 				+ Math.pow(Math.abs(coordenada.getLongitud() - this.getLongitud()), 2)) < this.getRadio();
 	}

@@ -54,7 +54,7 @@ public class Desafio implements ElementoDeLudificacion{
 	
 	public boolean esMuestraValida(Muestra muestra) {
 	
-		return this.getArea().contiene(muestra.getCoordenada()) && this.getRestriccion().estaHabilitado(muestra.getFecha());
+		return this.getArea().seCumple(muestra.getCoordenada()) && this.getRestriccion().estaHabilitado(muestra.getFecha());
 	}
 	
 	
