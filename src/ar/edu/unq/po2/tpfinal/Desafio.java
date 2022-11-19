@@ -1,16 +1,16 @@
 package ar.edu.unq.po2.tpfinal;
 
-import ar.edu.unq.po2.tpfinal.RestriccionTemporal.TipoDeRestriccion;
+import ar.edu.unq.po2.tpfinal.RestriccionTemporal.Restriccion;
 
 public class Desafio implements ElementoDeLudificacion{
 		
 	private RestriccionGeografica area; 
-	private TipoDeRestriccion restriccion; 
+	private Restriccion restriccion; 
 	private int cantidadDeMuestras; 
 	private int dificultad; 
 	private int recompensa; 
 	
-	public Desafio(RestriccionGeografica area, TipoDeRestriccion restriccion, int cant, int dif, int recompensa) {
+	public Desafio(RestriccionGeografica area, Restriccion restriccion, int cant, int dif, int recompensa) {
 		
 		this.setArea(area);
 		this.setRestriccion(restriccion);
@@ -45,10 +45,10 @@ public class Desafio implements ElementoDeLudificacion{
 		this.recompensa = recompensa;
 	}
 
-	public TipoDeRestriccion getRestriccion() {
+	public Restriccion getRestriccion() {
 		return restriccion;
 	}
-	public void setRestriccion(TipoDeRestriccion restriccion) {
+	public void setRestriccion(Restriccion restriccion) {
 		this.restriccion = restriccion;
 	}
 	

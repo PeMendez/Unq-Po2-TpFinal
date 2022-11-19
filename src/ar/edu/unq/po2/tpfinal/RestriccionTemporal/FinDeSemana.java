@@ -2,7 +2,7 @@ package ar.edu.unq.po2.tpfinal.RestriccionTemporal;
 
 import java.time.LocalDate;
 
-public class FinDeSemana extends TipoDeRestriccion {
+public class FinDeSemana extends Restriccion {
 	
 	@Override
 	public boolean estaHabilitado(LocalDate fecha) {
@@ -10,11 +10,11 @@ public class FinDeSemana extends TipoDeRestriccion {
 	}
 
 	@Override
-	public void agregarRestriccion(TipoDeRestriccion restriccion) {
+	public void agregarRestriccion(Restriccion restriccion) {
 	}
 
 	@Override
-	public void borrarRestriccion(TipoDeRestriccion restriccion) {
+	public void borrarRestriccion(Restriccion restriccion) {
 	}
 
 }

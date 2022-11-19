@@ -8,12 +8,12 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
 import ar.edu.unq.po2.tpfinal.RestriccionTemporal.DiasHabiles;
-import ar.edu.unq.po2.tpfinal.RestriccionTemporal.TipoDeRestriccion;
+import ar.edu.unq.po2.tpfinal.RestriccionTemporal.Restriccion;
 
 class DiasHabilesTest {
 
 	@Mock
-	private TipoDeRestriccion restriccion1;
+	private Restriccion restriccion1;
 	private DiasHabiles diasHabiles;
 
 	@BeforeEach

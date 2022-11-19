@@ -9,7 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
-import ar.edu.unq.po2.tpfinal.RestriccionTemporal.TipoDeRestriccion;
+import ar.edu.unq.po2.tpfinal.RestriccionTemporal.Restriccion;
 
 public class DesafioTest {
 
@@ -17,7 +17,7 @@ public class DesafioTest {
 	@Mock
 	private RestriccionGeografica area;
 	@Mock
-	private TipoDeRestriccion restriccion;
+	private Restriccion restriccion;
 	private int cantidadDeMuestras;
 	private int dificultad;
 	private int recompensa;
@@ -28,7 +28,7 @@ public class DesafioTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		area = mock(RestriccionGeografica.class);
-		restriccion = mock(TipoDeRestriccion.class);
+		restriccion = mock(Restriccion.class);
 		cantidadDeMuestras = 10;
 		dificultad = 4;
 		recompensa = 100;

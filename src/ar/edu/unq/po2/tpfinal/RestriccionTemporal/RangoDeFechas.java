@@ -2,7 +2,7 @@ package ar.edu.unq.po2.tpfinal.RestriccionTemporal;
 
 import java.time.LocalDate;
 
-public class RangoDeFechas extends TipoDeRestriccion{
+public class RangoDeFechas extends Restriccion{
 	
 	private LocalDate inicio;
 	private LocalDate fin;
@@ -35,11 +35,11 @@ public class RangoDeFechas extends TipoDeRestriccion{
 	}
 
 	@Override
-	public void agregarRestriccion(TipoDeRestriccion restriccion) {
+	public void agregarRestriccion(Restriccion restriccion) {
 	}
 
 	@Override
-	public void borrarRestriccion(TipoDeRestriccion restriccion) {
+	public void borrarRestriccion(Restriccion restriccion) {
 	}
 
 

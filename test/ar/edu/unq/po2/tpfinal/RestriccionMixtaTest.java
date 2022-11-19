@@ -15,16 +15,16 @@ class RestriccionMixtaTest {
 
 	private RestriccionMixta restriccionMixta;
 	@Mock
-	private TipoDeRestriccion restriccion1;
+	private Restriccion restriccion1;
 	@Mock
-	private TipoDeRestriccion restriccion2;
-	private List<TipoDeRestriccion> restricciones;
+	private Restriccion restriccion2;
+	private List<Restriccion> restricciones;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		restriccion1 = mock(TipoDeRestriccion.class);
-		restriccion2 = mock(TipoDeRestriccion.class);
-		restricciones = new ArrayList<TipoDeRestriccion>();
+		restriccion1 = mock(Restriccion.class);
+		restriccion2 = mock(Restriccion.class);
+		restricciones = new ArrayList<Restriccion>();
 		restriccionMixta = new RestriccionMixta(restricciones);
 		restriccionMixta.getRestricciones().add(restriccion1);
 		restriccionMixta.getRestricciones().add(restriccion2);
