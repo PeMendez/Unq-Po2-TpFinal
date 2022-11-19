@@ -2,28 +2,28 @@ package ar.edu.unq.po2.tpfinal;
 
 public class Coordenada {
 
-	private int x;
-	private int y;
+	private int latitud;
+	private int longitud;
 
-	public Coordenada(int x, int y) {
-		this.setX(x);
-		this.setY(y);
+	public Coordenada(int latitud, int longitud) {
+		this.setLatitud(latitud);
+		this.setLongitud(longitud);
 	}
 
-	public int getX() {
-		return this.x;
+	public int getLatitud() {
+		return this.latitud;
 	}
 
-	private void setX(int x) {
-		this.x = x;
+	private void setLatitud(int latitud) {
+		this.latitud = latitud;
 	}
 
-	public int getY() {
-		return this.y;
+	public int getLongitud() {
+		return this.longitud;
 	}
 
-	private void setY(int y) {
-		this.y = y;
+	private void setLongitud(int longitud) {
+		this.longitud = longitud;
 	}
 
 }

@@ -36,10 +36,10 @@ class RestriccionGeograficaTest {
 	@Test
 	void testContieneTrue1() {
 		// set up
-		when(coordenada1.getX()).thenReturn(4);
-		when(coordenada1.getY()).thenReturn(4);
-		when(coordenada2.getX()).thenReturn(5);
-		when(coordenada2.getY()).thenReturn(5);
+		when(coordenada1.getLatitud()).thenReturn(4);
+		when(coordenada1.getLongitud()).thenReturn(4);
+		when(coordenada2.getLatitud()).thenReturn(5);
+		when(coordenada2.getLongitud()).thenReturn(5);
 
 		// verify
 		assertTrue(restriccion.contiene(coordenada1));
@@ -49,8 +49,8 @@ class RestriccionGeograficaTest {
 	@Test
 	void testContieneFalse1() {
 		// set up
-		when(coordenada2.getX()).thenReturn(6);
-		when(coordenada2.getY()).thenReturn(6);
+		when(coordenada2.getLatitud()).thenReturn(6);
+		when(coordenada2.getLongitud()).thenReturn(6);
 
 		// verify
 		assertFalse(restriccion.contiene(coordenada1));

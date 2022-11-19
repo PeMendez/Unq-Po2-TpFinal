@@ -27,7 +27,7 @@ class CoordenadaTest {
 		//setup
 		//exercise
 		//verify
-		assertEquals(5,coordenada.getX());
+		assertEquals(5,coordenada.getLatitud());
 	}
 	
 	@Test
@@ -35,7 +35,7 @@ class CoordenadaTest {
 		//setup
 		//exercise
 		//verify
-		assertEquals(6,coordenada.getY());
+		assertEquals(6,coordenada.getLongitud());
 	}
 	
 }
