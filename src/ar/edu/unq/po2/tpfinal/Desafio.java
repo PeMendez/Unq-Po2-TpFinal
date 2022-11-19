@@ -2,7 +2,7 @@ package ar.edu.unq.po2.tpfinal;
 
 import ar.edu.unq.po2.tpfinal.RestriccionTemporal.Restriccion;
 
-public class Desafio implements ElementoDeLudificacion{
+public class Desafio {
 		
 	private RestriccionGeografica area; 
 	private Restriccion restriccion; 
