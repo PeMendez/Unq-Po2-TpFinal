@@ -17,6 +17,7 @@ class MuestraTest {
 	@Mock private Usuario usuario; 
 	private LocalDate fecha; 
 	private LocalTime hora;
+	@Mock private IRestriccion restriccion; 
 	
 	@BeforeEach
 	public void setup() {
@@ -25,6 +26,16 @@ class MuestraTest {
 		coordenada = mock(Coordenada.class);
 		usuario = mock(Usuario.class);
 		muestra = new Muestra(coordenada, usuario, fecha, hora);
+		restriccion = mock(IRestriccion.class); 
+	}
+	
+	@Test 
+	void testEsMustraValida() {
+		
+		muestra.esMuestraValida(restriccion);
+		
+		verify(restriccion, times(1)).seCumple(muestra); 
+		
 	}
 	
 	@Test
