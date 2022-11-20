@@ -8,17 +8,18 @@ import java.time.LocalTime;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 
 class MuestraTest {
 
 	private Muestra muestra;
-	@Mock private Coordenada coordenada; 
-	@Mock private Usuario usuario; 
-	private LocalDate fecha; 
+	private Coordenada coordenada;
+	private Usuario usuario;
+	private LocalDate fecha;
 	private LocalTime hora;
-	@Mock private IRestriccion restriccion; 
-	
+	private IRestriccion restriccion; 
+
+
+
 	@BeforeEach
 	public void setup() {
 		fecha = LocalDate.of(2022, 5, 11);
@@ -35,38 +36,39 @@ class MuestraTest {
 		muestra.esMuestraValida(restriccion);
 		
 		verify(restriccion, times(1)).seCumple(muestra); 
-		
 	}
 	
+
 	@Test
 	void testGetCoordenada() {
-		//setup
-		//exercise
-		//verify
-		assertEquals(coordenada,muestra.getCoordenada());
+		// setup
+		// exercise
+		// verify
+		assertEquals(coordenada, muestra.getCoordenada());
 	}
-	
+
 	@Test
 	void testGetUsuario() {
-		//setup
-		//exercise
-		//verify
-		assertEquals(usuario,muestra.getUsuario());
+		// setup
+		// exercise
+		// verify
+		assertEquals(usuario, muestra.getUsuario());
 	}
-	
+
 	@Test
 	void testGetFecha() {
-		//setup
-		//exercise
-		//verify
-		assertEquals(LocalDate.of(2022, 5, 11),muestra.getFecha());
+		// setup
+		// exercise
+		// verify
+		assertEquals(LocalDate.of(2022, 5, 11), muestra.getFecha());
 	}
-	
+
 	@Test
 	void testGetHora() {
-		//setup
-		//exercise
-		//verify
-		assertEquals(LocalTime.of(15,25),muestra.getHora());
+		// setup
+		// exercise
+		// verify
+		assertEquals(LocalTime.of(15, 25), muestra.getHora());
 	}
+
 }
