@@ -85,5 +85,10 @@ public class DesafioUsuario {
 	public void setFechaCompletado(LocalDate fechaCompletado) {
 		this.fechaCompletado = fechaCompletado;
 	}
+
+	public int porcentajeDeCompletitud() {
+		
+		return this.getEstado().porcentajeDeCompletitud(this);
+	}
 	
 }
