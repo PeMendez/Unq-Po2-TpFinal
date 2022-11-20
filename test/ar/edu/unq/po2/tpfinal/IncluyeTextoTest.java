@@ -15,7 +15,7 @@ public class IncluyeTextoTest {
 	private IncluyeTextoEnTitulo incluyeTexto;
 	private Proyecto proyecto1, proyecto2, proyecto3;
 	private Categoria cat1, cat2, cat3, cat4, cat5;
-	private AdministradorDeProyectos admP; 
+	private Sistema admP; 
 	private List<Categoria> categorias = new ArrayList<>();
 	private List<Categoria> catproy1 = new ArrayList<>();
 	private List<Categoria> catproy2 = new ArrayList<>();
@@ -24,7 +24,7 @@ public class IncluyeTextoTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		
-		admP = new AdministradorDeProyectos();  
+		admP = new Sistema();  
 		incluyeTexto = new IncluyeTextoEnTitulo("Java");
 	
 		proyecto1 = mock(Proyecto.class);
