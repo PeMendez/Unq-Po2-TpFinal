@@ -63,6 +63,6 @@ public class EstadoEnCursoTest {
 		//exercise
 		estadoEnCurso.porcentajeDeCompletitud(desafioU1);
 		//verify
-		assertEquals(0.50, estadoEnCurso.porcentajeDeCompletitud(desafioU1));
+		assertEquals(50, estadoEnCurso.porcentajeDeCompletitud(desafioU1));
 	}
 }

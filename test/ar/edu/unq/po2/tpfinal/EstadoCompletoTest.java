@@ -43,7 +43,7 @@ public class EstadoCompletoTest {
 		//exercise
 
 		//verify
-		assertEquals(1.00f, estadoComp.porcentajeDeCompletitud(du2));
+		assertEquals(100, estadoComp.porcentajeDeCompletitud(du2));
 	}
 	
 }

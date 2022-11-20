@@ -56,7 +56,7 @@ public class EstadoPendienteTest {
 		//exercise
 
 		//verify
-		assertEquals(0.00f, estadoPend.porcentajeDeCompletitud(du));
+		assertEquals(0, estadoPend.porcentajeDeCompletitud(du));
 	}
 	
 	
