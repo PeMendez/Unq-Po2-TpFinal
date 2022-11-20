@@ -56,7 +56,7 @@ class UsuarioTest {
 		//setup
 		List<Proyecto> proyectosSuscriptos = Arrays.asList(proyecto1);
 		//Exercise
-		user.suscribirse(admP, proyecto1); 
+		user.suscribirse(proyecto1); 
 		//verify
 		assertEquals(proyectosSuscriptos,user.getProyectos());
 
@@ -100,11 +100,11 @@ class UsuarioTest {
 	@Test 
 	void testBuscarProyectos() {
 		//setUp
-		user.suscribirse(admP, proyecto1);
+		user.suscribirse(proyecto1);
 		//Exercise
-		user.buscarProyectosPor(condicion);
+		user.buscarProyectosPor(condicion, admP);
 		//verify
-		verify(user.getSistema(), times(1)).filtrarProyectos(condicion); 
+		verify(admP, times(1)).filtrarProyectos(condicion); 
 	}
 	
 	@Test 
