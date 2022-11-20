@@ -131,7 +131,7 @@ public class FavoritoTest {
 		when(usuario.getProyectos()).thenReturn(Arrays.asList(proyecto1, proyecto2)); 
 
 		
-		assertTrue(recomendador.desafiosSegunUsuario(usuario).size() == 6); 
+		assertEquals(recomendador.desafiosSegunUsuario(usuario).size(), 6); 
 	}
 
 	@Test

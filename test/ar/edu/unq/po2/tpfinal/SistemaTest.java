@@ -84,7 +84,7 @@ public class SistemaTest {
 		admP.addProyecto(proyecto2);
 		admP.addProyecto(proyecto3); 
 		
-		assertEquals(admP.filtrarProyectos(condicion), filtrados); 		
+		assertTrue(admP.filtrarProyectos(condicion).containsAll(filtrados)); 		
 	}
 	
 	@Test 
