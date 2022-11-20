@@ -96,4 +96,49 @@ public class SistemaTest {
 		
 		assertEquals(admP.getProyDisponibles(), proyectos); 
 	}
+	
+	@Test 
+	void testDesuscribirUsuario() {
+		
+		Set<Usuario> usuarios = Sets.newSet(usuario1, usuario2);
+		
+		admP.setUsuarios(usuarios);
+		
+		assertEquals(admP.getUsuarios().size(), 2); 
+		
+		admP.removeUsuario(usuario1);
+		
+		assertEquals(admP.getUsuarios().size(), 1);
+		
+	}
+	
+	@Test 
+	void testDesuscribirProyecto() {
+		
+		Set<Proyecto> proyectos = Sets.newSet(proyecto1, proyecto2, proyecto3); 
+		
+		admP.setProyDisponibles(proyectos);
+		
+		assertEquals(admP.getProyDisponibles().size(), 3); 
+		
+		admP.removeProyecto(proyecto1);
+		
+		assertEquals(admP.getProyDisponibles().size(), 2);
+		
+	}
+	
+	@Test 
+	void testDesuscribirCategoria() {
+		
+		Set<Categoria> categorias = Sets.newSet(cat1, cat2); 
+		
+		admP.setCategoriasDisponibles(categorias);
+		
+		assertEquals(admP.getCategoriasDisponibles().size(), 2); 
+		
+		admP.removeCategoria(cat1);
+		
+		assertEquals(admP.getCategoriasDisponibles().size(), 1);
+		
+	}
 }
