@@ -8,12 +8,12 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
 import ar.edu.unq.po2.tpfinal.RestriccionTemporal.DiasHabiles;
-import ar.edu.unq.po2.tpfinal.RestriccionTemporal.Restriccion;
+import ar.edu.unq.po2.tpfinal.RestriccionTemporal.RestriccionTemporal;
 
 class DiasHabilesTest {
 
 	@Mock
-	private Restriccion restriccion1;
+	private RestriccionTemporal restriccion1;
 	private DiasHabiles diasHabiles;
 
 	@BeforeEach
@@ -25,17 +25,17 @@ class DiasHabilesTest {
 	@Test
 	void testEstaHabilitadoTrue() {
 		// verify
-		assertTrue(diasHabiles.estaHabilitado(LocalDate.of(2022, 10, 17))); // Lunes
-		assertTrue(diasHabiles.estaHabilitado(LocalDate.of(2022, 10, 18))); // Martes
-		assertTrue(diasHabiles.estaHabilitado(LocalDate.of(2022, 10, 19))); // Miércoles
-		assertTrue(diasHabiles.estaHabilitado(LocalDate.of(2022, 10, 20))); // Jueves
-		assertTrue(diasHabiles.estaHabilitado(LocalDate.of(2022, 10, 21))); // Viernes
+		assertTrue(diasHabiles.seCumple(LocalDate.of(2022, 10, 17))); // Lunes
+		assertTrue(diasHabiles.seCumple(LocalDate.of(2022, 10, 18))); // Martes
+		assertTrue(diasHabiles.seCumple(LocalDate.of(2022, 10, 19))); // Miércoles
+		assertTrue(diasHabiles.seCumple(LocalDate.of(2022, 10, 20))); // Jueves
+		assertTrue(diasHabiles.seCumple(LocalDate.of(2022, 10, 21))); // Viernes
 	}
 
 	@Test
 	void testEstaHabilitadoFalse() {
 		// verify
-		assertFalse(diasHabiles.estaHabilitado(LocalDate.of(2022, 10, 22))); // Sábado
-		assertFalse(diasHabiles.estaHabilitado(LocalDate.of(2022, 10, 23))); // Domingo
+		assertFalse(diasHabiles.seCumple(LocalDate.of(2022, 10, 22))); // Sábado
+		assertFalse(diasHabiles.seCumple(LocalDate.of(2022, 10, 23))); // Domingo
 	}
 }

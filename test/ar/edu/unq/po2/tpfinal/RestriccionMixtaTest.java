@@ -15,16 +15,16 @@ class RestriccionMixtaTest {
 
 	private RestriccionMixta restriccionMixta;
 	@Mock
-	private Restriccion restriccion1;
+	private RestriccionTemporal restriccion1;
 	@Mock
-	private Restriccion restriccion2;
-	private List<Restriccion> restricciones;
+	private RestriccionTemporal restriccion2;
+	private List<RestriccionTemporal> restricciones;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		restriccion1 = mock(Restriccion.class);
-		restriccion2 = mock(Restriccion.class);
-		restricciones = new ArrayList<Restriccion>();
+		restriccion1 = mock(RestriccionTemporal.class);
+		restriccion2 = mock(RestriccionTemporal.class);
+		restricciones = new ArrayList<RestriccionTemporal>();
 		restriccionMixta = new RestriccionMixta(restricciones);
 		restriccionMixta.getRestricciones().add(restriccion1);
 		restriccionMixta.getRestricciones().add(restriccion2);
@@ -32,16 +32,16 @@ class RestriccionMixtaTest {
 
 	@Test
 	void testEstaHabilitadoTrue() {
-		when(restriccion1.estaHabilitado(LocalDate.of(2022, 10, 17))).thenReturn(true);
-		when(restriccion2.estaHabilitado(LocalDate.of(2022, 10, 17))).thenReturn(true);
-		assertTrue(restriccionMixta.estaHabilitado(LocalDate.of(2022, 10, 17)));
+		when(restriccion1.seCumple(LocalDate.of(2022, 10, 17))).thenReturn(true);
+		when(restriccion2.seCumple(LocalDate.of(2022, 10, 17))).thenReturn(true);
+		assertTrue(restriccionMixta.seCumple(LocalDate.of(2022, 10, 17)));
 	}
 
 	@Test
 	void testEstaHabilitadoFalse() {
-		when(restriccion1.estaHabilitado(LocalDate.of(2022, 10, 17))).thenReturn(false);
-		when(restriccion2.estaHabilitado(LocalDate.of(2022, 10, 17))).thenReturn(true);
-		assertFalse(restriccionMixta.estaHabilitado(LocalDate.of(2022, 10, 17)));
+		when(restriccion1.seCumple(LocalDate.of(2022, 10, 17))).thenReturn(false);
+		when(restriccion2.seCumple(LocalDate.of(2022, 10, 17))).thenReturn(true);
+		assertFalse(restriccionMixta.seCumple(LocalDate.of(2022, 10, 17)));
 	}
 
 }

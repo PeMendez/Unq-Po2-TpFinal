@@ -1,36 +1,37 @@
 package ar.edu.unq.po2.tpfinal.RestriccionTemporal;
 
-import java.time.LocalDate;
 import java.util.List;
 
-public class RestriccionMixta extends Restriccion{
+import ar.edu.unq.po2.tpfinal.Muestra;
+
+public class RestriccionMixta extends RestriccionTemporal{
 	
-	private List<Restriccion> restricciones;
+	private List<RestriccionTemporal> restricciones;
 	
-	public RestriccionMixta(List<Restriccion> restricciones) {
+	public RestriccionMixta(List<RestriccionTemporal> restricciones) {
 		this.setRestricciones(restricciones);
 	}
 
-	public List<Restriccion> getRestricciones() {
+	public List<RestriccionTemporal> getRestricciones() {
 		return this.restricciones;
 	}
 
-	public void setRestricciones(List<Restriccion> restricciones) {
+	public void setRestricciones(List<RestriccionTemporal> restricciones) {
 		this.restricciones = restricciones;
 	}
 
 	@Override
-	public boolean estaHabilitado(LocalDate fecha) {
-		return this.getRestricciones().stream().allMatch(restriccion -> restriccion.estaHabilitado(fecha));
+	public boolean seCumple(Muestra muestra) {
+		return this.getRestricciones().stream().allMatch(restriccion -> restriccion.seCumple(muestra));
 	}
 
 	@Override
-	public void agregarRestriccion(Restriccion restriccion) {
+	public void agregarRestriccion(RestriccionTemporal restriccion) {
 		this.getRestricciones().add(restriccion);
 	}
 
 	@Override
-	public void borrarRestriccion(Restriccion restriccion) {
+	public void borrarRestriccion(RestriccionTemporal restriccion) {
 		this.getRestricciones().remove(restriccion);
 	}
 }

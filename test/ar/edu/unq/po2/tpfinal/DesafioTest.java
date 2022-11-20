@@ -9,7 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
-import ar.edu.unq.po2.tpfinal.RestriccionTemporal.Restriccion;
+import ar.edu.unq.po2.tpfinal.RestriccionTemporal.RestriccionTemporal;
 
 public class DesafioTest {
 
@@ -17,7 +17,7 @@ public class DesafioTest {
 	@Mock
 	private RestriccionGeografica area;
 	@Mock
-	private Restriccion restriccion;
+	private RestriccionTemporal restriccion;
 	private int cantidadDeMuestras;
 	private int dificultad;
 	private int recompensa;
@@ -28,7 +28,7 @@ public class DesafioTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		area = mock(RestriccionGeografica.class);
-		restriccion = mock(Restriccion.class);
+		restriccion = mock(RestriccionTemporal.class);
 		cantidadDeMuestras = 10;
 		dificultad = 4;
 		recompensa = 100;
@@ -57,7 +57,7 @@ public class DesafioTest {
 		when(muestra.getCoordenada()).thenReturn(coordenada);
 		when(area.seCumple(coordenada)).thenReturn(true);
 		when(muestra.getFecha()).thenReturn(LocalDate.of(2022, 10, 17));
-		when(restriccion.estaHabilitado(LocalDate.of(2022, 10, 17))).thenReturn(true);
+		when(restriccion.seCumple(LocalDate.of(2022, 10, 17))).thenReturn(true);
 
 		// verify
 		assertTrue(desafio.esMuestraValida(muestra));
@@ -70,7 +70,7 @@ public class DesafioTest {
 		when(muestra.getCoordenada()).thenReturn(coordenada);
 		when(area.seCumple(coordenada)).thenReturn(false);
 		when(muestra.getFecha()).thenReturn(LocalDate.of(2022, 10, 17));
-		when(restriccion.estaHabilitado(LocalDate.of(2022, 10, 17))).thenReturn(true);
+		when(restriccion.seCumple(LocalDate.of(2022, 10, 17))).thenReturn(true);
 
 		// verify
 		assertFalse(desafio.esMuestraValida(muestra));
@@ -82,7 +82,7 @@ public class DesafioTest {
 		when(muestra.getCoordenada()).thenReturn(coordenada);
 		when(area.seCumple(coordenada)).thenReturn(true);
 		when(muestra.getFecha()).thenReturn(LocalDate.of(2022, 10, 17));
-		when(restriccion.estaHabilitado(LocalDate.of(2022, 10, 17))).thenReturn(false);
+		when(restriccion.seCumple(LocalDate.of(2022, 10, 17))).thenReturn(false);
 
 		// verify
 		assertFalse(desafio.esMuestraValida(muestra));

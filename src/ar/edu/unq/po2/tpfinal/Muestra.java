@@ -48,5 +48,9 @@ public class Muestra {
 	private void setHora(LocalTime hora) {
 		this.hora = hora;
 	}
+
+	public boolean esMuestraValida(IRestriccion restriccion) {
+		return restriccion.seCumple(this);
+	}
 	
 }

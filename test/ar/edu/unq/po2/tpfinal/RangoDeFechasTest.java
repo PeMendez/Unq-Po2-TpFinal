@@ -21,16 +21,16 @@ class RangoDeFechasTest {
 	@Test
 	void testEstaHabilitadoTrue() {
 		// verify
-		assertTrue(rangodefechas.estaHabilitado(LocalDate.of(2022, 10, 17)));
-		assertTrue(rangodefechas.estaHabilitado(LocalDate.of(2022, 10, 18)));
-		assertTrue(rangodefechas.estaHabilitado(LocalDate.of(2022, 10, 19)));
+		assertTrue(rangodefechas.seCumple(LocalDate.of(2022, 10, 17)));
+		assertTrue(rangodefechas.seCumple(LocalDate.of(2022, 10, 18)));
+		assertTrue(rangodefechas.seCumple(LocalDate.of(2022, 10, 19)));
 	}
 
 	@Test
 	void testEstaHabilitadoFalse() {
 		// verify
-		assertFalse(rangodefechas.estaHabilitado(LocalDate.of(2022, 10, 16)));
-		assertFalse(rangodefechas.estaHabilitado(LocalDate.of(2022, 10, 20)));
+		assertFalse(rangodefechas.seCumple(LocalDate.of(2022, 10, 16)));
+		assertFalse(rangodefechas.seCumple(LocalDate.of(2022, 10, 20)));
 	}
 
 }

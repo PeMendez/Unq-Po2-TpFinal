@@ -2,7 +2,9 @@ package ar.edu.unq.po2.tpfinal.RestriccionTemporal;
 
 import java.time.LocalDate;
 
-public class RangoDeFechas extends Restriccion{
+import ar.edu.unq.po2.tpfinal.Muestra;
+
+public class RangoDeFechas extends RestriccionTemporal{
 	
 	private LocalDate inicio;
 	private LocalDate fin;
@@ -30,16 +32,16 @@ public class RangoDeFechas extends Restriccion{
 
 
 	@Override
-	public boolean estaHabilitado(LocalDate fecha) {
-		return fecha.isAfter(this.getInicio().minusDays(1)) && fecha.isBefore(this.getFin().plusDays(1));
+	public boolean seCumple(Muestra muestra) {
+		return muestra.getFecha().isAfter(this.getInicio().minusDays(1)) && muestra.getFecha().isBefore(this.getFin().plusDays(1));
 	}
 
 	@Override
-	public void agregarRestriccion(Restriccion restriccion) {
+	public void agregarRestriccion(RestriccionTemporal restriccion) {
 	}
 
 	@Override
-	public void borrarRestriccion(Restriccion restriccion) {
+	public void borrarRestriccion(RestriccionTemporal restriccion) {
 	}
 
 

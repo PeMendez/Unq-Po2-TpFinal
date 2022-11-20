@@ -1,16 +1,16 @@
 package ar.edu.unq.po2.tpfinal;
 
-import ar.edu.unq.po2.tpfinal.RestriccionTemporal.Restriccion;
+import ar.edu.unq.po2.tpfinal.RestriccionTemporal.RestriccionTemporal;
 
 public class Desafio {
 		
-	private RestriccionGeografica area; 
-	private Restriccion restriccion; 
+	private IRestriccion area; 
+	private RestriccionTemporal restriccion; 
 	private int cantidadDeMuestras; 
 	private int dificultad; 
 	private int recompensa; 
 	
-	public Desafio(RestriccionGeografica area, Restriccion restriccion, int cant, int dif, int recompensa) {
+	public Desafio(IRestriccion area, RestriccionTemporal restriccion, int cant, int dif, int recompensa) {
 		
 		this.setArea(area);
 		this.setRestriccion(restriccion);
@@ -20,10 +20,10 @@ public class Desafio {
 		
 	}
 	
-	public RestriccionGeografica getArea() {
+	public IRestriccion getArea() {
 		return area;
 	}
-	public void setArea(RestriccionGeografica area) {
+	public void setArea(IRestriccion area) {
 		this.area = area;
 	}
 	public int getCantidadDeMuestras() {
@@ -45,16 +45,18 @@ public class Desafio {
 		this.recompensa = recompensa;
 	}
 
-	public Restriccion getRestriccion() {
+	public RestriccionTemporal getRestriccion() {
 		return restriccion;
 	}
-	public void setRestriccion(Restriccion restriccion) {
+	public void setRestriccion(RestriccionTemporal restriccion) {
 		this.restriccion = restriccion;
 	}
 	
 	public boolean esMuestraValida(Muestra muestra) {
+		
+		return muestra.esMuestraValida(this.getArea()) && muestra.esMuestraValida(this.getRestriccion());
 	
-		return this.getArea().seCumple(muestra.getCoordenada()) && this.getRestriccion().estaHabilitado(muestra.getFecha());
+//		return this.getArea().seCumple(muestra.getCoordenada()) && this.getRestriccion().estaHabilitado(muestra.getFecha());
 	}
 	
 	

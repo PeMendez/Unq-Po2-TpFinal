@@ -19,17 +19,17 @@ class FinDeSemanaTest {
 	@Test
 	void testEstaHabilitadoTrue() {
 		// verify
-		assertTrue(finDeSemana.estaHabilitado(LocalDate.of(2022, 10, 22))); // Sábado
-		assertTrue(finDeSemana.estaHabilitado(LocalDate.of(2022, 10, 23))); // Domingo
+		assertTrue(finDeSemana.seCumple(LocalDate.of(2022, 10, 22))); // Sábado
+		assertTrue(finDeSemana.seCumple(LocalDate.of(2022, 10, 23))); // Domingo
 	}
 
 	@Test
 	void testEstaHabilitadoFalse() {
 		// verify
-		assertFalse(finDeSemana.estaHabilitado(LocalDate.of(2022, 10, 17))); // Lunes
-		assertFalse(finDeSemana.estaHabilitado(LocalDate.of(2022, 10, 18))); // Martes
-		assertFalse(finDeSemana.estaHabilitado(LocalDate.of(2022, 10, 19))); // Miércoles
-		assertFalse(finDeSemana.estaHabilitado(LocalDate.of(2022, 10, 20))); // Jueves
-		assertFalse(finDeSemana.estaHabilitado(LocalDate.of(2022, 10, 21))); // Viernes
+		assertFalse(finDeSemana.seCumple(LocalDate.of(2022, 10, 17))); // Lunes
+		assertFalse(finDeSemana.seCumple(LocalDate.of(2022, 10, 18))); // Martes
+		assertFalse(finDeSemana.seCumple(LocalDate.of(2022, 10, 19))); // Miércoles
+		assertFalse(finDeSemana.seCumple(LocalDate.of(2022, 10, 20))); // Jueves
+		assertFalse(finDeSemana.seCumple(LocalDate.of(2022, 10, 21))); // Viernes
 	}
 }
