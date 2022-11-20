@@ -1,6 +1,7 @@
 package ar.edu.unq.po2.tpfinal;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
 import java.time.LocalDate;
 
@@ -12,25 +13,48 @@ import ar.edu.unq.po2.tpfinal.RestriccionTemporal.RangoDeFechas;
 class RangoDeFechasTest {
 
 	private RangoDeFechas rangodefechas;
+	private Muestra muestra;
 
 	@BeforeEach
 	void setUp() throws Exception {
 		rangodefechas = new RangoDeFechas(LocalDate.of(2022, 10, 17), LocalDate.of(2022, 10, 19));
+		muestra = mock(Muestra.class);
 	}
 
 	@Test
-	void testEstaHabilitadoTrue() {
+	void testSeCumpleTrue() {
+		// inicio del rango
+		// set up
+		when(muestra.getFecha()).thenReturn(LocalDate.of(2022, 10, 17));
 		// verify
-		assertTrue(rangodefechas.seCumple(LocalDate.of(2022, 10, 17)));
-		assertTrue(rangodefechas.seCumple(LocalDate.of(2022, 10, 18)));
-		assertTrue(rangodefechas.seCumple(LocalDate.of(2022, 10, 19)));
+		assertTrue(rangodefechas.seCumple(muestra));
+		
+		// dentro del rango
+		// set up
+		when(muestra.getFecha()).thenReturn(LocalDate.of(2022, 10, 18));
+		// verify
+		assertTrue(rangodefechas.seCumple(muestra));
+		
+		// final del rango
+		// set up
+		when(muestra.getFecha()).thenReturn(LocalDate.of(2022, 10, 19));
+		// verify
+		assertTrue(rangodefechas.seCumple(muestra));
 	}
 
 	@Test
-	void testEstaHabilitadoFalse() {
+	void testSeCumpleFalse() {
+		// antes del inicio
+		// set up
+		when(muestra.getFecha()).thenReturn(LocalDate.of(2022, 10, 16));
 		// verify
-		assertFalse(rangodefechas.seCumple(LocalDate.of(2022, 10, 16)));
-		assertFalse(rangodefechas.seCumple(LocalDate.of(2022, 10, 20)));
+		assertFalse(rangodefechas.seCumple(muestra));
+		
+		// luego del fin
+		// set up
+		when(muestra.getFecha()).thenReturn(LocalDate.of(2022, 10, 20));
+		// verify
+		assertFalse(rangodefechas.seCumple(muestra));
 	}
 
 }

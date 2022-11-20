@@ -6,7 +6,6 @@ import static org.mockito.Mockito.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 
 class RestriccionGeograficaTest {
 
@@ -36,7 +35,7 @@ class RestriccionGeograficaTest {
 		when(coordenada.getLatitud()).thenReturn(4);
 		when(coordenada.getLongitud()).thenReturn(4);
 		assertTrue(restriccion.seCumple(muestra));
-		
+
 		// coordenada en el borde
 		when(coordenada.getLatitud()).thenReturn(5);
 		when(coordenada.getLongitud()).thenReturn(5);
