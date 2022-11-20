@@ -74,7 +74,7 @@ public class SistemaTest {
 	@Test
 	void testFiltrarProyectos() {
 		
-		List<Proyecto> filtrados = Arrays.asList(proyecto2, proyecto1); 
+		List<Proyecto> filtrados = Arrays.asList(proyecto1, proyecto2); 
 		
 		when(condicion.seCumple(proyecto1)).thenReturn(true); 
 		when(condicion.seCumple(proyecto2)).thenReturn(true); 

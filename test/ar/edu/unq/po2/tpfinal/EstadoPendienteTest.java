@@ -1,7 +1,7 @@
 package ar.edu.unq.po2.tpfinal;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*; 
+import static org.mockito.Mockito.*;
 
 import org.junit.jupiter.api.*;
 import org.mockito.Mock;
@@ -25,9 +25,10 @@ public class EstadoPendienteTest {
 		du2 = mock(DesafioUsuario.class);
 		du = new DesafioUsuario(usuario, desafio);
 		estadoEnCurso = mock(EstadoEnCurso.class); 
+ 
 	}
 	
-	
+
 	@Test
 	void testDesafioEstaPendiente() {
 		//setup

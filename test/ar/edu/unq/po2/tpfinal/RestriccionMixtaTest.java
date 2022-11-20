@@ -26,8 +26,8 @@ class RestriccionMixtaTest {
 		restriccion2 = mock(RestriccionTemporal.class);
 		restricciones = new ArrayList<RestriccionTemporal>();
 		restriccionMixta = new RestriccionMixta(restricciones);
-		restriccionMixta.getRestricciones().add(restriccion1);
-		restriccionMixta.getRestricciones().add(restriccion2);
+		restriccionMixta.agregarRestriccion(restriccion1);
+		restriccionMixta.agregarRestriccion(restriccion2);
 		muestra = mock(Muestra.class); 
 	}
 
@@ -40,9 +40,24 @@ class RestriccionMixtaTest {
 
 	@Test
 	void testEstaHabilitadoFalse() {
+		
 		when(restriccion1.seCumple(muestra)).thenReturn(false);
 		when(restriccion2.seCumple(muestra)).thenReturn(true);
 		assertFalse(restriccionMixta.seCumple(muestra));
+	}
+	
+	@Test 
+	void testAddRestriccion() {
+		
+		assertEquals(restriccionMixta.getRestricciones().size(), 2); 
+	}
+	
+	@Test 
+	void testRemoveRestriccion() {
+		
+		restriccionMixta.borrarRestriccion(restriccion1);
+		
+		assertEquals(restriccionMixta.getRestricciones().size(), 1); 
 	}
 
 }
