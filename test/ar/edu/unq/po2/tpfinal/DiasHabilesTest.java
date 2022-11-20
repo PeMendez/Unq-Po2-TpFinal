@@ -11,7 +11,6 @@ import ar.edu.unq.po2.tpfinal.RestriccionTemporal.DiasHabiles;
 
 class DiasHabilesTest {
 
-	
 	private DiasHabiles diasHabiles;
 	private Muestra muestra;
 
