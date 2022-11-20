@@ -9,7 +9,6 @@ import java.time.LocalTime;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
 class MuestraTest {
 
 	private Muestra muestra;
@@ -64,6 +63,6 @@ class MuestraTest {
 	@Test
 	void testEsMuestraValidaTrue() {
 		muestra.esMuestraValida(area);
-		verify(area,times(1)).seCumple(muestra);
+		verify(area, times(1)).seCumple(muestra);
 	}
 }
