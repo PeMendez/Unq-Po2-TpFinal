@@ -11,6 +11,7 @@ import ar.edu.unq.po2.tpfinal.RestriccionTemporal.FinDeSemana;
 
 class FinDeSemanaTest {
 
+	
 	private FinDeSemana finDeSemana;
 	private Muestra muestra;
 
