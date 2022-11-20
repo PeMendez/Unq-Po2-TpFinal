@@ -1,10 +1,7 @@
 package ar.edu.unq.po2.tpfinal;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-
-import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.CondicionDeBusqueda;
 
 public class Sistema{
 
@@ -55,11 +52,6 @@ public class Sistema{
 
 	public void setProyDisponibles(Set<Proyecto> proyDisponibles) {
 		this.proyDisponibles = proyDisponibles;
-	}
-	
-	public List<Proyecto> filtrarProyectos(CondicionDeBusqueda condicion) {
-		
-		return this.getProyDisponibles().stream().filter(proyecto -> condicion.seCumple(proyecto)).toList();
 	}
 
 	public Set<Usuario> getUsuarios() {
