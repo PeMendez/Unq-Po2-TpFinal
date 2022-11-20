@@ -21,6 +21,13 @@ public class EstadoEnCursoTest {
 		desafio = mock(Desafio.class);
 	}
 	
+	@Test
+	void testAceptarUnDesafioEnCursoLanzaError() throws Exception {
+	
+		assertThrows(Exception.class, () -> estadoEnCurso.serAceptado(desafioU1));
+		
+	}
+	
 	
 	@Test
 	void testEstaCompletoTrue() {
