@@ -6,13 +6,13 @@ public class EstadoEnCurso extends EstadoDesafio {
 
 	@Override
 	public boolean estaCompleto(DesafioUsuario desafio) {
-		
-		if (this.porcentajeDeCompletitud(desafio) == 1.00f) {
+		boolean estaCompletoElDesafio = this.porcentajeDeCompletitud(desafio) == 1.00f;
+		if (estaCompletoElDesafio) {
 			desafio.setEstado(new EstadoCompleto());  
 			desafio.setFechaCompletado(LocalDate.now());
 		}
 		
-		return this.porcentajeDeCompletitud(desafio) == 1.00f;
+		return estaCompletoElDesafio;
 	}
 
 	@Override
