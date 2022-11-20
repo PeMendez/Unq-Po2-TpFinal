@@ -11,7 +11,6 @@ import ar.edu.unq.po2.tpfinal.RestriccionTemporal.FinDeSemana;
 
 class FinDeSemanaTest {
 
-	
 	private FinDeSemana finDeSemana;
 	private Muestra muestra;
 
@@ -22,7 +21,7 @@ class FinDeSemanaTest {
 	}
 
 	@Test
-	void testEstaHabilitadoTrue() {
+	void testSeCumpleTrue() {
 		// sabado
 		// set up
 		when(muestra.getFecha()).thenReturn(LocalDate.of(2022, 10, 22));
@@ -37,7 +36,7 @@ class FinDeSemanaTest {
 	}
 
 	@Test
-	void testEstaHabilitadoFalse() {
+	void testSeCumpleFalse() {
 		// lunes
 		// set up
 		when(muestra.getFecha()).thenReturn(LocalDate.of(2022, 10, 17));
