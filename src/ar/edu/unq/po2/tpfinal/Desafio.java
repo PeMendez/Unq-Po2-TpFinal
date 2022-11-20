@@ -4,13 +4,13 @@ import ar.edu.unq.po2.tpfinal.RestriccionTemporal.RestriccionTemporal;
 
 public class Desafio {
 		
-	private IRestriccion area; 
+	private RestriccionGeografica area; 
 	private RestriccionTemporal restriccion; 
 	private int cantidadDeMuestras; 
 	private int dificultad; 
 	private int recompensa; 
 	
-	public Desafio(IRestriccion area, RestriccionTemporal restriccion, int cant, int dif, int recompensa) {
+	public Desafio(RestriccionGeografica area, RestriccionTemporal restriccion, int cant, int dif, int recompensa) {
 		
 		this.setArea(area);
 		this.setRestriccion(restriccion);
@@ -20,10 +20,10 @@ public class Desafio {
 		
 	}
 	
-	public IRestriccion getArea() {
+	public RestriccionGeografica getArea() {
 		return area;
 	}
-	public void setArea(IRestriccion area) {
+	public void setArea(RestriccionGeografica area) {
 		this.area = area;
 	}
 	public int getCantidadDeMuestras() {
