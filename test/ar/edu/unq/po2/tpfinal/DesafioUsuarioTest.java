@@ -111,4 +111,13 @@ public class DesafioUsuarioTest {
 		//verify
 		assertEquals(fechaInicio,desafioU.getFechaCompletado());
 	}
+	
+	@Test
+	void testPorcentajeDeCompletitud() {
+		
+		desafioU.setEstado(estado);
+		desafioU.porcentajeDeCompletitud();
+		
+		verify(estado, times(1)).porcentajeDeCompletitud(desafioU); 
+	}
 }

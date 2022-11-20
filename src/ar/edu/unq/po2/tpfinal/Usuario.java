@@ -100,7 +100,7 @@ public class Usuario {
 		return sistema.filtrarProyectos(condicion);
 	}
 
-	public int promedioDeCompletitudPorDesafio() {
+	private int promedioDeCompletitudPorDesafio() {
 		
 		return this.getDesafiosUsuario().stream().mapToInt(d -> d.porcentajeDeCompletitud()).sum();
 	}

@@ -183,6 +183,19 @@ class UsuarioTest {
 		//verify
 		assertEquals(desafiosUsuariosUser,user.getDesafiosUsuario());
 	}
+	
+	@Test 
+	void testPorcentajeDeCompletitudGeneral() throws Exception {		
+
+		List<DesafioUsuario> desafioRecomendado = Arrays.asList(desafiosUsuario1, desafiosUsuario2);
+		user.setDesafiosUsuario(desafioRecomendado);
+		
+		when(desafiosUsuario1.porcentajeDeCompletitud()).thenReturn(20);
+		when(desafiosUsuario2.porcentajeDeCompletitud()).thenReturn(40);
+
+		
+		assertEquals(user.promedioDeCompletitudGeneral(), 30);
+	}
 
 	
 }
