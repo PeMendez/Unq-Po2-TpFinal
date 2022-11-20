@@ -11,8 +11,7 @@ public class Usuario {
 	private List<Muestra> muestras; 
 	private List<Proyecto> proyectos; 
 	private Perfil perfil; 
-	private List<DesafioUsuario> desafiosUsuarios;
-	private Sistema sistema; 
+	private List<DesafioUsuario> desafiosUsuarios; 
 	
 	public Usuario(Perfil perfil) {
 		
@@ -22,9 +21,8 @@ public class Usuario {
 		this.desafiosUsuarios =  new ArrayList<DesafioUsuario>();
 	}
 	
-	public void suscribirse(Sistema admP, Proyecto proyecto) {
+	public void suscribirse(Proyecto proyecto) {
 		
-		this.setSistema(admP);
 		this.proyectos.add(proyecto); 
 		proyecto.addParticipante(this);
 	}
@@ -97,16 +95,9 @@ public class Usuario {
 		this.desafiosUsuarios = desafiosUsuario;
 	}
 	
-	public List<Proyecto> buscarProyectosPor(CondicionDeBusqueda condicion) {
+	public List<Proyecto> buscarProyectosPor(CondicionDeBusqueda condicion, Sistema sistema) {
 		
 		return sistema.filtrarProyectos(condicion);
 	}
 
-	public Sistema getSistema() {
-		return sistema;
-	}
-
-	public void setSistema(Sistema sistema) {
-		this.sistema = sistema;
-	}
 }
