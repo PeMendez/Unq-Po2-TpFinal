@@ -1,6 +1,5 @@
 package ar.edu.unq.po2.tpfinal;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,6 +18,7 @@ class RestriccionMixtaTest {
 	@Mock
 	private RestriccionTemporal restriccion2;
 	private List<RestriccionTemporal> restricciones;
+	@Mock private Muestra muestra; 
 
 	@BeforeEach
 	void setUp() throws Exception {
@@ -28,20 +28,21 @@ class RestriccionMixtaTest {
 		restriccionMixta = new RestriccionMixta(restricciones);
 		restriccionMixta.getRestricciones().add(restriccion1);
 		restriccionMixta.getRestricciones().add(restriccion2);
+		muestra = mock(Muestra.class); 
 	}
 
 	@Test
 	void testEstaHabilitadoTrue() {
-		when(restriccion1.seCumple(LocalDate.of(2022, 10, 17))).thenReturn(true);
-		when(restriccion2.seCumple(LocalDate.of(2022, 10, 17))).thenReturn(true);
-		assertTrue(restriccionMixta.seCumple(LocalDate.of(2022, 10, 17)));
+		when(restriccion1.seCumple(muestra)).thenReturn(true);
+		when(restriccion2.seCumple(muestra)).thenReturn(true);
+		assertTrue(restriccionMixta.seCumple(muestra));
 	}
 
 	@Test
 	void testEstaHabilitadoFalse() {
-		when(restriccion1.seCumple(LocalDate.of(2022, 10, 17))).thenReturn(false);
-		when(restriccion2.seCumple(LocalDate.of(2022, 10, 17))).thenReturn(true);
-		assertFalse(restriccionMixta.seCumple(LocalDate.of(2022, 10, 17)));
+		when(restriccion1.seCumple(muestra)).thenReturn(false);
+		when(restriccion2.seCumple(muestra)).thenReturn(true);
+		assertFalse(restriccionMixta.seCumple(muestra));
 	}
 
 }
