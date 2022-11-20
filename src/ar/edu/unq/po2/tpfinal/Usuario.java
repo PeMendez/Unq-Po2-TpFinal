@@ -12,7 +12,7 @@ public class Usuario {
 	private List<Proyecto> proyectos; 
 	private Perfil perfil; 
 	private List<DesafioUsuario> desafiosUsuarios;
-	private AdministradorDeProyectos sistema; 
+	private Sistema sistema; 
 	
 	public Usuario(Perfil perfil) {
 		
@@ -22,7 +22,7 @@ public class Usuario {
 		this.desafiosUsuarios =  new ArrayList<DesafioUsuario>();
 	}
 	
-	public void suscribirse(AdministradorDeProyectos admP, Proyecto proyecto) {
+	public void suscribirse(Sistema admP, Proyecto proyecto) {
 		
 		this.setSistema(admP);
 		this.proyectos.add(proyecto); 
@@ -102,11 +102,11 @@ public class Usuario {
 		return sistema.filtrarProyectos(condicion);
 	}
 
-	public AdministradorDeProyectos getSistema() {
+	public Sistema getSistema() {
 		return sistema;
 	}
 
-	public void setSistema(AdministradorDeProyectos sistema) {
+	public void setSistema(Sistema sistema) {
 		this.sistema = sistema;
 	}
 }

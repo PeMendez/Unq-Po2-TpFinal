@@ -11,16 +11,16 @@ import org.mockito.*;
 
 import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.*;
 
-public class AdministradorDeProyectosTest {
+public class SistemaTest {
 
-	private AdministradorDeProyectos admP; 
+	private Sistema admP; 
 	@Mock private IncluyeTextoEnTitulo condicion;
 	@Mock private Proyecto proyecto1, proyecto2, proyecto3;
 	
 	@BeforeEach	
 	void setUp(){
 		
-		admP = new AdministradorDeProyectos(); 
+		admP = new Sistema(); 
 		
 		condicion = mock(IncluyeTextoEnTitulo.class); 
 		

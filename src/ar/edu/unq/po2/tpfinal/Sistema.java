@@ -5,11 +5,11 @@ import java.util.List;
 
 import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.CondicionDeBusqueda;
 
-public class AdministradorDeProyectos {
+public class Sistema{
 
 	private List<Proyecto> proyDisponibles;
 	
-	public AdministradorDeProyectos() {
+	public Sistema() {
 		
 		this.proyDisponibles = new ArrayList<Proyecto>(); 
 	}
