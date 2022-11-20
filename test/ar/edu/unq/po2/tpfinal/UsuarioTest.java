@@ -29,7 +29,7 @@ class UsuarioTest {
 	@Mock private DesafioUsuario desafiosUsuario2;
 	@Mock private DesafioUsuario desafiosUsuario3;
 	@Mock private CondicionDeBusqueda condicion; 
-	@Mock private AdministradorDeProyectos admP; 
+	@Mock private Sistema admP; 
 	@Mock private RecomendadorDesafios tipoRecomendacion; 
 
 	
@@ -46,7 +46,7 @@ class UsuarioTest {
 		desafiosUsuario2 = mock(DesafioUsuario.class); 
 		desafiosUsuario3 = mock(DesafioUsuario.class);
 		condicion = mock(IncluyeCategorias.class); 
-		admP = mock(AdministradorDeProyectos.class);  
+		admP = mock(Sistema.class);  
 		tipoRecomendacion = mock(RecomendadorDesafios.class); 
 
 	}
