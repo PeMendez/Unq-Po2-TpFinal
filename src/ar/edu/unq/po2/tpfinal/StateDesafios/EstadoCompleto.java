@@ -9,9 +9,9 @@ public class EstadoCompleto extends EstadoDesafio{
 	}
 
 	@Override
-	public float porcentajeDeCompletitud(DesafioUsuario desafio) {
+	public int porcentajeDeCompletitud(DesafioUsuario desafio) {
 		
-		return 1.00f;
+		return 100;
 	}
 
 	@Override

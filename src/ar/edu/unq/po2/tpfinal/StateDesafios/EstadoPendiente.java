@@ -11,9 +11,9 @@ public class EstadoPendiente extends EstadoDesafio {
 	}
 
 	@Override
-	public float porcentajeDeCompletitud(DesafioUsuario desafio) {
+	public int porcentajeDeCompletitud(DesafioUsuario desafio) {
  
-		return 0.00f;
+		return 0; 
 	}
 
 	@Override
