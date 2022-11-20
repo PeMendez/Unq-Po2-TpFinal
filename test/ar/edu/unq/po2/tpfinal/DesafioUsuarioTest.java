@@ -101,4 +101,14 @@ public class DesafioUsuarioTest {
 		//verify
 		verify(estado).serAceptado(desafioU);
 	}
+	
+	@Test
+	void testGetYSetFechaCompletado() {
+		//setup
+		fechaInicio = LocalDate.of(2022, 5, 11);
+		//exercise
+		desafioU.setFechaCompletado(fechaInicio);
+		//verify
+		assertEquals(fechaInicio,desafioU.getFechaCompletado());
+	}
 }
