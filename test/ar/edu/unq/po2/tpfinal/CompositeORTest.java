@@ -74,13 +74,13 @@ public class CompositeORTest {
 	}
 	
 	@Test
-	void testFiltrarProyectosAND() {
+	void testFiltrarProyectosOR() {
 		
 		Set<Proyecto> proyectos = Sets.newSet(proyecto1, proyecto2, proyecto3);
 		
 		List<Proyecto> filtrados = Arrays.asList(proyecto1, proyecto3); 
 		
-		assertEquals(compositeOR.filtrarProyectos(proyectos), filtrados); 
+		assertTrue(compositeOR.filtrarProyectos(proyectos).containsAll(filtrados)); 
 	}
 
 }
