@@ -14,12 +14,6 @@ public class AND extends CompuestoBinario{
 	}
 
 	@Override
-	public boolean seCumple(Proyecto proyecto) {
-		
-		return this.getCondicion1().seCumple(proyecto) && this.getCondicion2().seCumple(proyecto);
-	}
-
-	@Override
 	public List<Proyecto> filtrarProyectos(Set<Proyecto> proyDisponibles) {
 		
 		List<Proyecto> filtro = this.getCondicion1().filtrarProyectos(proyDisponibles); 
@@ -28,6 +22,12 @@ public class AND extends CompuestoBinario{
 		filtro.stream().filter(p -> filtro2.contains(p)); 
 		
 		return filtro;
+	}
+
+	@Override
+	public boolean seCumple(Proyecto proyecto) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }
