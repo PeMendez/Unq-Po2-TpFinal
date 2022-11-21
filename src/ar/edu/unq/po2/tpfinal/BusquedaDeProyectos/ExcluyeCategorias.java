@@ -1,6 +1,7 @@
 package ar.edu.unq.po2.tpfinal.BusquedaDeProyectos;
 
 import java.util.List;
+import java.util.Set;
 
 import ar.edu.unq.po2.tpfinal.*;
 
@@ -25,6 +26,12 @@ public class ExcluyeCategorias extends CondicionDeBusqueda{
 	public boolean seCumple(Proyecto proyecto) {
 		
 		return !this.getCategorias().stream().anyMatch(categoria -> proyecto.getCategorias().contains(categoria));
+	}
+	
+	@Override
+	public List<Proyecto> filtrarProyectos(Set<Proyecto> proyectos) {
+		
+		return proyectos.stream().filter(p -> !(p.getCategorias().containsAll(this.categorias))).toList();
 	}
 
 }
