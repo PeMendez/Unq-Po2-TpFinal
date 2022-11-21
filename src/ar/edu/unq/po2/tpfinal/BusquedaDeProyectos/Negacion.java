@@ -31,7 +31,7 @@ public class Negacion extends CondicionDeBusqueda{
 		
 		List<Proyecto> filtroNOT = new ArrayList<>(); 
 				proyDisponibles.stream().forEach(p -> filtroNOT.add(p));
-//		proyDisponibles.stream().filter(p -> !filtro.contains(p)).toList(); 
+
 		
 		return filtroNOT;  
 	}

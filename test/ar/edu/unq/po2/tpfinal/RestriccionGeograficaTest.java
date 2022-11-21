@@ -73,23 +73,4 @@ class RestriccionGeograficaTest {
 		// verify
 		assertEquals(4, restriccionG.getRadio());
 	}
-
-//	@Test
-//	void testContieneTrue() {
-//		//setup
-//		Coordenada coordenada = new Coordenada(31, 12);
-//		//exercise
-//		//verify
-//		assertTrue(restriccionG.seCumple(coordenada));
-//	}
-//
-//	@Test
-//	void testContieneFalse() {
-//		//setup
-//		Coordenada coordenada = new Coordenada(33, 13);
-//		//exercise
-//		//verify
-//		assertFalse(restriccionG.seCumple(coordenada));
-//	}
-
 }
