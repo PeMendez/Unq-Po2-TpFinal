@@ -1,5 +1,6 @@
 package ar.edu.unq.po2.tpfinal.BusquedaDeProyectos;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -17,11 +18,13 @@ public class AND extends CompuestoBinario{
 	public List<Proyecto> filtrarProyectos(Set<Proyecto> proyDisponibles) {
 		
 		List<Proyecto> filtro = this.getCondicion1().filtrarProyectos(proyDisponibles); 
-		List<Proyecto> filtro2 = this.getCondicion2().filtrarProyectos(proyDisponibles); 
 		
-		filtro.stream().filter(p -> filtro2.contains(p)); 
+		Set<Proyecto> filtrado = new HashSet<>(); 
+				filtro.stream().forEach(p -> filtrado.add(p));
 		
-		return filtro;
+		List<Proyecto> filtro2 = this.getCondicion2().filtrarProyectos(filtrado);  
+		
+		return filtro2;
 	}
 
 	@Override

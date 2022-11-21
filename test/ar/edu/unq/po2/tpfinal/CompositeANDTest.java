@@ -65,7 +65,7 @@ class CompositeANDTest {
 		when(proyecto3.getCategorias()).thenReturn(catproy3);
 		
 		categorias.add(cat1);
-		categorias.add(cat3);
+		categorias.add(cat2); 
 
 		when(proyecto1.getNombre()).thenReturn("Programacion con Java");
 		when(proyecto2.getNombre()).thenReturn("Arboles Binarios");
@@ -79,7 +79,7 @@ class CompositeANDTest {
 		
 		Set<Proyecto> proyectos = Sets.newSet(proyecto1, proyecto2, proyecto3);
 		
-		List<Proyecto> filtrados = Arrays.asList(proyecto1, proyecto3); 
+		List<Proyecto> filtrados = Arrays.asList(proyecto1); 
 		
 		assertEquals(compositeAND.filtrarProyectos(proyectos), filtrados); 
 	}
