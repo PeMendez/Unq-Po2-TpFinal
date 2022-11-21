@@ -4,9 +4,12 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.jupiter.api.*;
+import org.mockito.internal.util.collections.Sets;
 
 import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.*;
 
@@ -59,8 +62,19 @@ public class ExcluyeCategoriasTest {
 		when(proyecto1.getNombre()).thenReturn("Programacion con Java");
 		when(proyecto2.getNombre()).thenReturn("Arboles Binarios");
 		when(proyecto3.getNombre()).thenReturn("Java and C++");
+		 
 	}
 
+	@Test 
+	void testExcluyeCategorias() {
+		
+		Set<Proyecto> proyectos = Sets.newSet(proyecto1, proyecto2, proyecto3);
+		
+		List<Proyecto> filtrados = Arrays.asList(proyecto2); 
+		
+		assertEquals(excluyeCategorias.filtrarProyectos(proyectos), filtrados); 
+	}
+	
 	@Test
 	void testExcluyeCategoriaseFalse() {
 		
