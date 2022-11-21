@@ -45,9 +45,9 @@ class RestriccionGeograficaTest {
 	@Test
 	void testSeCumpleFalse() {
 		// coordenada fuera
-		when(coordenada.getLatitud()).thenReturn(6);
-		when(coordenada.getLongitud()).thenReturn(6);
-		assertTrue(restriccion.seCumple(muestra));
+		when(coordenada.getLatitud()).thenReturn(10);
+		when(coordenada.getLongitud()).thenReturn(10);
+		assertFalse(restriccion.seCumple(muestra));
 	}
 
 	@Test

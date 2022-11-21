@@ -18,7 +18,7 @@ public class RestriccionGeografica extends Coordenada implements IRestriccion {
 	}
 
 	public boolean seCumple(Muestra muestra) {
-		return Math.sqrt(Math.pow(Math.abs(muestra.getCoordenada().getLatitud() - this.getLatitud()), 2)
-				+ Math.pow(Math.abs(muestra.getCoordenada().getLongitud() - this.getLongitud()), 2)) < this.getRadio();
+		return (Math.sqrt(Math.pow(Math.abs(muestra.getCoordenada().getLatitud() - this.getLatitud()), 2)
+				+ Math.pow(Math.abs(muestra.getCoordenada().getLongitud() - this.getLongitud()), 2))) < this.getRadio();
 	}
 }
