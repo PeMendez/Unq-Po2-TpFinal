@@ -97,7 +97,7 @@ public class Usuario {
 	
 	public List<Proyecto> buscarProyectosPor(CondicionDeBusqueda condicion, Sistema sistema) {
 		
-		return sistema.filtrarProyectos(condicion);
+		return condicion.filtrarProyectos(sistema.getProyDisponibles()); 
 	}
 
 	private int promedioDeCompletitudPorDesafio() {

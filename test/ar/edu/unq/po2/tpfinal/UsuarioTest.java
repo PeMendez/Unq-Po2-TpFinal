@@ -104,7 +104,7 @@ class UsuarioTest {
 		//Exercise
 		user.buscarProyectosPor(condicion, admP);
 		//verify
-		verify(admP, times(1)).filtrarProyectos(condicion); 
+		verify(condicion, times(1)).filtrarProyectos(admP.getProyDisponibles()); 
 	}
 	
 	@Test 
