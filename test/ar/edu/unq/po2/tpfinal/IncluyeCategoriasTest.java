@@ -4,10 +4,13 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.internal.util.collections.Sets;
 
 import ar.edu.unq.po2.tpfinal.BusquedaDeProyectos.*;
 
@@ -61,6 +64,16 @@ public class IncluyeCategoriasTest {
 		when(proyecto3.getNombre()).thenReturn("Java and C++");
 	}
 
+	@Test 
+	void testIncluyeCategorias() {
+		
+		Set<Proyecto> proyectos = Sets.newSet(proyecto1, proyecto2, proyecto3);
+		
+		List<Proyecto> filtrados = Arrays.asList(proyecto1, proyecto3); 
+		
+		assertEquals(incluyeCategorias.filtrarProyectos(proyectos), filtrados); 
+	}
+	
 	@Test
 	void testIncluyeCategoriasTrue() {
 		

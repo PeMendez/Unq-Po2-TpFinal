@@ -32,7 +32,12 @@ public class IncluyeCategorias extends CondicionDeBusqueda{
 	@Override
 	public List<Proyecto> filtrarProyectos(Set<Proyecto> proyDisponibles) {
 		
-		return proyDisponibles.stream().filter(p -> (p.getCategorias().containsAll(this.categorias))).toList();
+		return proyDisponibles
+				.stream()
+				.filter(p -> (this.getCategorias()
+									.stream()
+									.anyMatch(categoria -> p.getCategorias().contains(categoria))))
+									.toList(); 
 	}
 
 }
