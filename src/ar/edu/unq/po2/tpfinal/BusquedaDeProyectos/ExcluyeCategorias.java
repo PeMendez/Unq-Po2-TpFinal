@@ -21,12 +21,6 @@ public class ExcluyeCategorias extends CondicionDeBusqueda{
 	public void setCategorias(List<Categoria> categorias) {
 		this.categorias = categorias;
 	}
-
-	@Override
-	public boolean seCumple(Proyecto proyecto) {
-		
-		return !this.getCategorias().stream().anyMatch(categoria -> proyecto.getCategorias().contains(categoria));
-	}
 	
 	@Override
 	public List<Proyecto> filtrarProyectos(Set<Proyecto> proyectos) {

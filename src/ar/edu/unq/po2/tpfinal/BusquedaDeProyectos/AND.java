@@ -27,10 +27,4 @@ public class AND extends CompuestoBinario{
 		return filtro2;
 	}
 
-	@Override
-	public boolean seCumple(Proyecto proyecto) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
 }

@@ -14,12 +14,6 @@ public class OR extends CompuestoBinario{
 		this.setCondicion1(condicion1);
 		this.setCondicion2(condicion2);
 	}
-	
-	@Override
-	public boolean seCumple(Proyecto proyecto) {
-		
-		return this.getCondicion1().seCumple(proyecto) || this.getCondicion2().seCumple(proyecto);
-	}
 
 	@Override
 	public List<Proyecto> filtrarProyectos(Set<Proyecto> proyDisponibles) {

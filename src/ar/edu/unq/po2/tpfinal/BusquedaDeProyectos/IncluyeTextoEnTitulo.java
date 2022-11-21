@@ -24,12 +24,6 @@ public class IncluyeTextoEnTitulo extends CondicionDeBusqueda {
 	}
 
 	@Override
-	public boolean seCumple(Proyecto proyecto) {
-		
-		return proyecto.getNombre().contains(this.getTextoABuscar());
-	}
-
-	@Override
 	public List<Proyecto> filtrarProyectos(Set<Proyecto> proyDisponibles) {
 	
 		return proyDisponibles.stream().filter(p -> p.getNombre().contains(this.getTextoABuscar())).toList();

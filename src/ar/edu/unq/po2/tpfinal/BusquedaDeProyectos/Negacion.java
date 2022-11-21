@@ -22,12 +22,6 @@ public class Negacion extends CondicionDeBusqueda{
 	public void setCondicion(CondicionDeBusqueda condicion) {
 		this.condicion = condicion;
 	}
-
-	@Override
-	public boolean seCumple(Proyecto proyecto) {
-		return !this.getCondicion().seCumple(proyecto);
-	}
-
 	@Override
 	public List<Proyecto> filtrarProyectos(Set<Proyecto> proyDisponibles) {
 		
