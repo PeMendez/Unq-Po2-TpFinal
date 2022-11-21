@@ -1,5 +1,6 @@
 package ar.edu.unq.po2.tpfinal.BusquedaDeProyectos;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -15,7 +16,7 @@ public class Negacion extends CondicionDeBusqueda{
 	}
 
 	public CondicionDeBusqueda getCondicion() {
-		return condicion;
+		return this.condicion;
 	}
 
 	public void setCondicion(CondicionDeBusqueda condicion) {
@@ -32,7 +33,13 @@ public class Negacion extends CondicionDeBusqueda{
 		
 		List<Proyecto> filtro = this.getCondicion().filtrarProyectos(proyDisponibles); 
 		
-		return proyDisponibles.stream().filter(p -> !filtro.contains(p)).toList();  
+		proyDisponibles.removeAll(filtro); 
+		
+		List<Proyecto> filtroNOT = new ArrayList<>(); 
+				proyDisponibles.stream().forEach(p -> filtroNOT.add(p));
+//		proyDisponibles.stream().filter(p -> !filtro.contains(p)).toList(); 
+		
+		return filtroNOT;  
 	}
 
 }
