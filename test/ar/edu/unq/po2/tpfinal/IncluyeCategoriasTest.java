@@ -73,18 +73,4 @@ public class IncluyeCategoriasTest {
 		
 		assertEquals(incluyeCategorias.filtrarProyectos(proyectos), filtrados); 
 	}
-	
-	@Test
-	void testIncluyeCategoriasTrue() {
-		
-		assertTrue(incluyeCategorias.seCumple(proyecto1));
-	
-	}
-
-	@Test
-	void testIncluyeCategoriasFalse() {
-		
-		assertFalse(incluyeCategorias.seCumple(proyecto2));
-		assertFalse(incluyeCategorias.seCumple(proyecto3));
-	}
 }

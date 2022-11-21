@@ -40,19 +40,4 @@ public class IncluyeTextoTest {
 		
 		assertEquals(incluyeTexto.filtrarProyectos(proyectos), filtrados); 
 	}
-	
-	
-	@Test
-	void testORCompositeTrue() {
-		
-		assertTrue(incluyeTexto.seCumple(proyecto1));
-		assertTrue(incluyeTexto.seCumple(proyecto3));
-	}
-
-	@Test
-	void testORCompositeFalse() {
-		
-		assertFalse(incluyeTexto.seCumple(proyecto2));
-
-	}
 }

@@ -74,19 +74,5 @@ public class ExcluyeCategoriasTest {
 		
 		assertEquals(excluyeCategorias.filtrarProyectos(proyectos), filtrados); 
 	}
-	
-	@Test
-	void testExcluyeCategoriaseFalse() {
-		
-		assertFalse(excluyeCategorias.seCumple(proyecto1));
-		assertFalse(excluyeCategorias.seCumple(proyecto3));
-	}
-
-	@Test
-	void testExcluyeCategoriasTrue() {
-		
-		assertTrue(excluyeCategorias.seCumple(proyecto2));
-
-	}
 
 }

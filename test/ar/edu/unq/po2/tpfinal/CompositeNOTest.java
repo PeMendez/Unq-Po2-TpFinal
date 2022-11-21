@@ -46,19 +46,4 @@ public class CompositeNOTest {
 		assertEquals(compositeNOT.filtrarProyectos(proyectos), filtrados); 
 		
 	}
-
-	//@Test
-	void testSeCumpleTrue() {
-		condicion = mock(IncluyeTextoEnTitulo.class); 		
-		when(condicion.seCumple(proyecto1)).thenReturn(false);
-		assertTrue(compositeNOT.seCumple(proyecto1));
-	}
-
-	@Test
-	void testSeCumpleFalse() {
-		condicion = mock(IncluyeTextoEnTitulo.class);
-		when(condicion.seCumple(proyecto1)).thenReturn(true);
-		assertFalse(compositeNOT.seCumple(proyecto1));
-	}
-
 }
