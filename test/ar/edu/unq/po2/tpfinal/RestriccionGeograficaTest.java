@@ -38,7 +38,7 @@ class RestriccionGeograficaTest {
 
 		// coordenada en el borde
 		when(coordenada.getLatitud()).thenReturn(5);
-		when(coordenada.getLongitud()).thenReturn(5);
+		when(coordenada.getLongitud()).thenReturn(10);
 		assertTrue(restriccion.seCumple(muestra));
 	}
 
