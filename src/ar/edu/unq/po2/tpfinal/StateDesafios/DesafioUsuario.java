@@ -91,4 +91,9 @@ public class DesafioUsuario {
 		return this.getEstado().porcentajeDeCompletitud(this);
 	}
 	
+	public boolean estaCompleto() {
+		
+		return this.getEstado().estaCompleto(this); 
+	}
+	
 }

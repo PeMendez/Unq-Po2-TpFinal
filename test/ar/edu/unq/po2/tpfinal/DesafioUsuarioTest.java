@@ -120,4 +120,14 @@ public class DesafioUsuarioTest {
 		
 		verify(estado, times(1)).porcentajeDeCompletitud(desafioU); 
 	}
+	
+	@Test 
+	void testEstaCompleto() {
+		
+		desafioU.setEstado(estado);
+		desafioU.estaCompleto(); 
+		
+		verify(estado, times(1)).estaCompleto(desafioU); 
+		
+	}
 }
