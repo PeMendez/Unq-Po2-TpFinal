@@ -39,9 +39,9 @@ public class Usuario {
 		this.getDesafiosUsuario().remove(desafio); 
 	}
 	
-	public List<Desafio> desafiosRecomendados(){
+	public List<Desafio> desafiosRecomendados(Sistema sistema){
 		
-		return this.getPerfil().getTipoDeRecomendacion().desafiosRecomendados(this); 
+		return this.getPerfil().getTipoDeRecomendacion().desafiosRecomendados(this, sistema); 
 	}
 
 	public void valorarDesafio(DesafioUsuario desafio, Integer valoracion) {
