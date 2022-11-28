@@ -11,6 +11,7 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+import org.mockito.internal.util.collections.Sets;
 
 import ar.edu.unq.po2.tpfinal.StateDesafios.*;
 import ar.edu.unq.po2.tpfinal.StrategyRecomendacion.*;
@@ -48,6 +49,8 @@ public class FavoritoTest {
 	private Proyecto proyecto1;
 	@Mock 
 	private Proyecto proyecto2;
+	@Mock 
+	private Sistema sistema; 
 
 	@BeforeEach
 	void setUp() throws Exception {
@@ -65,7 +68,8 @@ public class FavoritoTest {
 		desafioUsuario3 = mock(DesafioUsuario.class);
 		desafioUsuario4 = mock(DesafioUsuario.class);
 		proyecto1 = mock(Proyecto.class);
-		proyecto2 = mock(Proyecto.class);		
+		proyecto2 = mock(Proyecto.class);
+		sistema = mock(Sistema.class); 
 
 		when(desafioUsuario.getValoracion()).thenReturn(5);		
 		when(desafioUsuario.getDesafio()).thenReturn(desafio1);
@@ -99,6 +103,11 @@ public class FavoritoTest {
 		when(desafio6.getRecompensa()).thenReturn(10);
 		
 		when(usuario.getPerfil()).thenReturn(perfil); 
+		
+		when(proyecto1.getDesafios()).thenReturn(Arrays.asList(desafio1, desafio2, desafio3)); 
+		when(proyecto2.getDesafios()).thenReturn(Arrays.asList(desafio4, desafio5, desafio6)); 
+		
+		when(sistema.getProyDisponibles()).thenReturn(Sets.newSet(proyecto1, proyecto2)); 
 	}
 
 	@Test
@@ -118,39 +127,39 @@ public class FavoritoTest {
 	}
 	
 	
-	@Test
-	void testDesafiosSegunUsuario() {
-		// set up 
-		List<Desafio> desafiosProyecto1 = Arrays.asList(desafio1, desafio2, desafio3); 
-		List<Desafio> desafiosProyecto2 = Arrays.asList(desafio4, desafio5, desafio6); 
-		//exercise
-		
-		when(proyecto1.getDesafios()).thenReturn(desafiosProyecto1); 
-		when(proyecto2.getDesafios()).thenReturn(desafiosProyecto2);		
-		
-		when(usuario.getProyectos()).thenReturn(Arrays.asList(proyecto1, proyecto2)); 
-
-		
-		assertEquals(recomendador.desafiosSegunUsuario(usuario).size(), 6); 
-	}
+//	@Test
+//	void testDesafiosSegunUsuario() {
+//		// set up 
+//		List<Desafio> desafiosProyecto1 = Arrays.asList(desafio1, desafio2, desafio3); 
+//		List<Desafio> desafiosProyecto2 = Arrays.asList(desafio4, desafio5, desafio6); 
+//		//exercise
+//		
+//		when(proyecto1.getDesafios()).thenReturn(desafiosProyecto1); 
+//		when(proyecto2.getDesafios()).thenReturn(desafiosProyecto2);		
+//		
+//		when(usuario.getProyectos()).thenReturn(Arrays.asList(proyecto1, proyecto2)); 
+//
+//		
+//		assertEquals(recomendador.desafiosSegunUsuario(usuario).size(), 6); 
+//	}
 
 	@Test
 	void testDesafiosARecomendar() {
 		
-		List<DesafioUsuario> desafiosDelUsuario = new ArrayList<DesafioUsuario>();
+//		List<DesafioUsuario> desafiosDelUsuario = new ArrayList<DesafioUsuario>();
+//
+//		when(usuario.getDesafiosUsuario()).thenReturn(desafiosDelUsuario);
+//		desafiosDelUsuario.add(desafioUsuario);
+//		
+//		
+//		List<Desafio> desafiosProyecto1 = Arrays.asList(desafio1, desafio2, desafio3, desafio4, desafio5, desafio6); 
+//		
+//		when(proyecto1.getDesafios()).thenReturn(desafiosProyecto1); 		
+//		
+//		when(usuario.getProyectos()).thenReturn(Arrays.asList(proyecto1, proyecto2)); 
 
-		when(usuario.getDesafiosUsuario()).thenReturn(desafiosDelUsuario);
-		desafiosDelUsuario.add(desafioUsuario);
 		
-		
-		List<Desafio> desafiosProyecto1 = Arrays.asList(desafio1, desafio2, desafio3, desafio4, desafio5, desafio6); 
-		
-		when(proyecto1.getDesafios()).thenReturn(desafiosProyecto1); 		
-		
-		when(usuario.getProyectos()).thenReturn(Arrays.asList(proyecto1, proyecto2)); 
-
-		
-		assertEquals(5, recomendador.desafiosRecomendados(usuario).size()); 
+		assertEquals(5, recomendador.desafiosRecomendados(usuario,sistema).size()); 
 	}
 	
 }
