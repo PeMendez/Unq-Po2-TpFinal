@@ -11,6 +11,7 @@ import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+import org.mockito.internal.util.collections.Sets;
 
 import ar.edu.unq.po2.tpfinal.StateDesafios.DesafioUsuario;
 import ar.edu.unq.po2.tpfinal.StrategyRecomendacion.PreferenciaDeJuego;
@@ -40,6 +41,8 @@ class PreferenciaDeJuegoTest {
 	private Proyecto proyecto1;
 	@Mock 
 	private Proyecto proyecto2;
+	@Mock 
+	private Sistema sistema; 
 
 
 	@BeforeEach
@@ -56,7 +59,7 @@ class PreferenciaDeJuegoTest {
 		desafioUsuario = mock(DesafioUsuario.class);
 		proyecto1 = mock(Proyecto.class);
 		proyecto2 = mock(Proyecto.class);
-		
+		sistema = mock(Sistema.class); 
 
 		when(desafioUsuario.getValoracion()).thenReturn(5);		
 		when(desafioUsuario.getDesafio()).thenReturn(desafio1);
@@ -65,7 +68,7 @@ class PreferenciaDeJuegoTest {
 		
 		when(desafio1.getDificultad()).thenReturn(5);
 		when(desafio1.getCantidadDeMuestras()).thenReturn(10);
-		when(desafio1.getRecompensa()).thenReturn(100); 
+		when(desafio1.getRecompensa()).thenReturn(100); // 
 		
 		when(desafio2.getDificultad()).thenReturn(2);
 		when(desafio2.getCantidadDeMuestras()).thenReturn(19);
@@ -90,6 +93,11 @@ class PreferenciaDeJuegoTest {
 		when(perfil.getDificultad()).thenReturn(3);
 		when(perfil.getCantMuestrasARecolectar()).thenReturn(20);
 		when(perfil.getRecompensasPreferidas()).thenReturn(80);
+		
+		when(proyecto1.getDesafios()).thenReturn(Arrays.asList(desafio1, desafio2, desafio3)); 
+		when(proyecto2.getDesafios()).thenReturn(Arrays.asList(desafio4, desafio5, desafio6)); 
+		
+		when(sistema.getProyDisponibles()).thenReturn(Sets.newSet(proyecto1, proyecto2)); 
 	}
 
 	@Test
@@ -119,40 +127,40 @@ class PreferenciaDeJuegoTest {
 	@Test
 	void testDesafiosARecomendar() {
 		
-		List<DesafioUsuario> desafiosDelUsuario = new ArrayList<DesafioUsuario>();
+//		List<DesafioUsuario> desafiosDelUsuario = new ArrayList<DesafioUsuario>();
+//
+//		when(usuario.getDesafiosUsuario()).thenReturn(desafiosDelUsuario);
+//		desafiosDelUsuario.add(desafioUsuario);
+//		
+//		
+//		List<Desafio> desafiosProyecto1 = Arrays.asList(desafio1, desafio2, desafio3, desafio4, desafio5, desafio6); 
+//		
+//		when(proyecto1.getDesafios()).thenReturn(desafiosProyecto1); 		
+//		
+//		when(usuario.getProyectos()).thenReturn(Arrays.asList(proyecto1)); 
 
-		when(usuario.getDesafiosUsuario()).thenReturn(desafiosDelUsuario);
-		desafiosDelUsuario.add(desafioUsuario);
 		
-		
-		List<Desafio> desafiosProyecto1 = Arrays.asList(desafio1, desafio2, desafio3, desafio4, desafio5, desafio6); 
-		
-		when(proyecto1.getDesafios()).thenReturn(desafiosProyecto1); 		
-		
-		when(usuario.getProyectos()).thenReturn(Arrays.asList(proyecto1)); 
-
-		
-		assertEquals(5, recomendador.desafiosRecomendados(usuario).size()); 
+		assertEquals(5, recomendador.desafiosRecomendados(usuario, sistema).size()); 
 	}
 	
 	@Test 
 	void testOrdenDesafiosRecomendados() {
 		
-		List<DesafioUsuario> desafiosDelUsuario = new ArrayList<DesafioUsuario>();
-
-		when(usuario.getDesafiosUsuario()).thenReturn(desafiosDelUsuario);
-		desafiosDelUsuario.add(desafioUsuario);
+//		List<DesafioUsuario> desafiosDelUsuario = new ArrayList<DesafioUsuario>();
+//
+//		when(usuario.getDesafiosUsuario()).thenReturn(desafiosDelUsuario);
+//		desafiosDelUsuario.add(desafioUsuario);
+//		
+//		
+//		List<Desafio> desafiosProyecto1 = Arrays.asList(desafio2, desafio3, desafio4, desafio5, desafio6); 
+//		
+//		when(proyecto1.getDesafios()).thenReturn(desafiosProyecto1); 		
+//		
+//		when(usuario.getProyectos()).thenReturn(Arrays.asList(proyecto1)); 
+//		
+		List<Desafio> desafiosOrdenados = Arrays.asList(desafio2, desafio1, desafio4, desafio6, desafio3); 
 		
-		
-		List<Desafio> desafiosProyecto1 = Arrays.asList(desafio2, desafio3, desafio4, desafio5, desafio6); 
-		
-		when(proyecto1.getDesafios()).thenReturn(desafiosProyecto1); 		
-		
-		when(usuario.getProyectos()).thenReturn(Arrays.asList(proyecto1)); 
-		
-		List<Desafio> desafiosOrdenados = Arrays.asList(desafio2, desafio4, desafio6, desafio3, desafio5); 
-		
-		assertEquals(desafiosOrdenados, recomendador.desafiosRecomendados(usuario)); 
+		assertEquals(desafiosOrdenados, recomendador.desafiosRecomendados(usuario, sistema)); 
 		
 	}
 	
