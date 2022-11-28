@@ -58,8 +58,6 @@ class UsuarioTest {
 		//Exercise
 		user.suscribirse(proyecto1); 
 		//verify
-		assertEquals(proyectosSuscriptos,user.getProyectos());
-
 		verify(proyecto1).addParticipante(user);
 	}
 	
@@ -70,8 +68,6 @@ class UsuarioTest {
 		//Exercise
 		user.desuscribirse(proyecto1); 
 		//verify
-		assertNotEquals(proyectosSuscriptos,user.getProyectos());
-
 		verify(proyecto1).desuscribirParticipante(user);;
 	}
 	
@@ -91,9 +87,9 @@ class UsuarioTest {
 		when(perfilUser.getTipoDeRecomendacion()).thenReturn(tipoRecomendacion);
 		user = new Usuario(perfilUser);
 		//Exercise
-		user.desafiosRecomendados(); 
+		user.desafiosRecomendados(admP); 
 		//verify
-		verify(tipoRecomendacion, times(1)).desafiosRecomendados(user);
+		verify(tipoRecomendacion, times(1)).desafiosRecomendados(user, admP);
 	}
 	
 	
@@ -153,16 +149,6 @@ class UsuarioTest {
 		//excercise y verify
 		assertEquals(perfilUser2,user.getPerfil());
 	}	
-	
-	@Test
-	void testGetYSetProyectos() {
-		//setup
-		List<Proyecto> proyectosSuscriptos = Arrays.asList(proyecto1,proyecto2);
-		//excercise
-		user.setProyectos(proyectosSuscriptos);
-		//verify
-		assertEquals(proyectosSuscriptos,user.getProyectos());
-	}
 
 	@Test
 	void testGetYSetMuestras() {
