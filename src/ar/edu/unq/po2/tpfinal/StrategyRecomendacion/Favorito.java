@@ -5,11 +5,11 @@ import java.util.List;
 public class Favorito extends RecomendadorDesafios {
 	
 	@Override
-	public List<Desafio> desafiosRecomendados(Usuario usuario) {
+	public List<Desafio> desafiosRecomendados(Usuario usuario, Sistema sistema) {
 		
 		List<Desafio> desafiosRecomendados = 
 			this.ordenarPorSimilitud(
-				this.los20ConMayorCoincidencia(usuario), this.desafioFavoritoDe(usuario)).stream().limit(5).toList(); 
+				this.los20ConMayorCoincidencia(usuario, sistema), this.desafioFavoritoDe(usuario)).stream().limit(5).toList(); 
 		
 		this.agregarDesafiosRecomendados(usuario, desafiosRecomendados);
 		
@@ -35,9 +35,9 @@ public class Favorito extends RecomendadorDesafios {
 		return (difDificultad + difMuestras + difRecompensa) / 3;
 	}
 
-	private List<Desafio> los20ConMayorCoincidencia(Usuario usuario) {
+	private List<Desafio> los20ConMayorCoincidencia(Usuario usuario, Sistema sistema) {
 		
-		return this.ordenarPorCoincidencia(this.desafiosARecomendar(usuario), usuario).stream().limit(20).toList(); 
+		return this.ordenarPorCoincidencia(this.desafiosARecomendar(usuario, sistema), usuario).stream().limit(20).toList(); 
 	}
 
 	public Desafio desafioFavoritoDe(Usuario usuario) {

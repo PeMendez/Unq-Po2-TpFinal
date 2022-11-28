@@ -8,10 +8,10 @@ public class PreferenciaDeJuego extends RecomendadorDesafios {
 
 
 	@Override
-	public List<Desafio> desafiosRecomendados(Usuario usuario) {
+	public List<Desafio> desafiosRecomendados(Usuario usuario, Sistema sistema) {
 		
 		List<Desafio> desafiosRecomendados = 
-				this.ordenarPorCoincidencia(this.desafiosARecomendar(usuario), usuario).stream().limit(5).toList();
+				this.ordenarPorCoincidencia(this.desafiosARecomendar(usuario, sistema), usuario).stream().limit(5).toList();
 		
 		this.agregarDesafiosRecomendados(usuario, desafiosRecomendados);
 	

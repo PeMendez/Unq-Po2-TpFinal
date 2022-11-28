@@ -7,32 +7,42 @@ import java.util.List;
 
 public abstract class RecomendadorDesafios {
 
-	public List<Desafio> desafiosARecomendar(Usuario usuario){
-			
-			List<Desafio> desafios = desafiosSegunUsuario(usuario); 
-			
-			
-			desafios.removeAll(dasafiosYaTomados(usuario)); 
-			
-			return desafios;  
-	}
+//	public List<Desafio> desafiosARecomendar(Usuario usuario){
+//			
+//			List<Desafio> desafios = desafiosSegunUsuario(usuario); 
+//			
+//			
+//			desafios.removeAll(dasafiosYaTomados(usuario)); 
+//			
+//			return desafios;  
+//	}
 	
-	public List<Desafio> desafiosSegunUsuario(Usuario usuario){
+	public List<Desafio> desafiosARecomendar(Usuario usuario, Sistema sistema){
 		
-		List<Desafio> desafios = new ArrayList<Desafio>();
+		List<Desafio> desafios = new ArrayList<Desafio>(); 
 		
-		usuario
-		    .getProyectos()
-			.stream()
-			.forEach(proyecto -> desafios.addAll(proyecto.getDesafios()));
+		sistema.getProyDisponibles().forEach(proyecto -> desafios.addAll(proyecto.getDesafios()));
 		
-		return desafios; 
-	}
+		return desafios;  
+}
 
-	private List<Desafio> dasafiosYaTomados(Usuario usuario) {
-			
-			return usuario.getDesafiosUsuario().stream().map(desafioUsuario -> desafioUsuario.getDesafio()).toList();
-	}
+//	
+//	public List<Desafio> desafiosSegunUsuario(Usuario usuario){
+//		
+//		List<Desafio> desafios = new ArrayList<Desafio>();
+//		
+//		usuario
+//		    .getProyectos()
+//			.stream()
+//			.forEach(proyecto -> desafios.addAll(proyecto.getDesafios()));
+//		
+//		return desafios; 
+//	}
+//
+//	private List<Desafio> dasafiosYaTomados(Usuario usuario) {
+//			
+//			return usuario.getDesafiosUsuario().stream().map(desafioUsuario -> desafioUsuario.getDesafio()).toList();
+//	}
 	
 	public List<Desafio> ordenarPorCoincidencia(List<Desafio> desafios, Usuario usuario){
 		
@@ -60,6 +70,6 @@ public abstract class RecomendadorDesafios {
 		desafiosRecomendados.stream().forEach(desafio -> usuario.getDesafiosUsuario().add(new DesafioUsuario(usuario, desafio)));
 	}
 	
-	public abstract List<Desafio> desafiosRecomendados(Usuario usuario);
+	public abstract List<Desafio> desafiosRecomendados(Usuario usuario, Sistema sistema);
 	
 }
