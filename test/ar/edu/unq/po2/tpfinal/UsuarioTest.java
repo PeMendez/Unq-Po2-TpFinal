@@ -54,7 +54,7 @@ class UsuarioTest {
 	@Test
 	void testSuscribirseAProyecto() {
 		//setup
-		List<Proyecto> proyectosSuscriptos = Arrays.asList(proyecto1);
+
 		//Exercise
 		user.suscribirse(proyecto1); 
 		//verify
@@ -64,7 +64,7 @@ class UsuarioTest {
 	@Test
 	void testDesuscribirseAProyecto() {
 		//setup
-		List<Proyecto> proyectosSuscriptos = Arrays.asList(proyecto1);
+	
 		//Exercise
 		user.desuscribirse(proyecto1); 
 		//verify

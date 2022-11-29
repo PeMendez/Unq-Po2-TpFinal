@@ -3,9 +3,6 @@ package ar.edu.unq.po2.tpfinal;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-import java.util.Arrays;
-import java.util.List;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -15,9 +12,7 @@ import ar.edu.unq.po2.tpfinal.StrategyRecomendacion.*;
 class PerfilTest {
 
 	private Perfil perfil; // sut
-	private int cantMuestrasARecolectar; 
-	private int dificultad; 
-	private int recompensasPreferidas;
+
 	
 	@Mock private RecomendadorDesafios tipoDeRecomendacion;
 	@Mock private RecomendadorDesafios tipoDeRecomendacion2;
