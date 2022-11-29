@@ -2,7 +2,7 @@ package ar.edu.unq.po2.tpfinal.StateDesafios;
 
 import java.time.LocalDate;
 
-public class EstadoEnCurso extends EstadoDesafio {
+public class EstadoEnCurso implements EstadoDesafio {
 
 	@Override
 	public boolean estaCompleto(DesafioUsuario desafio) {
