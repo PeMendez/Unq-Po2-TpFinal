@@ -11,22 +11,18 @@ class RestriccionGeograficaTest {
 
 	private RestriccionGeografica restriccion;
 	private Coordenada coordenada;
-	private RestriccionGeografica restriccionG;
-	private int latitud;
-	private int longitud;
-	private int radio;
+	private Coordenada coordenadaDeRestriccion;
 	private Muestra muestra;
 
 	@BeforeEach
 	void setUp() throws Exception {
 		coordenada = mock(Coordenada.class);
-		restriccion = new RestriccionGeografica(5, 5, 5);
-		latitud = 30;
-		longitud = 10;
-		radio = 4;
-		restriccionG = new RestriccionGeografica(latitud, longitud, radio);
+		coordenadaDeRestriccion = mock(Coordenada.class);
+		restriccion = new RestriccionGeografica(coordenadaDeRestriccion, 5);
 		muestra = mock(Muestra.class);
 		when(muestra.getCoordenada()).thenReturn(coordenada);
+		when(coordenadaDeRestriccion.getLatitud()).thenReturn(5);
+		when(coordenadaDeRestriccion.getLongitud()).thenReturn(5);
 	}
 
 	@Test
@@ -51,26 +47,14 @@ class RestriccionGeograficaTest {
 	}
 
 	@Test
-	void testGetLatitud() {
-		// setup
-		// exercise
+	void testGetCoordenada() {
 		// verify
-		assertEquals(30, restriccionG.getLatitud());
-	}
-
-	@Test
-	void testGetLongitud() {
-		// setup
-		// exercise
-		// verify
-		assertEquals(10, restriccionG.getLongitud());
+		assertEquals(coordenadaDeRestriccion, restriccion.getCoordenada());
 	}
 
 	@Test
 	void testGetRadio() {
-		// setup
-		// exercise
 		// verify
-		assertEquals(4, restriccionG.getRadio());
+		assertEquals(5, restriccion.getRadio());
 	}
 }
