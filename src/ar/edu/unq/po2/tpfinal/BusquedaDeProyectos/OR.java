@@ -18,16 +18,17 @@ public class OR extends CompuestoBinario{
 	@Override
 	public List<Proyecto> filtrarProyectos(Set<Proyecto> proyDisponibles) {
 		
-		List<Proyecto> filtro = this.getCondicion1().filtrarProyectos(proyDisponibles); 
-		List<Proyecto> filtro2 = this.getCondicion2().filtrarProyectos(proyDisponibles); 
+		List<Proyecto> filtro1 = this.getCondicion1().filtrarProyectos(proyDisponibles); 
+		List<Proyecto> filtro2 = this.getCondicion2().filtrarProyectos(proyDisponibles);
 		
-		Set<Proyecto> or = new HashSet<Proyecto>(filtro); 
+		Set<Proyecto> or = new HashSet<Proyecto>(); 
 		
+		or.addAll(filtro1); 
 		or.addAll(filtro2); 
-		
+
 		List<Proyecto> proyFiltrados = new ArrayList<Proyecto>(); 
 		
-		or.stream().forEach(p -> proyFiltrados.add(p));
+		proyFiltrados.addAll(or);
 		
 		return proyFiltrados;
 	}

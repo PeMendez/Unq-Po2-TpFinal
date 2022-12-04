@@ -20,7 +20,8 @@ public class AND extends CompuestoBinario{
 		List<Proyecto> filtro = this.getCondicion1().filtrarProyectos(proyDisponibles); 
 		
 		Set<Proyecto> filtrado = new HashSet<>(); 
-				filtro.stream().forEach(p -> filtrado.add(p));
+		
+		filtrado.addAll(filtro);
 		
 		List<Proyecto> filtro2 = this.getCondicion2().filtrarProyectos(filtrado);  
 		
