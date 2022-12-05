@@ -26,10 +26,18 @@ public class RestriccionGeografica implements IRestriccion {
 		this.radio = radio;
 	}
 
+	private int getLatitud() {
+		return this.getCoordenada().getLatitud();
+	}
+
+	private int getLongitud() {
+		return this.getCoordenada().getLongitud();
+	}
+
 	@Override
 	public boolean seCumple(Muestra muestra) {
-		return (Math.sqrt(Math.pow(Math.abs(muestra.getCoordenada().getLatitud() - this.getCoordenada().getLatitud()), 2)
-				+ Math.pow(Math.abs(muestra.getCoordenada().getLongitud() - this.getCoordenada().getLongitud()), 2))) <= this
+		return (Math.sqrt(Math.pow(Math.abs(muestra.getCoordenada().getLatitud() - this.getLatitud()), 2) + Math
+				.pow(Math.abs(muestra.getCoordenada().getLongitud() - this.getLongitud()), 2))) <= this
 						.getRadio();
 	}
 
